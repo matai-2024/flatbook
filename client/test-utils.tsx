@@ -11,7 +11,7 @@ import {
 } from 'react-router-dom'
 import '@testing-library/jest-dom/vitest'
 
-// import { routes } from './index'
+// import { routes } from './routes.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 afterEach(cleanup)
@@ -49,6 +49,5 @@ export function renderWithQuery(component: JSX.Element) {
   }
 }
 
-//referenced rcmndr test utils
-//routes set-up will look like: https://github.com/matai-2024/rcmndr/blob/main/client/index.tsx
-//protected-component set-up: https://github.com/matai-2024/rcmndr/blob/main/client/components/UI/ProtectedComponent.tsx
+//everything that's been commented out can be un-commented out when
+//testing up front-end routes is done (ticket#43)
