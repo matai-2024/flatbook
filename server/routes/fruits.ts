@@ -2,7 +2,7 @@ import { Router } from 'express'
 import checkJwt, { JwtRequest } from '../auth0.ts'
 import { StatusCodes } from 'http-status-codes'
 
-import * as db from '../db/fruits.ts'
+import * as db from '../db/flats.ts'
 
 const router = Router()
 
