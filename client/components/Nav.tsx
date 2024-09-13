@@ -3,14 +3,14 @@ import { NavLink } from 'react-router-dom'
 function Nav() {
   const navItems = [
     { title: '', link: '/' },
-    { title: '', link: './' },
-    { title: '', link: './' },
-    { title: '', link: './' },
+    // { title: '', link: './' },
+    // { title: '', link: './' },
+    // { title: '', link: './' },
   ]
 
   return (
     <>
-      <nav className="placeholder tailwind">
+      <nav className="tailwind placeholder">
         <NavLink to="/"></NavLink>
         <ul>
           {navItems.map((item) => (
