@@ -1,12 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  align-items: center;
+  justify-content: center;
+}
+
 .landing-page {
+  /* background-color: aqua; */
   font-family: 'Playfair Display', serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
+  /* font-size: 285px; */
+  font-size: 15cqmax;
+  font-weight: 600;
+  padding-top: px;
+  padding-left: 50px;
+}
+
+.landing-page-description {
+  /* background-color: blueviolet; */
+  font-family: 'Rubik', serif;
+  /* font-size: 185px; */
+  font-size: 1.3cqmax;
+  font-weight: 200;
+  max-width: 600px;
+  text-align: center;
+  padding-top: 150px;
+  padding-right: 50px;
+}
+
+.register-button {
+  /* background-color: yellow; */
+  padding-top: 20px;
+  margin-right: 210px;
+  text-align: center;
 }
