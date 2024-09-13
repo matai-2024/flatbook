@@ -1,15 +1,15 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import { useFlats } from '../hooks/useFlats.ts'
 
 function App() {
-  const { data } = useFruits()
+  const { data } = useFlats()
 
   return (
     <>
       <div className="app">
         <h1 className="text-3xl font-bold underline">
-          Fullstack Boilerplate - with Fruits!
+          Fullstack Boilerplate - with Flats!
         </h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
+        <ul>{data && data.map((flat) => <li key={flat}>{flat}</li>)}</ul>
       </div>
     </>
   )

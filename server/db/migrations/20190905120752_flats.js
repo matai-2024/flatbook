@@ -11,5 +11,5 @@ export async function up(knex) {
 }
 
 export async function down(knex) {
-  return knex.schema.dropTable('flat')
+  return knex.schema.dropTable('flats')
 }

@@ -1,4 +1,4 @@
 export async function seed(knex) {
-  await knex('flat').del()
+  await knex('flats').del()
   // Add other tables here...
 }

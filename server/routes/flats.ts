@@ -8,9 +8,9 @@ const router = Router()
 
 router.get('/', async (req, res) => {
   try {
-    const fruits = await db.getAllFruits()
+    const flats = await db.getAllFlats()
 
-    res.json({ fruits: fruits.map((fruit) => fruit.name) })
+    res.json({ flats: flats.map((flat) => flat.name) })
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })
@@ -19,8 +19,8 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const fruit = await db.getFruitById(req.params.id)
-    res.json(fruit)
+    const flat = await db.getFlatById(req.params.id)
+    res.json(flat)
   } catch (err) {
     next(err)
   }
@@ -33,8 +33,8 @@ router.post('/', checkJwt, async (req: JwtRequest, res, next) => {
   }
 
   try {
-    const { owner, name } = req.body
-    const id = await db.addFruit({ owner, name })
+    const { address, name, phone } = req.body
+    const id = await db.addFlat({ address, name, phone })
     res
       .setHeader('Location', `${req.baseUrl}/${id}`)
       .sendStatus(StatusCodes.CREATED)
