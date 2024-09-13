@@ -1,3 +1,23 @@
-import { createRoutesFromElements, Route } from 'react-router-dom'
-import App from './components/App.tsx'
-export default createRoutesFromElements(<Route index element={<App />} />)
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from 'react-router-dom'
+// import ProtectedComponent from './components/ProtectedComponent'
+import App from './components/App'
+import LandingPage from './components/LandingPage'
+
+export const routes = createRoutesFromElements(
+  <Route path="/" element={<App />}>
+    <Route index element={<LandingPage />} />
+  </Route>,
+)
+
+export const router = createBrowserRouter(routes)
+
+//template for if you're adding a protected-route
+//<Route
+//path="my-path"
+//element={<ProtectedComponent component={componentGoesHere} />}
+//handle={'page name goes here'}
+///>
