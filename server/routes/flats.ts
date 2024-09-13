@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
     res.json({ flats: flats.map((flat) => flat.name) })
   } catch (error) {
-    console.log(error)
+    console.error(error)
     res.status(500).json({ message: 'Something went wrong' })
   }
 })
