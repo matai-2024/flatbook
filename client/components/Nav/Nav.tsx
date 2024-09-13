@@ -1,6 +1,7 @@
 import LoginButton from '../LoginButton'
-import logo from '../Nav/flatbook-logo.png'
+import logo from '../../assets/flatbook-logo.png'
 import LogoutButton from '../LogoutButton'
+import Button from '../UI/Button'
 
 interface Props {
   navState: boolean
@@ -13,7 +14,14 @@ function Nav(props: Props) {
         <img src={logo} alt="logo" className=" w- btn btn-ghost h-28" />
       </div>
       <div className="mr-20">
-        {props.navState === false ? <LoginButton /> : <LogoutButton />}
+        {props.navState === false ? (
+          <LoginButton />
+        ) : (
+          <div>
+            <Button className="btn btn-accent">Flat Dashboard</Button>{' '}
+            <LogoutButton />
+          </div>
+        )}
       </div>
     </div>
   )
