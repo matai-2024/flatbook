@@ -12,7 +12,7 @@ function RegisterButton() {
     })
   }
 
-  return <Button onClick={handleRegister}>Register Now!</Button>
+  return <Button onClick={handleRegister}>Get Started</Button>
 }
 
 export default RegisterButton

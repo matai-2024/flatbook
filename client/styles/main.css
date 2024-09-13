@@ -11,15 +11,6 @@ body {
   justify-content: center;
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100;
-  text-align: center;
-  background-color: aquamarine;
-}
-
 .landing-page {
   /* background-color: aqua; */
   font-family: 'Playfair Display', serif;
@@ -46,4 +37,20 @@ body {
   max-width: 600px;
   padding-top: 20px;
   text-align: center;
+}
+
+.footer {
+  background-color: #dedebd69;
+  color: #57534e;
+  position: fixed;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  width: 100;
+}
+
+.footer-links {
+  /* background-color: blueviolet; */
+  padding: 10px;
+  font-weight: 600;
 }
