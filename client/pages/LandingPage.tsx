@@ -7,7 +7,7 @@ function LandingPage() {
       <div className="flex flex-row">
         <div className="flex-none basis-3/5">
           <h1 className="landing-page">FLAT</h1>
-          <h1 className="landing-page">BOOK</h1>
+          <h1 className="landing-page leading-none">BOOK</h1>
         </div>
         <div className="basis-1/2 flex-row">
           <p className="landing-page-description">
