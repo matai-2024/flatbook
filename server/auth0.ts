@@ -15,7 +15,7 @@ const checkJwt = jwt({
     jwksRequestsPerMinute: 5,
     jwksUri: `${process.env.AUTH0_DOMAIN}/.well-known/jwks.json`,
   }) as GetVerificationKey,
-  audience: process.env.AUTH0_AUDIENCE,
+  audience: `${process.env.AUTH0_AUDIENCE}`,
   issuer: `${process.env.AUTH0_DOMAIN}/`,
   algorithms: ['RS256'],
 })
