@@ -6,6 +6,7 @@ For every submission to the codebase, check the following:
 
 - [ ] Code fulfils the user story and scenarios set out in the github task and UI prototype.
 - [ ] The feature has been thoroughly manually tested.
+- [ ] There is no error logs in the web broswer's Inspect > Console.
 - [ ] All tests run and passed from terminal. Any broken tests fixed, not disabled or skipped.
   > `npm test`
 - [ ] Tests added or updated where appropriate.
