@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 function Nav() {
   const navItems = [
     { title: '', link: '/' },
-    { title: '', link: './' },
-    { title: '', link: './' },
-    { title: '', link: './' },
+    // { title: '', link: './' },
+    // { title: '', link: './' },
+    // { title: '', link: './' },
   ]
 
   return (
