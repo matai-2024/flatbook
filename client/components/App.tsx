@@ -2,7 +2,6 @@ import { useFlats } from '../hooks/useFlats.ts'
 
 function App() {
   const { data } = useFlats()
-
   return (
     <>
       <div className="app">
