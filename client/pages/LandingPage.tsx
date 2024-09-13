@@ -1,4 +1,5 @@
 import RegisterButton from '../components/RegisterButton'
+import Footer from '../components/Footer'
 
 function LandingPage() {
   return (
@@ -28,6 +29,9 @@ function LandingPage() {
           </p>
         </div>
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </>
   )
 }
