@@ -6,6 +6,7 @@ const LogoutButton = () => {
 
   return (
     <Button
+      data-testid="logoutButton"
       onClick={() =>
         logout({ logoutParams: { returnTo: window.location.origin } })
       }
