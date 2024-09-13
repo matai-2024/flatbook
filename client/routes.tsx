@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 // import ProtectedComponent from './components/ProtectedComponent'
 import App from './components/App'
-import LandingPage from './components/LandingPage'
+import LandingPage from './pages/LandingPage'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>

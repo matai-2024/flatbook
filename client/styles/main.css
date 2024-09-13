@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.landing-page {
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}

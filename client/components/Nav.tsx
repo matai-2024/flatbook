@@ -10,7 +10,7 @@ function Nav() {
 
   return (
     <>
-      <nav className="placeholder tailwind">
+      <nav className="tailwind placeholder">
         <NavLink to="/"></NavLink>
         <ul>
           {navItems.map((item) => (
