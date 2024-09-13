@@ -8,11 +8,17 @@ function AppLayout() {
   useDocumentTitle(pageTitle ? `${pageTitle}` : 'flatbook')
 
   return (
-    <section className="placeholder tailwind">
-      <main>
-        <Outlet />
-      </main>
-    </section>
+    <>
+      <section className="tailwind placeholder">
+        <header>
+          <h1>Fullstack Boilerplate - with Flats!</h1>
+        </header>
+        <main>
+          <Outlet />
+        </main>
+        <footer></footer>
+      </section>
+    </>
   )
 }
 

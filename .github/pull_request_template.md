@@ -1,5 +1,7 @@
 ## Definition of Done
 
+Closes #[Ticket number]
+
 For every submission to the codebase, check the following:
 
 - [ ] Code fulfils the user story and scenarios set out in the github task and UI prototype.
