@@ -1,18 +1,20 @@
-import { useFlats } from '../hooks/useFlats.ts'
-import Nav from './Nav'
+// import { useFlats } from '../hooks/useFlats.ts'
+import Nav from './Nav/Nav.tsx'
 import AppLayout from './AppLayout'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const { data } = useFlats()
+  // const { data } = useFlats()
+  const { isAuthenticated } = useAuth0()
+  const [navState, setNavState] = useState(false)
+
+  useEffect(() => {
+    isAuthenticated === false ? setNavState(false) : setNavState(true)
+  }, [isAuthenticated])
   return (
     <>
-      <div className="app">
-        <h1 className="text-3xl font-bold underline">
-          Fullstack Boilerplate - with Flats!
-        </h1>
-        <ul>{data && data.map((flat) => <li key={flat}>{flat}</li>)}</ul>
-      </div>
-      <Nav />
+      <Nav navState={navState} />
       <AppLayout />
     </>
   )
