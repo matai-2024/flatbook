@@ -13,7 +13,7 @@ type ButtonProps = HtmlHTMLAttributes<HTMLButtonElement>
 
 function Button({ children, className, ...rest }: ButtonProps) {
   return (
-    <button className={twMerge('btn', className)} {...rest}>
+    <button className={twMerge(' btn btn-secondary', className)} {...rest}>
       {children}
     </button>
   )
