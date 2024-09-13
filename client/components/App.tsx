@@ -1,4 +1,6 @@
 import { useFlats } from '../hooks/useFlats.ts'
+import Nav from './Nav'
+import AppLayout from './AppLayout'
 
 function App() {
   const { data } = useFlats()
@@ -10,6 +12,8 @@ function App() {
         </h1>
         <ul>{data && data.map((flat) => <li key={flat}>{flat}</li>)}</ul>
       </div>
+      <Nav />
+      <AppLayout />
     </>
   )
 }
