@@ -9,15 +9,11 @@ function AppLayout() {
 
   return (
     <>
-      <section className="tailwind placeholder">
-        <header>
-          <h1>Fullstack Boilerplate - with Flats!</h1>
-        </header>
-        <main>
-          <Outlet />
-        </main>
-        <footer></footer>
-      </section>
+      <header></header>
+      <main>
+        <Outlet />
+      </main>
+      <footer></footer>
     </>
   )
 }
