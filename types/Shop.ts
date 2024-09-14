@@ -21,7 +21,7 @@ export type ShoppingList = z.infer<typeof shoppingList>
 export const shoppingItemData = z.object({
   shoppingListId: z.number(),
   productName: z.string(),
-  price: z.number(),
+  quantity: z.number()
 })
 
 export const shoppingItemDataSchema = shoppingItemData
