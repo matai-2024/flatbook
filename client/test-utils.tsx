@@ -11,7 +11,7 @@ import {
 } from 'react-router-dom'
 import '@testing-library/jest-dom/vitest'
 
-// import { routes } from './routes.tsx'
+import { routes } from './routes.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 afterEach(cleanup)
@@ -21,13 +21,13 @@ export function renderComponent(component: JSX.Element) {
   return { user, ...render(component) }
 }
 
-// export function renderWithRouter(location = '/') {
-//   const router = createMemoryRouter(routes, {
-//     initialEntries: [location],
-//   })
-//   userEvent.setup()
-//   return render(<RouterProvider router={router} />)
-// }
+export function renderWithRouter(location = '/') {
+  const router = createMemoryRouter(routes, {
+    initialEntries: [location],
+  })
+  userEvent.setup()
+  return render(<RouterProvider router={router} />)
+}
 
 export function renderWithQuery(component: JSX.Element) {
   const router = createMemoryRouter(
