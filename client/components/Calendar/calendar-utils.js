@@ -32,10 +32,23 @@ export const generateDate = (
     i <= lastDateOfMonth.date() + remaining;
     i++
   ) {
-    arrayOfDate.push({ date: lastDateOfMonth.day(i), currentMonth: false })
+    arrayOfDate.push({ date: lastDateOfMonth.date(i), currentMonth: false })
   }
 
   return arrayOfDate
 }
 
-console.log(generateDate())
+export const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
