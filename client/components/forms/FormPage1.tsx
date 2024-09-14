@@ -1,4 +1,4 @@
-import { FormProps } from '../../../models/forms.ts'
+import { UserFormProps } from '../../../models/forms.ts'
 import FormContainer from './FormContainer.tsx'
 
 //Who are you?
@@ -7,9 +7,9 @@ export default function FormPage1({
   lastName,
   nickname,
   about,
-  // profile_photo, (i don't know how to do that)
+  // profile_photo (i don't know how to do that)
   updateFields,
-}: FormProps) {
+}: UserFormProps) {
   return (
     <FormContainer title="Let's get to know each other">
       <div className="tailwind placeholder">

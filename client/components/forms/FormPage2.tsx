@@ -1,4 +1,4 @@
-import { FormProps } from '../../../models/forms.ts'
+import { UserFormProps } from '../../../models/forms.ts'
 import FormContainer from './FormContainer.tsx'
 
 //How will your flatties contact you?
@@ -7,7 +7,7 @@ export default function FormPage2({
   number,
   socialMedia,
   updateFields,
-}: FormProps) {
+}: UserFormProps) {
   return (
     <FormContainer title="How will your flatties contact you?">
       <div className="tailwind placeholder">
