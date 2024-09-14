@@ -57,6 +57,7 @@ export default function Calendar() {
           {days.map((day, index) => {
             return (
               <h1
+                data-testid="calendar-days"
                 key={index}
                 className="grid h-14 place-content-center text-sm"
               >

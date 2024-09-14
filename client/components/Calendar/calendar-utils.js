@@ -59,5 +59,3 @@ export const events = [
   { date: 'Tue Sep 17 2024', eventName: 'Flat Spring Cleaning' },
   { date: 'Thu Sep 19 2024', eventName: 'Flat Game Day' },
 ]
-
-console.log(dayjs().toDate().toDateString())
