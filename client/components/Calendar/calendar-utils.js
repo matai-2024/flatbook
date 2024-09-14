@@ -52,3 +52,12 @@ export const months = [
   'November',
   'December',
 ]
+
+export const events = [
+  { date: 'Sun Sep 15 2024', eventName: 'Flat Viewing' },
+  { date: 'Tue Sep 17 2024', eventName: 'Flat Cleaning' },
+  { date: 'Tue Sep 17 2024', eventName: 'Flat Spring Cleaning' },
+  { date: 'Thu Sep 19 2024', eventName: 'Flat Game Day' },
+]
+
+console.log(dayjs().toDate().toDateString())

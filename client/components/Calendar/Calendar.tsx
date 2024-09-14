@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import dayjs from 'dayjs'
-import { generateDate, months } from './calendar-utils'
+import { events, generateDate, months } from './calendar-utils'
 import cn from './cn'
 import { useState } from 'react'
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
+import Button from '../UI/Button'
 
 export default function Calendar() {
   const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
@@ -13,9 +14,18 @@ export default function Calendar() {
   const [today, setToday] = useState(currentDate)
   const [selectDate, setSelectDate] = useState(currentDate)
 
+  const eventList = events
+  const daysWithEvent: string[] = []
+  eventList.forEach((eve) => {
+    daysWithEvent.push(eve.date)
+  })
+
   return (
     <div className="mx-auto flex h-screen w-1/2 items-center gap-10 divide-x-2 divide-secondary">
       <div className="h-96 w-96">
+        {
+          //** Calendar Days of week*/
+        }
         <div className="flex justify-between">
           <h1 className="font-semibold">
             {months[today.month()]}, {today.year()}
@@ -55,6 +65,9 @@ export default function Calendar() {
             )
           })}
         </div>
+        {
+          //** Calendar Days of month*/
+        }
         <div className="grid w-full grid-cols-7">
           {generateDate(today.month(), today.year()).map(
             ({ date, currentMonth, today }, index) => {
@@ -72,6 +85,9 @@ export default function Calendar() {
                         date.toDate().toDateString()
                         ? 'bg-primary text-white'
                         : '',
+                      daysWithEvent.includes(date.toDate().toDateString())
+                        ? ' font-semibold underline'
+                        : '',
                     )}
                     onClick={() => {
                       setSelectDate(date)
@@ -85,11 +101,27 @@ export default function Calendar() {
           )}
         </div>
       </div>
-      <div className="h-96 w-96 px-5">
+      {
+        //** Schedule Events*/
+      }
+      <div className="h-96 w-96 flex-row px-5">
         <h1 className="font-semibold">
           Schedule for {selectDate.toDate().toDateString()}
         </h1>
-        <p> Events</p>
+        {daysWithEvent.includes(selectDate.toDate().toDateString()) ? (
+          eventList.map((eve) => {
+            return eve.date === selectDate.toDate().toDateString() ? (
+              <p key={eve.eventName} className="leading-10">
+                {eve.eventName}
+              </p>
+            ) : (
+              ''
+            )
+          })
+        ) : (
+          <p className="leading-10">No Events Today!</p>
+        )}
+        <Button className="absolute bottom-60 text-center">Add an event</Button>
       </div>
     </div>
   )
