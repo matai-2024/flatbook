@@ -19,11 +19,11 @@ const invalidChoreResponse = {
   },
 }
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const { flatId } = req.body
+    const flatId = req.params.id
 
-    const chores = await db.getChores(flatId)
+    const chores = await db.getChores(+flatId)
     res.json(chores)
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong' })

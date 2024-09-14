@@ -6,10 +6,12 @@ import {
 // import ProtectedComponent from './components/ProtectedComponent'
 import App from './components/App'
 import LandingPage from './pages/LandingPage'
+import ChoresList from './components/ChoresList'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
     <Route index element={<LandingPage />} />
+    <Route path="/chores/:id" element={<ChoresList />} />
   </Route>,
 )
 
