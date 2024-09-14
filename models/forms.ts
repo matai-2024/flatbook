@@ -5,6 +5,19 @@ export interface FormContainerProps {
   children: ReactNode
 }
 
+export interface FormData {
+  flat_id: number
+  firstName: string
+  lastName: string
+  nickname: string
+  about: string
+  profile_photo: string
+  email: string
+  number: string
+  socialMedia: string
+  created_at: number
+}
+
 export interface User {
   flat_id: number
   firstName: string
