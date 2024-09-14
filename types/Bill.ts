@@ -3,11 +3,9 @@ import * as z from 'zod'
 export const billData = z.object({
   flatId: z.number(),
   title: z.string(),
-  description: z.string().nullable(),
-  priority: z.number().default(0),
-  deadline: z.string().date().nullable(),
+  authorId: z.string(),
+  amount: z.number(),
   createdAt: z.string().date(),
-  isCompleted: z.boolean().default(false),
 })
 
 export const billDataSchema = billData // For validation, call billDataSchema.safeParse(param) function
@@ -28,4 +26,4 @@ export const bill = billData.extend({
       }
 */
 export type BillData = z.infer<typeof billData>
-export type Chore = z.infer<typeof bill>
+export type Bill = z.infer<typeof bill>
