@@ -27,7 +27,7 @@ export default function Calendar() {
           //** Calendar Days of week*/
         }
         <div className="flex justify-between">
-          <h1 className="font-semibold">
+          <h1 className="font-semibold" data-testid="visibleMonth">
             {months[today.month()]}, {today.year()}
           </h1>
           <div className="flex items-center gap-5">
@@ -46,6 +46,7 @@ export default function Calendar() {
               Today
             </h1>
             <GrFormNext
+              data-testid="next-month-button"
               className="h-5 w-5 cursor-pointer"
               onClick={() => {
                 setToday(today.month(today.month() + 1))
@@ -78,6 +79,11 @@ export default function Calendar() {
                   className="grid h-14 place-content-center border-t-2 border-secondary text-sm"
                 >
                   <h1
+                    data-testid={
+                      daysWithEvent.includes(date.toDate().toDateString())
+                        ? 'dayWithEvent'
+                        : 'dayWithoutEvent'
+                    }
                     className={cn(
                       currentMonth ? '' : 'text-gray-600',
                       today ? 'bg-red-400 text-white' : '',
@@ -112,7 +118,7 @@ export default function Calendar() {
         {daysWithEvent.includes(selectDate.toDate().toDateString()) ? (
           eventList.map((eve) => {
             return eve.date === selectDate.toDate().toDateString() ? (
-              <p key={eve.eventName} className="leading-10">
+              <p key={eve.eventName} data-testid="event" className="leading-10">
                 {eve.eventName}
               </p>
             ) : (
@@ -120,7 +126,9 @@ export default function Calendar() {
             )
           })
         ) : (
-          <p className="leading-10">No Events Today!</p>
+          <p data-testid="noEvent" className="leading-10">
+            No Events Today!
+          </p>
         )}
         <Button className="absolute bottom-60 text-center">Add an event</Button>
       </div>
