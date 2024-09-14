@@ -6,12 +6,13 @@
 export async function up(knex) {
   return knex.schema.createTable('chores', (table) => {
     table.increments('id')
-    table.integer('flat_id')
-    table.string('title')
+    table.integer('flat_id').notNullable()
+    table.string('title').notNullable()
     table.string('description')
+    table.string('assignee_id')
     table.integer('priority')
     table.string('deadline')
-    table.string('created_at').defaultTo(new Date())
+    table.string('created_at')
     table.string('is_completed').defaultTo(false)
   })
 }

@@ -12,9 +12,9 @@ const invalidChoreResponse = {
     flatId: 'number',
     title: 'string',
     description: 'string',
-    priority: 'number',
-    deadline: 'date string',
-    createdAt: 'date string',
+    priority: 'string (0-10)',
+    deadline: 'ISO date string',
+    createdAt: 'ISO date string',
     isCompleted: 'boolean',
   },
 }
@@ -22,7 +22,6 @@ const invalidChoreResponse = {
 router.get('/:id', async (req, res) => {
   try {
     const flatId = req.params.id
-
     const chores = await db.getChores(+flatId)
     res.json(chores)
   } catch (error) {
@@ -30,17 +29,19 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/:id', async (req, res, next) => {
   try {
-    const newChore: ChoreData = req.body
+    const flatId = req.params.id
+    const newChore: ChoreData = { flatId: flatId, ...req.body }
     const validationResult = choreDataSchema.safeParse(newChore)
 
     if (!validationResult.success) {
       res.status(400).json(invalidChoreResponse)
+      return
     }
 
-    const id = await db.addChore(newChore)
-    res.json(id)
+    await db.addChore(+flatId, newChore)
+    res.sendStatus(200)
   } catch (err) {
     next(err)
   }
