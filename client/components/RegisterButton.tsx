@@ -7,7 +7,7 @@ function RegisterButton() {
   function handleRegister() {
     loginWithRedirect({
       authorizationParams: {
-        redirect_uri: `${window.location.origin}/signup`,
+        redirect_uri: `${window.location.origin}/sign-up`,
       },
     })
   }
