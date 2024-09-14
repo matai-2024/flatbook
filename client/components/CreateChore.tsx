@@ -3,51 +3,48 @@ import TextBox from './UI/TextBox'
 import Button from './UI/Button'
 import { ChoreData } from '../../types/Chore'
 import { Params } from 'react-router-dom'
+import { useState } from 'react'
 
 interface Props {
   flatId: Readonly<Params<string>>
 }
+// CreatedAt: YYYY-MM-DD timestamp
+const handleTodaysDate = () => {
+  // zod .date() expects a valid ISO date i.e., YYYY-MM-DD
+  const date = new Date()
+  const day = String(date.getDate()).padStart(2, '0') // Get the day and pad with zero if needed
+  const month = String(date.getMonth() + 1).padStart(2, '0') // Months are zero-indexed, so add 1
+  const year = date.getFullYear() // Get the full year
+  return `${year}-${month}-${day}` // Combine into YYYY-MM-DD format
+}
 
 export default function AddChore({ flatId }: Props) {
   const { id } = flatId
+  const defaultForm: ChoreData = {
+    flatId: +id,
+    title: '',
+    description: '',
+    priority: '0',
+    deadline: '',
+    createdAt: handleTodaysDate(),
+    isCompleted: false,
+  }
+
+  const [formData, setFormData] = useState(defaultForm)
+
   const createChore = useCreateChore(flatId)
+
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    const { name, value } = event.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault()
-    const newChoreData = new FormData(event.currentTarget)
 
-    // initialise empty object to fill with chore data
-    let newChore = {} as ChoreData
+    createChore.mutateAsync(formData) // create new chore with form data
 
-    // loop through form data and add to newChore object
-    for (const [key, value] of newChoreData.entries()) {
-      newChore[key] = value
-    }
-
-    /*
-    CreatedAt, flatId, isCompleted 
-    are not entries of our form so we must add them manually
-    */
-
-    // CreatedAt: YYYY-MM-DD timestamp
-    // zod .date() expects a valid ISO date i.e., YYYY-MM-DD
-    const date = new Date()
-    const day = String(date.getDate()).padStart(2, '0') // Get the day and pad with zero if needed
-    const month = String(date.getMonth() + 1).padStart(2, '0') // Months are zero-indexed, so add 1
-    const year = date.getFullYear() // Get the full year
-    const dayMonthYear = `${year}-${month}-${day}` // Combine into YYYY-MM-DD format
-
-    // Set timestamp
-    newChore.createdAt = dayMonthYear
-    // Set flat id from url parameter
-    newChore.flatId = +id
-    // Set all new chores to incomplete
-    newChore.isCompleted = false
-
-    // Create new chore
-    createChore.mutateAsync(newChore)
-
-    newChore = {} as ChoreData
+    setFormData(defaultForm) // reset form data to default values
   }
 
   return (
@@ -62,6 +59,8 @@ export default function AddChore({ flatId }: Props) {
             name="title"
             placeholder="Title*"
             className="input input-bordered max-w-full"
+            value={formData.title}
+            onChange={handleChange}
           />
         </div>
 
@@ -70,6 +69,8 @@ export default function AddChore({ flatId }: Props) {
             name="description"
             placeholder="Description"
             className="textarea textarea-bordered w-full"
+            value={formData.description}
+            onChange={handleChange}
           />
         </div>
 
@@ -82,6 +83,8 @@ export default function AddChore({ flatId }: Props) {
             id="chore-deadline"
             type="date"
             className="input input-bordered input-primary w-full"
+            value={formData.deadline}
+            onChange={handleChange}
           />
         </div>
 
@@ -95,6 +98,8 @@ export default function AddChore({ flatId }: Props) {
             min="1"
             max="10"
             className="range range-primary"
+            value={formData.priority}
+            onChange={handleChange}
           />
           <div className="flex w-full justify-between px-2 text-xs">
             {/* Create visual markers for priority slider */}

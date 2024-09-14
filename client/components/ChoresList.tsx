@@ -17,7 +17,6 @@ export default function ChoresList() {
   }
 
   if (chores) {
-    console.log(chores)
     return (
       <>
         <CreateChore flatId={flatId} />
