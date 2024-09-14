@@ -1,3 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-page {
+  /* background-color: aqua; */
+  font-family: 'Playfair Display', serif;
+  /* font-size: 285px; */
+  font-size: 15cqmax;
+  font-weight: 600;
+  text-align: justify;
+  padding-left: 50px;
+}
+
+.landing-page-description {
+  /* background-color: blueviolet; */
+  font-family: 'Rubik', serif;
+  /* font-size: 185px; */
+  font-size: 1.3cqmax;
+  font-weight: 200;
+  max-width: 600px;
+  padding-top: 150px;
+  text-align: justify;
+}
+
+.register-button {
+  /* background-color: yellow; */
+  max-width: 600px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer {
+  background-color: #dedebd69;
+  color: #57534e;
+  position: fixed;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  width: 100;
+}
+
+.footer-links {
+  /* background-color: blueviolet; */
+  padding: 10px;
+  font-weight: 600;
+}
