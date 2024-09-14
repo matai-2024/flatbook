@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         redirect_uri: window.location.origin,
         audience: env_audience,
       }}
-      useRefreshTokens
       cacheLocation="localstorage"
     >
       <QueryClientProvider client={queryClient}>
