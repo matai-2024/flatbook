@@ -3,17 +3,17 @@ import { UserProfile, UserProfileData } from '../../models/forms.ts'
 
 const rootUrl = '/api/v1/profiles'
 
-export async function fetchProfile() {
+export async function getProfile() {
   const res = await request.get(rootUrl)
   return res.body as UserProfile[]
 }
 
-export async function fetchProfileById(id: number) {
+export async function getProfileById(id: number) {
   const res = await request.get(rootUrl + '/' + id)
   return res.body as UserProfile
 }
 
-export async function fetchProfileByFlatId(id: number) {
+export async function getProfileByFlatId(id: number) {
   const res = await request.get(rootUrl + 'flat/' + id)
   return res.body as UserProfile[]
 }
