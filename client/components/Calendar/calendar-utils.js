@@ -11,12 +11,18 @@ export const generateDate = (
 
   // Before month days
   for (let i = 0; i < firstDateOfMonth.day(); i++) {
-    arrayOfDate.push(firstDateOfMonth.day(i))
+    arrayOfDate.push({ currentMonth: false, date: firstDateOfMonth.day(i) })
   }
 
   //Current month
   for (let i = firstDateOfMonth.date(); i <= lastDateOfMonth.date(); i++) {
-    arrayOfDate.push(firstDateOfMonth.date(i))
+    arrayOfDate.push({
+      date: firstDateOfMonth.date(i),
+      currentMonth: true,
+      today:
+        firstDateOfMonth.date(i).toDate().toDateString() ===
+        dayjs().toDate().toDateString(),
+    })
   }
 
   // after month days
@@ -26,7 +32,7 @@ export const generateDate = (
     i <= lastDateOfMonth.date() + remaining;
     i++
   ) {
-    arrayOfDate.push(lastDateOfMonth.day(i))
+    arrayOfDate.push({ date: lastDateOfMonth.day(i), currentMonth: false })
   }
 
   return arrayOfDate
