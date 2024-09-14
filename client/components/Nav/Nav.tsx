@@ -17,7 +17,7 @@ function Nav() {
           <LoginButton />
         ) : (
           <div>
-            <Button className="btn btn-accent">Flat Dashboard</Button>{' '}
+            <Button className="btn btn-accent">Flat Dashboard</Button>
             <LogoutButton />
           </div>
         )}
