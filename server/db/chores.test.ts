@@ -61,7 +61,6 @@ describe('addAlbum', () => {
       // @ts-expect-error: Intentionally not including expected argument
       await addChore()
     } catch (e) {
-      console.log(e)
       if (e instanceof Error) {
         error = e.message
       } else {
