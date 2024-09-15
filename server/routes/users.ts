@@ -1,10 +1,11 @@
 import { Router } from 'express'
-import checkJwt, { JwtRequest } from '../auth0.ts'
 import { StatusCodes } from 'http-status-codes'
 
 import * as db from '../db/users.ts'
 
 const router = Router()
+
+//TODO-- ADD CHECKJWT STUFF
 
 router.get('/', async (req, res) => {
   try {
@@ -17,12 +18,6 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res, next) => {
-  // if (!req.auth?.sub) {
-  //   console.log('Meow')
-  //   res.sendStatus(StatusCodes.UNAUTHORIZED)
-  //   return
-  // }
-
   try {
     const {
       auth0Id,
