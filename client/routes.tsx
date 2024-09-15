@@ -8,13 +8,10 @@ import App from './components/App'
 import LandingPage from './pages/LandingPage'
 import Dashboard from './pages/Dashboard/Dashboard'
 import DumbDashboard from './components/DumbDashboard'
+import ErrorPage from './pages/ErrorPage'
 
 export const routes = createRoutesFromElements(
-  <Route
-    path="/"
-    element={<App />}
-    // errorElement={<ErrorPage />} // Todo: to use real Error page
-  >
+  <Route path="/" element={<App />} errorElement={<ErrorPage />}>
     <Route index element={<LandingPage />} />
     <Route
       path="dashboard"
