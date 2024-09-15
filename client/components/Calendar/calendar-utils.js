@@ -7,14 +7,15 @@ export const generateDate = (
   const firstDateOfMonth = dayjs().year(year).month(month).startOf('month')
   const lastDateOfMonth = dayjs().year(year).month(month).endOf('month')
 
+  // Stores the current displayed dates on calendar as defined by month year variables
   const arrayOfDate = []
 
-  // Before month days
+  // Calculate the days before the month to ensure the calendar is fully populated
   for (let i = 0; i < firstDateOfMonth.day(); i++) {
     arrayOfDate.push({ currentMonth: false, date: firstDateOfMonth.day(i) })
   }
 
-  //Current month
+  //Calculate how many days there are in the current month
   for (let i = firstDateOfMonth.date(); i <= lastDateOfMonth.date(); i++) {
     arrayOfDate.push({
       date: firstDateOfMonth.date(i),
@@ -25,7 +26,7 @@ export const generateDate = (
     })
   }
 
-  // after month days
+  // Calculate the days after the month to ensure the calendar is fully populated
   const remaining = 42 - arrayOfDate.length
   for (
     let i = lastDateOfMonth.date() + 1;
@@ -53,6 +54,7 @@ export const months = [
   'December',
 ]
 
+//TODO: Events are hardcoded so will need to be replaced with a database in the future.
 export const events = [
   { date: 'Sun Sep 15 2024', eventName: 'Flat Viewing' },
   { date: 'Tue Sep 17 2024', eventName: 'Flat Cleaning' },
