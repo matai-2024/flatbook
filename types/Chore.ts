@@ -4,7 +4,7 @@ export const choreData = z.object({
   flatId: z.number(),
   title: z.string(),
   description: z.string().nullable(),
-  priority: z.number().default(0),
+  priority: z.string().default('0'),
   deadline: z.string().date().nullable(),
   createdAt: z.string().date(),
   isCompleted: z.boolean().default(false),
