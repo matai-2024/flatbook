@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
+    "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "express": "^4.17.2",
     "express-jwt": "^7.7.5",
