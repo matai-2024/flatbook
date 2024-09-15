@@ -25,7 +25,6 @@ export async function deleteProfileById(id: number, token: string) {
 }
 
 export async function addProfile(newProfile: UserProfileData, token: string) {
-  console.log(token)
   const res = await request
     .post(rootUrl)
     .set('Authorization', `Bearer ${token}`)

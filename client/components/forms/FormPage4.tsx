@@ -5,7 +5,7 @@ import FormContainer from './FormContainer.tsx'
 export default function FormPage4({
   title,
   description,
-  // image (idk how to do an image team)
+  // image (placeholder image)
   updateFields,
 }: FlatFormProps) {
   return (

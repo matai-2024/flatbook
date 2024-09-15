@@ -12,8 +12,8 @@ export default function FormPage1({
 }: UserFormProps) {
   return (
     <FormContainer title="Let's get to know each other">
-      <div className="tailwind placeholder">
-        <label className="tailwind placeholder" htmlFor="firstName">
+      <div className="form-control mb-4 w-full">
+        <label className="label-text" htmlFor="firstName">
           First name
         </label>
         <div className="tailwind placeholder">
@@ -24,13 +24,13 @@ export default function FormPage1({
             placeholder="First name"
             value={firstName}
             onChange={(e) => updateFields({ firstName: e.target.value })}
-            className="tailwind placeholder"
+            className="input input-bordered input-primary w-full"
           />
         </div>
       </div>
 
-      <div className="tailwind placeholder">
-        <label className="tailwind placeholder" htmlFor="lastName">
+      <div className="form-control mb-4 w-full">
+        <label className="label-text" htmlFor="lastName">
           Last name
         </label>
         <div className="tailwind placeholder">
@@ -41,13 +41,13 @@ export default function FormPage1({
             placeholder="Last name"
             value={lastName}
             onChange={(e) => updateFields({ lastName: e.target.value })}
-            className="tailwind placeholder"
+            className="input input-bordered input-primary w-full"
           />
         </div>
       </div>
 
-      <div className="sm:col-span-full">
-        <label className="tailwind placeholder" htmlFor="nickname">
+      <div className="form-control mb-4 w-full">
+        <label className="label-text" htmlFor="nickname">
           Nickname
         </label>
         <div className="tailwind placeholder">
@@ -58,13 +58,13 @@ export default function FormPage1({
             placeholder="Nickname"
             value={nickname}
             onChange={(e) => updateFields({ nickname: e.target.value })}
-            className="tailwind placeholder"
+            className="input input-bordered input-primary w-full"
           />
         </div>
       </div>
 
-      <div className="sm:col-span-full">
-        <label className="tailwind placeholder" htmlFor="about">
+      <div className="form-control mb-4 w-full">
+        <label className="label-text" htmlFor="about">
           About
         </label>
         <div className="tailwind placeholder">
@@ -75,7 +75,7 @@ export default function FormPage1({
             placeholder="About"
             value={about}
             onChange={(e) => updateFields({ about: e.target.value })}
-            className="tailwind placeholder"
+            className="input input-bordered input-primary w-full"
           />
         </div>
       </div>

@@ -6,7 +6,7 @@ export async function getAllUsers() {
   return users as User[]
 }
 
-export async function addUser(data) {
+export async function addUser(data: User) {
   const [id] = await db('users').insert(data)
   return id
 }

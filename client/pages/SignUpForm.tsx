@@ -8,6 +8,7 @@ import FormPage2 from '../components/forms/FormPage2'
 import useCreateProfile from '../hooks/useCreateProfile'
 import useForm from '../hooks/useForm'
 import { FormData } from '../../models/forms'
+import Button from '../components/UI/Button'
 
 const MOCK_DATA = {
   flat_id: 0,
@@ -56,41 +57,37 @@ export default function Signup() {
   }
 
   return (
-    <div>
-      <div className="tailwind placeholder">
-        <div className="tailwind placeholder">
-          <h1 className="tailwind placeholder">FLATBOOK</h1>
-          <p className="tailwind placeholder">
+    <div className="flex items-center justify-center p-10">
+      <div className="w-full max-w-lg">
+        <div className="flex flex-col items-center text-center">
+          {/* <h1 className="text-3xl font-bold">FLATBOOK</h1>
+          <p className="mt-2 text-lg">
             Flatbook is a NZ platform for New Zealand Flatties
-          </p>
-          <div>
-            <h2>
+          </p> */}
+          <div className="mt-4">
+            {/* <h2>
               Form Page {currentStepIndex + 1} / {steps.length}
-            </h2>
+            </h2> */}
           </div>
-        </div>
 
-        <form onSubmit={onSubmit} className="tailwind placeholder">
-          <div className="tailwind placeholder">
-            <div className="tailwind placeholder">
-              <div className="tailwind placeholder">{step}</div>
+          <form onSubmit={onSubmit} className="mt-6 w-full">
+            <div>
+              <div>
+                <div>{step}</div>
+              </div>
             </div>
-          </div>
-          <div className="tailwind placeholder">
-            {!isFirstStep && (
-              <button
-                type="button"
-                onClick={back}
-                className="tailwind placeholder"
-              >
-                Back
-              </button>
-            )}
-            <button type="submit" className="tailwind placeholder">
-              {isLastStep ? 'Complete' : 'Continue'}
-            </button>
-          </div>
-        </form>
+            <div className="mt-4 flex justify-center">
+              {!isFirstStep && (
+                <Button onClick={back} className="">
+                  Back
+                </Button>
+              )}
+              <Button className={isLastStep ? 'btn-accent' : 'btn-primary'}>
+                {isLastStep ? 'Complete' : 'Continue'}
+              </Button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   )

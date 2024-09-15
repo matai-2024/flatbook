@@ -10,8 +10,8 @@ export default function FormPage2({
 }: UserFormProps) {
   return (
     <FormContainer title="How will your flatties contact you?">
-      <div className="tailwind placeholder">
-        <label className="tailwind placeholder" htmlFor="email">
+      <div className="form-control mb-4 w-full">
+        <label className="label-text" htmlFor="email">
           Email
         </label>
         <div className="tailwind placeholder">
@@ -22,12 +22,12 @@ export default function FormPage2({
             placeholder="Email"
             value={email}
             onChange={(e) => updateFields({ email: e.target.value })}
-            className="tailwind placeholder"
+            className="input input-bordered input-primary w-full"
           />
         </div>
       </div>
-      <div className="tailwind placeholder">
-        <label className="tailwind placeholder" htmlFor="number">
+      <div className="form-control mb-4 w-full">
+        <label className="label-text" htmlFor="number">
           Phone Number
         </label>
         <div className="tailwind placeholder">
@@ -38,13 +38,13 @@ export default function FormPage2({
             placeholder="Phone Number"
             value={number}
             onChange={(e) => updateFields({ number: e.target.value })}
-            className="tailwind placeholder"
+            className="input input-bordered input-primary w-full"
           />
         </div>
       </div>
 
-      <div className="tailwind placeholder">
-        <label className="tailwind placeholder" htmlFor="socialMedia">
+      <div className="form-control mb-4 w-full ">
+        <label className="label-text" htmlFor="socialMedia">
           Social Media
         </label>
         <div className="tailwind placeholder">
@@ -55,7 +55,7 @@ export default function FormPage2({
             placeholder="Social Media"
             value={socialMedia}
             onChange={(e) => updateFields({ socialMedia: e.target.value })}
-            className="tailwind placeholder"
+            className="input input-bordered input-primary w-full"
           />
         </div>
       </div>

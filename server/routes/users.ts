@@ -50,6 +50,7 @@ router.post('/', async (req, res, next) => {
     })
     res
       .setHeader('Location', `${req.baseUrl}/${id}`)
+      .json(id)
       .sendStatus(StatusCodes.CREATED)
   } catch (err) {
     next(err)
