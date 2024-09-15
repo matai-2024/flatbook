@@ -35,6 +35,10 @@ export interface UserFormProps extends User {
   updateFields: (fields: Partial<User>) => void
 }
 
+export interface PhotoFormProps {
+  updateFields: (fields: Partial<User>) => void
+}
+
 export interface UserProfileData {
   flat_id: number
   firstName: string

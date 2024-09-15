@@ -1,14 +1,12 @@
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-import FormPage1 from '../components/forms/FormPage1'
-import FormPage2 from '../components/forms/FormPage2'
-// import FormPage3 from '../components/forms/FormPage3'
-// import FormPage4 from '../components/forms/FormPage4'
+import FormPage1 from '../components/userSignUpForms/FormPage1'
+import FormPage2 from '../components/userSignUpForms/FormPage2'
 import useCreateProfile from '../hooks/useCreateProfile'
 import useForm from '../hooks/useForm'
 import { FormData } from '../../models/forms'
-import Button from '../components/UI/Button'
+import FormPage0 from '../components/userSignUpForms/FormPage0'
 
 const MOCK_DATA = {
   flat_id: 0,
@@ -36,13 +34,11 @@ export default function Signup() {
     })
   }
 
-  const { step, steps, currentStepIndex, isFirstStep, isLastStep, back, next } =
-    useForm([
-      <FormPage1 {...data} updateFields={updateFields} key={'form-page-1'} />,
-      <FormPage2 {...data} updateFields={updateFields} key={'form-page-2'} />,
-      // <FormPage3 {...data} updateFields={updateFields} key={'form-page-3'} />,
-      // <FormPage4 {...data} updateFields={updateFields} key={'form-page-4'} />,
-    ])
+  const { step, isFirstStep, isLastStep, back, next } = useForm([
+    <FormPage0 {...data} updateFields={updateFields} key={'form-page-1'} />,
+    <FormPage1 {...data} updateFields={updateFields} key={'form-page-2'} />,
+    <FormPage2 {...data} updateFields={updateFields} key={'form-page-3'} />,
+  ])
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -57,19 +53,9 @@ export default function Signup() {
   }
 
   return (
-    <div className="flex items-center justify-center p-10">
+    <div className="flex items-center justify-center">
       <div className="w-full max-w-lg">
         <div className="flex flex-col items-center text-center">
-          {/* <h1 className="text-3xl font-bold">FLATBOOK</h1>
-          <p className="mt-2 text-lg">
-            Flatbook is a NZ platform for New Zealand Flatties
-          </p> */}
-          <div className="mt-4">
-            {/* <h2>
-              Form Page {currentStepIndex + 1} / {steps.length}
-            </h2> */}
-          </div>
-
           <form onSubmit={onSubmit} className="mt-6 w-full">
             <div>
               <div>
@@ -78,13 +64,20 @@ export default function Signup() {
             </div>
             <div className="mt-4 flex justify-center">
               {!isFirstStep && (
-                <Button onClick={back} className="">
+                <button
+                  type="button"
+                  onClick={back}
+                  className="btn btn-secondary"
+                >
                   Back
-                </Button>
+                </button>
               )}
-              <Button className={isLastStep ? 'btn-accent' : 'btn-primary'}>
+              <button
+                type="submit"
+                className={`btn btn-primary ${isLastStep ? 'btn-accent' : 'btn-primary'}`}
+              >
                 {isLastStep ? 'Complete' : 'Continue'}
-              </Button>
+              </button>
             </div>
           </form>
         </div>
