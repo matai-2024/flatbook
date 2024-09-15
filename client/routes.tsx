@@ -6,12 +6,15 @@ import {
 // import ProtectedComponent from './components/ProtectedComponent'  // TODO: to use
 import App from './components/App'
 import LandingPage from './pages/LandingPage'
-import ErrorPage from './pages/ErrorPage/ErrorPage'
 import Dashboard from './pages/Dashboard/Dashboard'
 import DumbDashboard from './components/DumbDashboard'
 
 export const routes = createRoutesFromElements(
-  <Route path="/" element={<App />} errorElement={<ErrorPage />}>
+  <Route
+    path="/"
+    element={<App />}
+    // errorElement={<ErrorPage />} // Todo: to use real Error page
+  >
     <Route index element={<LandingPage />} />
     <Route
       path="dashboard"
