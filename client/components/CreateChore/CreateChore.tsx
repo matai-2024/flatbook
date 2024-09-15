@@ -1,14 +1,12 @@
-import useCreateChore from '../hooks/useCreateChore'
-import TextBox from './UI/TextBox'
-import Button from './UI/Button'
-import { ChoreData } from '../../types/Chore'
-import { Params } from 'react-router-dom'
+import useCreateChore from '../../hooks/useCreateChore'
+import TextBox from '../UI/TextBox'
+import Button from '../UI/Button'
+import { ChoreData } from '../../../types/Chore'
 import { useState } from 'react'
 
 interface Props {
-  flatId: Readonly<Params<string>>
+  id: string
 }
-// CreatedAt: YYYY-MM-DD timestamp
 const handleTodaysDate = () => {
   // zod .date() expects a valid ISO date i.e., YYYY-MM-DD
   const date = new Date()
@@ -18,8 +16,8 @@ const handleTodaysDate = () => {
   return `${year}-${month}-${day}` // Combine into YYYY-MM-DD format
 }
 
-export default function AddChore({ flatId }: Props) {
-  const { id } = flatId
+// currently accepts id(flatid) from choreslist url, will need to be replaced by dashboard url
+export default function AddChore({ id }: Props) {
   const defaultForm: ChoreData = {
     flatId: +id,
     title: '',
@@ -32,9 +30,11 @@ export default function AddChore({ flatId }: Props) {
 
   const [formData, setFormData] = useState(defaultForm)
 
-  const createChore = useCreateChore(flatId)
-
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  const createChore = useCreateChore(id)
+  const { isPending } = createChore
+  const handleChange: React.ChangeEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = (event) => {
     const { name, value } = event.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -45,6 +45,10 @@ export default function AddChore({ flatId }: Props) {
     createChore.mutateAsync(formData) // create new chore with form data
 
     setFormData(defaultForm) // reset form data to default values
+  }
+
+  if (isPending) {
+    return <p data-testid={`create-chore-pending`}>Loading...</p>
   }
 
   return (
@@ -69,21 +73,31 @@ export default function AddChore({ flatId }: Props) {
             name="description"
             placeholder="Description"
             className="textarea textarea-bordered w-full"
-            value={formData.description}
+            value={
+              typeof formData.description === 'string'
+                ? formData.description
+                : undefined
+            }
             onChange={handleChange}
           />
         </div>
 
         <div className="form-control">
           <label htmlFor="chore-deadline" className="label">
-            <span className="label-text">Select a Deadline</span>
+            <span className="label-text">Select a Deadline*</span>
           </label>
           <input
+            required
+            data-testid={`deadline-selector`}
             name="deadline"
             id="chore-deadline"
             type="date"
             className="input input-bordered input-primary w-full"
-            value={formData.deadline}
+            value={
+              typeof formData.deadline === 'string'
+                ? formData.deadline
+                : undefined
+            }
             onChange={handleChange}
           />
         </div>

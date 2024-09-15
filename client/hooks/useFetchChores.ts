@@ -1,10 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import request from 'superagent'
 import { Chore } from '../../types/Chore'
-import { Params } from 'react-router-dom'
 
-export default function useFetchChores(flatParams: Readonly<Params<string>>) {
-  const { id } = flatParams
+export default function useFetchChores(id: string) {
   return useQuery({
     queryKey: ['chores'],
     queryFn: async () => {

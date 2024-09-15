@@ -31,8 +31,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/:id', async (req, res, next) => {
   try {
-    const flatId = req.params.id
-    const newChore: ChoreData = { flatId: flatId, ...req.body }
+    const newChore: ChoreData = req.body
     const validationResult = choreDataSchema.safeParse(newChore)
 
     if (!validationResult.success) {
@@ -40,7 +39,7 @@ router.post('/:id', async (req, res, next) => {
       return
     }
 
-    await db.addChore(+flatId, newChore)
+    await db.addChore(newChore)
     res.sendStatus(200)
   } catch (err) {
     next(err)

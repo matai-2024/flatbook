@@ -6,12 +6,13 @@ import {
 // import ProtectedComponent from './components/ProtectedComponent'
 import App from './components/App'
 import LandingPage from './pages/LandingPage'
-import ChoresList from './components/ChoresList'
+import DumbDashboard from './components/DumbDashboard'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
     <Route index element={<LandingPage />} />
-    <Route path="/chores/:id" element={<ChoresList />} />
+    {/* TODO: Update with real dashboard component and path */}
+    <Route path="/chores/:id" element={<DumbDashboard />} />
   </Route>,
 )
 

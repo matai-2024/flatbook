@@ -12,16 +12,17 @@ export async function getChores(flatId: number) {
       'deadline',
       'created_at as createdAt',
       'is_completed as isCompleted',
+      'id',
     )
   return chores as Chore[]
 }
 
-export async function addChore(flat_id: number, data: ChoreData) {
-  const { title, description, priority, deadline, createdAt } = data
+export async function addChore(data: ChoreData) {
+  const { flatId, title, description, priority, deadline, createdAt } = data
 
   return await db('chores').insert(
     {
-      flat_id: flat_id,
+      flat_id: flatId,
       title: title,
       description: description,
       priority: priority,

@@ -1,12 +1,12 @@
-import useFetchChores from '../hooks/useFetchChores'
-import { Chore } from '../../types/Chore'
-import { useParams } from 'react-router-dom'
-import CreateChore from './CreateChore'
+import useFetchChores from '../../hooks/useFetchChores'
+import { Chore } from '../../../types/Chore'
 
-export default function ChoresList() {
-  const flatId = useParams()
+interface Props {
+  id: string
+}
 
-  const { data: chores, isLoading, isError, error } = useFetchChores(flatId)
+export default function ChoresList({ id }: Props) {
+  const { data: chores, isLoading, isError, error } = useFetchChores(id)
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -19,7 +19,6 @@ export default function ChoresList() {
   if (chores) {
     return (
       <>
-        <CreateChore flatId={flatId} />
         <ul>
           {chores.map((chore: Chore) => (
             <div className="collapse collapse-arrow bg-base-200" key={chore.id}>
@@ -43,10 +42,12 @@ export default function ChoresList() {
                   max="10"
                 ></progress>
                 <li>
-                  Created: {chore.createdAt?.split('-').reverse().join('-')}
+                  <p>{`Created At: ${chore.createdAt?.split('-').reverse().join('-')}`}</p>
                 </li>
                 <li>
-                  Deadline: {chore.deadline?.split('-').reverse().join('-')}
+                  <p>
+                    {`Deadline: ${chore.deadline?.split('-').reverse().join('-')}`}
+                  </p>
                 </li>
               </div>
             </div>
