@@ -1,4 +1,4 @@
-import FormContainer from './FormContainer.tsx'
+import FormContainer from '../userSignUpForms/FormContainer.tsx'
 
 //Joining or creating?
 export default function FormPage3() {

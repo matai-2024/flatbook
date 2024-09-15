@@ -1,5 +1,5 @@
 import { FlatFormProps } from '../../../models/forms.ts'
-import FormContainer from './FormContainer.tsx'
+import FormContainer from '../userSignUpForms/FormContainer.tsx'
 
 //New flat create form
 export default function FormPage4({
