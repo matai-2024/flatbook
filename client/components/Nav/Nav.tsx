@@ -8,7 +8,7 @@ function Nav() {
   const { isAuthenticated } = useAuth0()
 
   return (
-    <div className="bg-base100 navbar mb-5 shadow-md">
+    <div className="bg-base100 navbar shadow-md">
       <div className="ml-8 flex-1">
         <img src={logo} alt="logo" className=" w- btn btn-ghost h-28" />
       </div>
