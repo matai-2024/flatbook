@@ -1,10 +1,11 @@
 import * as z from 'zod'
 
 export const userData = z.object({
-  flatId: z.number(),
+  flatId: z.number().nullable(),
   firstName: z.string(),
   lastName: z.string().nullable(),
   nickName: z.string().nullable(),
+  about: z.string().nullable(),
   email: z.string().email().nullable(),
   mobile: z.string().nullable(),
   profilePhoto: z.string().nullable(),
