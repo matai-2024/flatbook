@@ -1,31 +1,11 @@
-export function Sidebar() {
-  return (
-    <>
-      <h2 className="text-5xl font-bold">Sweethome</h2>
-      <br />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-        soluta natus? Ratione vero corporis dolore a eligendi inventore
-        accusantium reiciendis praesentium debitis aut incidunt minus labore
-        iste, ad omnis aspernatur.
-      </p>
-      <br />
-      <h2 className="text-3xl font-bold">Flatties</h2>
-      {/* Todo: replace this list with dynamic list */}
-      <ul>
-        <li>Alicia Myers</li>
-        <li>Elias Kaleta</li>
-        <li>Logan Benett</li>
-        <li>Ryan Zhao</li>
-      </ul>
-    </>
-  )
-}
+import ChoresList from '../../components/ChoresList/ChoresList'
+import AddChore from '../../components/CreateChore/CreateChore'
+import Sidebar from './Sidebar'
 
-export function Widget() {
+function WidgetExample() {
   return (
     <>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 shadow-xl w-full">
         <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -44,7 +24,7 @@ export function Widget() {
   )
 }
 
-export function Chats() {
+function ChatsExample() {
   return (
     <>
       <div className="chat chat-start">
@@ -101,27 +81,30 @@ function Dashboard() {
               <h3 className="py-5 text-center text-2xl font-bold">
                 Announcements
               </h3>
-              <Chats />
+              <ChatsExample /> {/* Todo: replace with real Announcements component */}
             </div>
             <div className="max-auto container mb-5 min-w-96 px-5">
               <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
-              <Chats />
+              <ChatsExample /> {/* Todo: replace with real Events component */}
             </div>
           </div>
           <div className="container flex flex-col">
-            <div className="container mb-5 max-w-96">
+            <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Chores</h3>
-              <Widget />
+              <div className="container flex flex-row space-x-1">
+                <ChoresList id={'1'} /> {/* Todo: Why id? */}
+                <AddChore id={'1'} /> {/* Todo: Why id? */}
+              </div>
             </div>
-            <div className="container mb-5 max-w-96">
+            <div className="container mb-5 max-auto">
               <h3 className="py-5 text-center text-2xl font-bold">
                 Shopping List
               </h3>
-              <Widget />
+              <WidgetExample />
             </div>
-            <div className="container mb-5 max-w-96">
+            <div className="container mb-5 max-auto">
               <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
-              <Widget />
+              <WidgetExample />
             </div>
           </div>
         </div>
