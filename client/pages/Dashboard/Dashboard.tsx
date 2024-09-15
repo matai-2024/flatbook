@@ -2,6 +2,7 @@ import ChoresList from '../../components/ChoresList/ChoresList'
 import AddChore from '../../components/CreateChore/CreateChore'
 import Sidebar from './Sidebar'
 
+/* Todo: To be replaced by real widgets */
 function WidgetExample() {
   return (
     <>
@@ -24,6 +25,7 @@ function WidgetExample() {
   )
 }
 
+/* Todo: To be replaced by real widgets */
 function ChatsExample() {
   return (
     <>
