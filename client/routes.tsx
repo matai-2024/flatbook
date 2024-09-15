@@ -8,11 +8,18 @@ import App from './components/App'
 import LandingPage from './pages/LandingPage'
 import Dashboard from './pages/Dashboard/Dashboard'
 import DumbDashboard from './components/DumbDashboard'
+import ProfilePage from './pages/UserProfilePage/UserProfilePage'
 import ErrorPage from './pages/ErrorPage'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
     <Route index element={<LandingPage />} />
+    <Route
+      path="profile"
+      // element={<ProtectedComponent component={ProfilePage} />} // TODO: add auth0
+      element={<ProfilePage />}
+      handle={'Profile Page'}
+    />
     <Route
       path="dashboard"
       // element={<ProtectedComponent component={Dashboard} />} // TODO: add auth0
@@ -25,12 +32,3 @@ export const routes = createRoutesFromElements(
 )
 
 export const router = createBrowserRouter(routes)
-
-/**
-  // template for if you're adding a protected-route
-  <Route
-  path="my-path"
-  element={<ProtectedComponent component={componentGoesHere} />}
-  handle={'page name goes here'}
-  />
- */
