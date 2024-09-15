@@ -3,7 +3,7 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-import ProtectedComponent from './components/ProtectedComponent'
+// import ProtectedComponent from './components/ProtectedComponent'  // TODO: to use
 import App from './components/App'
 import LandingPage from './pages/LandingPage'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
