@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom'
-import ChoresList from './ChoresList/ChoresList'
-import CreateChore from './CreateChore/CreateChore'
+import FlatAnnouncements from './FlatAnnouncements/FlatAnnouncements'
 
 export default function DumbDashboard() {
   const { id } = useParams()
@@ -8,8 +7,7 @@ export default function DumbDashboard() {
   if (id)
     return (
       <>
-        <CreateChore id={id} />
-        <ChoresList id={id} />
+        <FlatAnnouncements id={id} />
       </>
     )
 }
