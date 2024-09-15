@@ -12,7 +12,7 @@ export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
     <Route index element={<LandingPage />} />
     <Route
-      path="sign-up"
+      path="signup"
       element={<ProtectedComponent component={SignUpForm} />}
       handle={'Sign Up'}
     />

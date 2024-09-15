@@ -1,13 +1,13 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import Button from './UI/Button'
 
-function RegisterButton() {
+const RegisterButton = () => {
   const { loginWithRedirect } = useAuth0()
 
   function handleRegister() {
     loginWithRedirect({
       authorizationParams: {
-        redirect_uri: `${window.location.origin}/sign-up`,
+        screen_hint: 'signup',
       },
     })
   }
