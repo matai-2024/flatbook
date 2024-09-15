@@ -50,13 +50,13 @@ export default function Signup() {
     } else {
       const token = await getAccessTokenSilently()
       const id = await addProfile.mutateAsync({ data, token })
-      navigate(`/profile/${id}`)
+      //TODO - change to user/profile
+      navigate(`/users/${id}`)
     }
   }
 
   return (
     <div>
-      mutation
       <div className="tailwind placeholder">
         <div className="tailwind placeholder">
           <h1 className="tailwind placeholder">FLATBOOK</h1>
