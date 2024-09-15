@@ -11,6 +11,7 @@ export function Sidebar() {
       </p>
       <br />
       <h2 className="text-3xl font-bold">Flatties</h2>
+      {/* Todo: replace this list with dynamic list */}
       <ul>
         <li>Alicia Myers</li>
         <li>Elias Kaleta</li>
@@ -96,13 +97,13 @@ function Dashboard() {
         </div>
         <div className="container flex flex-row">
           <div className="container flex flex-col">
-            <div className="max-auto container min-w-96 px-5 mb-5">
+            <div className="max-auto container mb-5 min-w-96 px-5">
               <h3 className="py-5 text-center text-2xl font-bold">
                 Announcements
               </h3>
               <Chats />
             </div>
-            <div className="max-auto container min-w-96 px-5 mb-5">
+            <div className="max-auto container mb-5 min-w-96 px-5">
               <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
               <Chats />
             </div>
