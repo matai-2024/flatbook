@@ -33,8 +33,6 @@ export default function FlatAnnouncements({ flatId }: Props) {
   }
 
   if (announcements) {
-    console.log(announcements)
-
     return (
       <div className="flex flex-col justify-center">
         <ul>

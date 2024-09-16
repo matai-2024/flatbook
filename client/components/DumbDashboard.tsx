@@ -8,7 +8,9 @@ export default function DumbDashboard() {
   if (flatId)
     return (
       <>
-        <h2 className="flex justify-center text-3xl font-bold">Announcements</h2>
+        <h2 className="flex justify-center text-3xl font-bold">
+          Announcements
+        </h2>
         <CreateAnnouncement flatId={flatId} />
         <FlatAnnouncements flatId={flatId} />
       </>

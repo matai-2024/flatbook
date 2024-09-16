@@ -108,11 +108,12 @@ function Dashboard() {
               <h3 className="py-5 text-center text-2xl font-bold">
                 Shopping List
               </h3>
-              <WidgetExample /> {/* Todo: replace with real Shopping List component */}
+              <WidgetExample />{' '}
+              {/* Todo: replace with real Shopping List component */}
             </div>
             <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
-              <WidgetExample />  {/* Todo: replace with real Bills component */}
+              <WidgetExample /> {/* Todo: replace with real Bills component */}
             </div>
           </div>
         </div>
