@@ -15,24 +15,24 @@ export default function Sidebar() {
         <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
           Flatties
         </h2>
-        <ul className="space-y-2 p-1 text-lg text-secondary">
-          <li className="rounded-lg from-accent to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
-            <a href="/profile/1" className="hover:text-primary">
+        <ul className="space-y-2 p-1 text-center text-lg text-secondary">
+          <li className="rounded-lg from-primary to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
+            <a href="/profile/1" className="hover:text-white">
               Alicia Myers
             </a>
           </li>
-          <li className="rounded-lg from-accent to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
-            <a href="/profile/2" className="hover:text-primary">
+          <li className="rounded-lg from-primary to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
+            <a href="/profile/2" className="hover:text-white">
               Elias Kaleta
             </a>
           </li>
-          <li className="rounded-lg from-accent to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
-            <a href="/profile/4" className="hover:text-primary">
+          <li className="rounded-lg from-primary to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
+            <a href="/profile/4" className="hover:text-white">
               Logan Benett
             </a>
           </li>
-          <li className="rounded-lg from-accent to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
-            <a href="/profile/3" className="hover:text-primary">
+          <li className="rounded-lg from-primary to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
+            <a href="/profile/3" className="hover:text-white">
               Ryan Zhao
             </a>
           </li>

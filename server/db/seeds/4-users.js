@@ -52,7 +52,7 @@ export async function seed(knex) {
       id: 4,
       auth0Id: '4',
       flatId: 1,
-      firstName: 'Lßogan',
+      firstName: 'Logan',
       lastName: 'Bennett',
       nickName: null,
       about:
