@@ -26,7 +26,7 @@ const Carousel: React.FC = () => {
   return (
     <div className="relative h-screen w-screen overflow-hidden">
       <div
-        className="flex h-full w-full transition-transform duration-500 ease-in-out"
+        className="flex h-5/6 w-full transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {slides.map((slide) => (

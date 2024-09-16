@@ -10,7 +10,7 @@ function Nav() {
   const navigate = useNavigate()
 
   return (
-    <div className="bg-base100 navbar">
+    <div className="bg-base100 navbar relative">
       <div className="ml-8 flex-1">
         <button onClick={() => navigate('/')}>
           <img src={logo} alt="logo" className=" w- btn btn-ghost h-28" />
