@@ -1,8 +1,10 @@
+import { useParams } from 'react-router-dom'
 import ChoresList from '../../components/ChoresList/ChoresList'
 import CreateAnnouncement from '../../components/CreateAnnouncement/CreateAnnouncement'
 import CreateChore from '../../components/CreateChore/CreateChore'
 import FlatAnnouncements from '../../components/FlatAnnouncements/FlatAnnouncements'
 import Sidebar from './Sidebar'
+import ErrorPage from '../ErrorPage'
 
 /* Todo: To be replaced by real widgets */
 function WidgetExample() {
@@ -73,9 +75,12 @@ function ChatsExample() {
 }
 
 function Dashboard() {
-  {
-    /* // TODO: replace static flatId '1' with url parameters */
+  const { flatId } = useParams()
+
+  if (!flatId) {
+    return <ErrorPage />
   }
+
   return (
     <>
       <div className="container flex flex-row">
@@ -88,8 +93,8 @@ function Dashboard() {
               <h3 className="py-5 text-center text-2xl font-bold">
                 Announcements
               </h3>
-              <CreateAnnouncement flatId="1" />
-              <FlatAnnouncements flatId="1" />
+              <CreateAnnouncement flatId={flatId} />
+              <FlatAnnouncements flatId={flatId} />
             </div>
             <div className="max-auto container mb-5 min-w-96 px-5">
               <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
@@ -100,8 +105,8 @@ function Dashboard() {
             <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Chores</h3>
               <div className="container flex flex-row space-x-1">
-                <CreateChore flatId={'1'} /> {/* Todo: to set id dynamically */}
-                <ChoresList flatId={'1'} /> {/* Todo: to set id dynamically */}
+                <CreateChore flatId={flatId} />
+                <ChoresList flatId={flatId} />
               </div>
             </div>
             <div className="max-auto container mb-5">
