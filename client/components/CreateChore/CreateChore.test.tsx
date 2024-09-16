@@ -39,7 +39,7 @@ describe('CRUD operations', () => {
       .post('/api/v1/chores/1')
       .reply(201, [{ id: 2 }])
 
-    const screen = renderWithQuery(<CreateChore id={'1'} />)
+    const screen = renderWithQuery(<CreateChore flatId={'1'} />)
     const { user } = screen
 
     await waitForElementToBeRemoved(() =>

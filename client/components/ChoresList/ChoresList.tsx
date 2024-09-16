@@ -2,11 +2,11 @@ import useChores from '../../hooks/useChores'
 import { Chore } from '../../../types/Chore'
 
 interface Props {
-  id: string
+  flatId: string
 }
 
-export default function ChoresList({ id }: Props) {
-  const { data: chores, isLoading, isError, error } = useChores(id)
+export default function ChoresList({ flatId }: Props) {
+  const { data: chores, isLoading, isError, error } = useChores(flatId)
 
   if (isLoading) {
     return <p>Loading...</p>
