@@ -71,65 +71,70 @@ function ChatsExample() {
     </>
   )
 }
+
 function Dashboard() {
   return (
-    <>
-      <div className="flex min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-32">
+    <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-36">
+      <div className="flex h-full w-full flex-col md:flex-row">
         {/* Sidebar */}
-        <div className="w-1/4 px-10 py-8">
+        <div className="w-full p-6 md:w-1/4 md:p-8">
           <Sidebar />
         </div>
 
         {/* Content Area */}
-        <div className="flex w-3/4 px-8 py-8">
-          {/* Left Column (Announcements, Events) */}
-          <div className="flex w-1/2 flex-col space-y-8 px-6">
-            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                Announcements
-              </h3>
-              <CreateAnnouncement flatId="1" />
-              <FlatAnnouncements flatId="1" />
-            </div>
+        <div className="flex w-full flex-col space-y-8 p-6 md:w-3/4 md:px-8">
+          <div className="flex h-full w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
+            {/* Left Column (Announcements, Events) */}
+            <div className="flex w-full flex-col space-y-8 md:w-1/2">
+              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                  Announcements
+                </h3>
+                <CreateAnnouncement flatId="1" />
+                <FlatAnnouncements flatId="1" />
+              </div>
 
-            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                Events
-              </h3>
-              <ChatsExample /> {/* Todo: replace with real Events component */}
-            </div>
-          </div>
-
-          {/* Right Column (Chores, Shopping List, Bills) */}
-          <div className="flex w-1/2 flex-col justify-between space-y-8">
-            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                Chores
-              </h3>
-              <div className="flex flex-row space-x-4">
-                <ChoresList flatId={'1'} />
-                <AddChore flatId={'1'} />
+              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                  Events
+                </h3>
+                <ChatsExample />{' '}
+                {/* Todo: replace with real Events component */}
               </div>
             </div>
 
-            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                Shopping List
-              </h3>
-              <WidgetExample />{' '}
-              {/* Todo: replace with real Shopping List component */}
-            </div>
+            {/* Right Column (Chores, Shopping List, Bills) */}
+            <div className="flex w-full flex-col space-y-8 md:w-1/2">
+              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                  Chores
+                </h3>
+                <div className="flex flex-row space-x-4">
+                  <ChoresList flatId={'1'} />
+                  <AddChore flatId={'1'} />
+                </div>
+              </div>
 
-            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                Bills
-              </h3>
-              <WidgetExample /> {/* Todo: replace with real Bills component */}
+              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                  Shopping List
+                </h3>
+                <WidgetExample />{' '}
+                {/* Todo: replace with real Shopping List component */}
+              </div>
+
+              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                  Bills
+                </h3>
+                <WidgetExample />{' '}
+                {/* Todo: replace with real Bills component */}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
