@@ -2,11 +2,10 @@ import LoginButton from '../LoginButton'
 import logo from '../../assets/flatbook-logo.png'
 import LogoutButton from '../LogoutButton'
 import Button from '../UI/Button'
-import { useAuth0 } from '@auth0/auth0-react'
 import { useNavigate } from 'react-router-dom'
+import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
 
 function Nav() {
-  const { isAuthenticated } = useAuth0()
   const navigate = useNavigate()
 
   return (
@@ -17,14 +16,15 @@ function Nav() {
         </button>
       </div>
       <div className="mr-20">
-        {isAuthenticated === false ? (
+        <IfNotAuthenticated>
           <LoginButton />
-        ) : (
+        </IfNotAuthenticated>
+        <IfAuthenticated>
           <div>
             <Button className="btn btn-accent">Flat Dashboard</Button>
             <LogoutButton />
           </div>
-        )}
+        </IfAuthenticated>
       </div>
     </div>
   )
