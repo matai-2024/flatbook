@@ -1,10 +1,14 @@
-import { UserFormProps } from '../../../models/forms.ts'
+import { UserData } from '../../../types/User.ts'
 import FormContainer from './FormContainer.tsx'
+
+interface UserFormProps extends UserData {
+  updateFields: (fields: Partial<UserData>) => void
+}
 
 //How will your flatties contact you?
 export default function NewUserContactForm({
   email,
-  number,
+  mobile,
   socialMedia,
   updateFields,
 }: UserFormProps) {
@@ -21,24 +25,24 @@ export default function NewUserContactForm({
               name="email"
               type="text"
               placeholder="Email"
-              value={email}
+              value={email ? email : ''}
               onChange={(e) => updateFields({ email: e.target.value })}
               className="input input-bordered input-primary w-full"
             />
           </div>
         </div>
         <div className="form-control mb-4 w-full">
-          <label className="label-text" htmlFor="number">
+          <label className="label-text" htmlFor="mobile">
             Phone Number
           </label>
           <div className="tailwind placeholder">
             <input
-              id="number"
-              name="number"
+              id="mobile"
+              name="mobile"
               type="text"
               placeholder="Phone Number"
-              value={number}
-              onChange={(e) => updateFields({ number: e.target.value })}
+              value={mobile ? mobile : ''}
+              onChange={(e) => updateFields({ mobile: e.target.value })}
               className="input input-bordered input-primary w-full"
             />
           </div>
@@ -54,7 +58,7 @@ export default function NewUserContactForm({
               name="socialMedia"
               type="socialMedia"
               placeholder="Social Media"
-              value={socialMedia}
+              value={socialMedia ? socialMedia : ''}
               onChange={(e) => updateFields({ socialMedia: e.target.value })}
               className="input input-bordered input-primary w-full"
             />

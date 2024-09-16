@@ -1,24 +1,24 @@
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-import { FormData } from '../../models/forms'
-import FormPage1 from '../components/UserSignUpForms/NewUserDetailForm'
-import FormPage2 from '../components/UserSignUpForms/NewUserPictureForm'
-import FormPage3 from '../components/UserSignUpForms/NewUserContactForm'
+
 import useCreateProfile from '../hooks/useUserProfile'
 import useForm from '../hooks/useFormStep'
+import NewUserDetailForm from '../components/userSignUpForms/NewUserDetailForm'
+import NewUserPictureForm from '../components/userSignUpForms/NewUserPictureForm'
+import NewUserContactForm from '../components/userSignUpForms/NewUserContactForm'
 
 const MOCK_DATA = {
-  flat_id: 0,
+  flatId: 0,
   firstName: '',
   lastName: '',
-  nickname: '',
+  nickName: '',
   about: '',
-  profile_photo: '',
+  profilePhoto: '',
   email: '',
-  number: '',
+  mobile: '',
   socialMedia: '',
-  created_at: 0,
+  createdAt: '',
 }
 
 export default function SignUpForm() {
@@ -35,9 +35,21 @@ export default function SignUpForm() {
   }
 
   const { step, isFirstStep, isLastStep, back, next } = useForm([
-    <FormPage1 {...data} updateFields={updateFields} key={'form-page-1'} />,
-    <FormPage2 {...data} updateFields={updateFields} key={'form-page-2'} />,
-    <FormPage3 {...data} updateFields={updateFields} key={'form-page-3'} />,
+    <NewUserDetailForm
+      {...data}
+      updateFields={updateFields}
+      key={'form-page-1'}
+    />,
+    <NewUserPictureForm
+      {...data}
+      updateFields={updateFields}
+      key={'form-page-2'}
+    />,
+    <NewUserContactForm
+      {...data}
+      updateFields={updateFields}
+      key={'form-page-3'}
+    />,
   ])
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {

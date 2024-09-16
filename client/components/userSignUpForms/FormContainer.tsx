@@ -1,4 +1,9 @@
-import { FormContainerProps } from '../../../models/forms'
+import { ReactNode } from 'react'
+
+interface FormContainerProps {
+  title: string
+  children: ReactNode
+}
 
 function FormContainer({ title, children }: FormContainerProps) {
   return (

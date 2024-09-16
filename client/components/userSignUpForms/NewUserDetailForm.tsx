@@ -1,11 +1,15 @@
-import { UserFormProps } from '../../../models/forms.ts'
+import { UserData } from '../../../types/User.ts'
 import FormContainer from './FormContainer.tsx'
+
+interface UserFormProps extends UserData {
+  updateFields: (fields: Partial<UserData>) => void
+}
 
 //Who are you?
 export default function NewUserDetailForm({
   firstName,
   lastName,
-  nickname,
+  nickName,
   about,
   updateFields,
 }: UserFormProps) {
@@ -39,7 +43,7 @@ export default function NewUserDetailForm({
               name="lastName"
               type="text"
               placeholder="Last name"
-              value={lastName}
+              value={lastName ? lastName : ''}
               onChange={(e) => updateFields({ lastName: e.target.value })}
               className="input input-bordered input-primary w-full"
             />
@@ -47,17 +51,17 @@ export default function NewUserDetailForm({
         </div>
 
         <div className="form-control mb-4 w-full">
-          <label className="label-text" htmlFor="nickname">
+          <label className="label-text" htmlFor="nickName">
             Nickname
           </label>
           <div className="tailwind placeholder">
             <input
-              id="nickname"
-              name="nickname"
-              type="nickname"
+              id="nickName"
+              name="nickName"
+              type="nickName"
               placeholder="Nickname"
-              value={nickname}
-              onChange={(e) => updateFields({ nickname: e.target.value })}
+              value={nickName ? nickName : ''}
+              onChange={(e) => updateFields({ nickName: e.target.value })}
               className="input input-bordered input-primary w-full"
             />
           </div>
@@ -73,7 +77,7 @@ export default function NewUserDetailForm({
               name="about"
               type="about"
               placeholder="About"
-              value={about}
+              value={about ? about : ''}
               onChange={(e) => updateFields({ about: e.target.value })}
               className="input input-bordered input-primary w-full"
             />

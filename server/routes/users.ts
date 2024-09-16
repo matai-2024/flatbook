@@ -2,8 +2,6 @@ import { Router } from 'express'
 import { StatusCodes } from 'http-status-codes'
 
 import * as db from '../db/users.ts'
-import { userDataSchema } from '../../types/User.ts'
-import { useParams } from 'react-router-dom'
 
 const router = Router()
 
@@ -20,11 +18,6 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res, next) => {
-  const validationResult = userDataSchema.safeParse(useParams)
-
-  if (!validationResult.success) {
-    res.status(400).json({ message: 'Validation denied' }) // Bad request
-  }
   try {
     const data = req.body
     const id = await db.addUser({

@@ -12,6 +12,7 @@ export async function up(knex) {
     table.string('email')
     table.string('mobile').defaultTo(null)
     table.string('profilePhoto').defaultTo(null)
+    table.timestamp('socialMedia')
     table.timestamp('createdAt')
   })
 }
