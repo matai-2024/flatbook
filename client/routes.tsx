@@ -6,9 +6,10 @@ import {
 import ProtectedComponent from './components/ProtectedComponent'
 import App from './components/App'
 import LandingPage from './pages/LandingPage'
-import DumbDashboard from './components/DumbDashboard'
 import SignUpForm from './pages/SignUpForm'
 import Dashboard from './pages/Dashboard/Dashboard'
+import DumbDashboard from './components/DumbDashboard'
+import ProfilePage from './pages/UserProfilePage/UserProfilePage'
 import ErrorPage from './pages/ErrorPage'
 
 export const routes = createRoutesFromElements(
@@ -20,6 +21,12 @@ export const routes = createRoutesFromElements(
       path="signup"
       element={<ProtectedComponent component={SignUpForm} />}
       handle={'Sign Up'}
+    />
+    <Route
+      path="/profile/:id"
+      // element={<ProtectedComponent component={ProfilePage} />} // TODO: add auth0
+      element={<ProfilePage />}
+      handle={'Profile Page'}
     />
     <Route
       path="dashboard" // TODO: add '/:flatId' to path
