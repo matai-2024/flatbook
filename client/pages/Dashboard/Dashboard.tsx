@@ -1,12 +1,14 @@
 import ChoresList from '../../components/ChoresList/ChoresList'
+import CreateAnnouncement from '../../components/CreateAnnouncement/CreateAnnouncement'
 import AddChore from '../../components/CreateChore/CreateChore'
+import FlatAnnouncements from '../../components/FlatAnnouncements/FlatAnnouncements'
 import Sidebar from './Sidebar'
 
 /* Todo: To be replaced by real widgets */
 function WidgetExample() {
   return (
     <>
-      <div className="card w-96 bg-base-100 shadow-xl w-full">
+      <div className="card w-96 w-full bg-base-100 shadow-xl">
         <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -71,6 +73,9 @@ function ChatsExample() {
 }
 
 function Dashboard() {
+  {
+    /* // TODO: replace static flatId '1' with url parameters */
+  }
   return (
     <>
       <div className="container flex flex-row">
@@ -83,7 +88,8 @@ function Dashboard() {
               <h3 className="py-5 text-center text-2xl font-bold">
                 Announcements
               </h3>
-              <ChatsExample /> {/* Todo: replace with real Announcements component */}
+              <CreateAnnouncement flatId="1" />
+              <FlatAnnouncements flatId="1" />{' '}
             </div>
             <div className="max-auto container mb-5 min-w-96 px-5">
               <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
@@ -94,19 +100,20 @@ function Dashboard() {
             <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Chores</h3>
               <div className="container flex flex-row space-x-1">
-                <ChoresList id={'1'} /> {/* Todo: Why id? */}
-                <AddChore id={'1'} /> {/* Todo: Why id? */}
+                <AddChore flatId={'1'} />
+                <ChoresList flatId={'1'} />
               </div>
             </div>
-            <div className="container mb-5 max-auto">
+            <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">
                 Shopping List
               </h3>
-              <WidgetExample /> {/* Todo: replace with real Shopping List component */}
+              <WidgetExample />{' '}
+              {/* Todo: replace with real Shopping List component */}
             </div>
-            <div className="container mb-5 max-auto">
+            <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
-              <WidgetExample />  {/* Todo: replace with real Bills component */}
+              <WidgetExample /> {/* Todo: replace with real Bills component */}
             </div>
           </div>
         </div>

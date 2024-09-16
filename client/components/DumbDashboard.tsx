@@ -1,15 +1,18 @@
 import { useParams } from 'react-router-dom'
-import ChoresList from './ChoresList/ChoresList'
-import CreateChore from './CreateChore/CreateChore'
+import FlatAnnouncements from './FlatAnnouncements/FlatAnnouncements'
+import CreateAnnouncement from './CreateAnnouncement/CreateAnnouncement'
 
 export default function DumbDashboard() {
-  const { id } = useParams()
+  const { flatId } = useParams()
 
-  if (id)
+  if (flatId)
     return (
       <>
-        <CreateChore id={id} />
-        <ChoresList id={id} />
+        <h2 className="flex justify-center text-3xl font-bold">
+          Announcements
+        </h2>
+        <CreateAnnouncement flatId={flatId} />
+        <FlatAnnouncements flatId={flatId} />
       </>
     )
 }
