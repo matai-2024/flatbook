@@ -8,7 +8,10 @@ interface FormContainerProps {
 function FormContainer({ title, children }: FormContainerProps) {
   return (
     <>
-      <h1 className="mb-4 py-2 text-lg font-bold italic">{title}</h1>
+      <div className="">
+        <h1 className="text-lg font-bold">{title}</h1>
+        <p className="italic">Required forms marked using *</p>
+      </div>
       {children}
     </>
   )

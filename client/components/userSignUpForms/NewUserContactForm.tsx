@@ -15,53 +15,55 @@ export default function NewUserContactForm({
   return (
     <>
       <FormContainer title="How will your flatties contact you?">
-        <div className="form-control mb-4 w-full">
-          <label className="label-text" htmlFor="email">
-            Email
-          </label>
-          <div className="tailwind placeholder">
-            <input
-              id="email"
-              name="email"
-              type="text"
-              placeholder="Email"
-              value={email ? email : ''}
-              onChange={(e) => updateFields({ email: e.target.value })}
-              className="input input-bordered input-primary w-full"
-            />
+        <div className="py-8">
+          <div className="form-control mb-4 w-full">
+            <label className="label-text" htmlFor="email">
+              *Email
+            </label>
+            <div className="tailwind placeholder">
+              <input
+                id="email"
+                name="email"
+                type="text"
+                placeholder="Email"
+                value={email ? email : ''}
+                onChange={(e) => updateFields({ email: e.target.value })}
+                className="input input-bordered input-primary w-full"
+              />
+            </div>
           </div>
-        </div>
-        <div className="form-control mb-4 w-full">
-          <label className="label-text" htmlFor="mobile">
-            Phone Number
-          </label>
-          <div className="tailwind placeholder">
-            <input
-              id="mobile"
-              name="mobile"
-              type="text"
-              placeholder="Phone Number"
-              value={mobile ? mobile : ''}
-              onChange={(e) => updateFields({ mobile: e.target.value })}
-              className="input input-bordered input-primary w-full"
-            />
+          <div className="form-control mb-4 w-full">
+            <label className="label-text" htmlFor="mobile">
+              Phone Number
+            </label>
+            <div className="tailwind placeholder">
+              <input
+                id="mobile"
+                name="mobile"
+                type="text"
+                placeholder="Phone Number"
+                value={mobile ? mobile : ''}
+                onChange={(e) => updateFields({ mobile: e.target.value })}
+                className="input input-bordered input-primary w-full"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="form-control mb-4 w-full ">
-          <label className="label-text" htmlFor="socialMedia">
-            Social Media
-          </label>
-          <div className="tailwind placeholder">
-            <input
-              id="socialMedia"
-              name="socialMedia"
-              type="socialMedia"
-              placeholder="Social Media"
-              value={socialMedia ? socialMedia : ''}
-              onChange={(e) => updateFields({ socialMedia: e.target.value })}
-              className="input input-bordered input-primary w-full"
-            />
+          <div className="form-control mb-4 w-full ">
+            <label className="label-text" htmlFor="socialMedia">
+              Social Media
+            </label>
+            <div className="tailwind placeholder">
+              <input
+                id="socialMedia"
+                name="socialMedia"
+                type="socialMedia"
+                placeholder="Whats your facebook?"
+                value={socialMedia ? socialMedia : ''}
+                onChange={(e) => updateFields({ socialMedia: e.target.value })}
+                className="input input-bordered input-primary w-full"
+              />
+            </div>
           </div>
         </div>
       </FormContainer>

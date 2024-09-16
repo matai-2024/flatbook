@@ -77,12 +77,12 @@ function Dashboard() {
     <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-36">
       <div className="flex h-full w-full flex-col md:flex-row">
         {/* Sidebar */}
-        <div className="w-full p-6 md:w-1/4 md:p-8">
+        <div className="flex w-full flex-col space-y-8 p-6 md:w-1/4 md:px-8">
           <Sidebar />
         </div>
 
         {/* Content Area */}
-        <div className="flex w-full flex-col space-y-8 p-6 md:w-3/4 md:px-8">
+        <div className="flex w-full flex-col space-y-8 p-6 md:w-4/5">
           <div className="flex h-full w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
             {/* Left Column (Announcements, Events) */}
             <div className="flex w-full flex-col space-y-8 md:w-1/2">
