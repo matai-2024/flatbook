@@ -16,11 +16,13 @@ export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
     <Route index element={<LandingPage />} />
     <Route
-      path="dashboard"
+      path="dashboard" // TODO: add '/:flatId' to path
       // element={<ProtectedComponent component={Dashboard} />} // TODO: add auth0
       element={<Dashboard />}
       handle={'Flat Dashboard'}
     />
+    {/* DumbDashboard for testing */}
+    {/* <Route path="/chores/:flatId" element={<DumbDashboard />} /> */}
     {/* TODO: Update with real dashboard component and path */}
     <Route path="/chores/:id" element={<DumbDashboard />} />
     <Route

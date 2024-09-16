@@ -15,7 +15,7 @@ export default function Sidebar() {
       <ul>
         <li>Alicia Myers</li>
         <li>Elias Kaleta</li>
-        <li>Logan Benett</li>
+        <li>Logan Bennett</li>
         <li>Ryan Zhao</li>
       </ul>
     </>

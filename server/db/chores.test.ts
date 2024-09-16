@@ -31,8 +31,8 @@ describe('getChores', () => {
   })
 })
 
-describe('addAlbum', () => {
-  it('adds a new album to the database', async () => {
+describe('addChore', () => {
+  it('adds a new chore to the database', async () => {
     //ARRANGE
     const newChore = {
       flatId: 1,
@@ -52,7 +52,7 @@ describe('addAlbum', () => {
     expect(flatOneChores[3].title).toBe('Test1')
   })
 
-  it('throws an error if no album data is passed in', async () => {
+  it('throws an error if no chore data is passed in', async () => {
     //ARRANGE
 
     let error = ''
