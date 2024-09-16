@@ -30,3 +30,4 @@ document.addEventListener('DOMContentLoaded', () => {
     </Auth0Provider>,
   )
 })
+//TODO - once click register button, redirecturi

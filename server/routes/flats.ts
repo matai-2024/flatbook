@@ -3,12 +3,13 @@ import checkJwt, { JwtRequest } from '../auth0.ts'
 import { StatusCodes } from 'http-status-codes'
 
 import * as db from '../db/flats.ts'
+import { Flat } from '../../models/flat.ts'
 
 const router = Router()
 
 router.get('/', async (req, res) => {
   try {
-    const flats = await db.getAllFlats()
+    const flats: Flat[] = await db.getAllFlats()
 
     res.json({ flats: flats.map((flat) => flat.name) })
   } catch (error) {
@@ -32,7 +33,7 @@ router.post('/', checkJwt, async (req: JwtRequest, res, next) => {
   }
 
   try {
-    const { address, name, phone } = req.body
+    const { address, name, phone }: Flat = req.body
     const id = await db.addFlat({ address, name, phone })
     res
       .setHeader('Location', `${req.baseUrl}/${id}`)
