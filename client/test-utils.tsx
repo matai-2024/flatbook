@@ -48,6 +48,3 @@ export function renderWithQuery(component: JSX.Element) {
     ),
   }
 }
-
-//everything that's been commented out can be un-commented out when
-//testing up front-end routes is done (ticket#43)

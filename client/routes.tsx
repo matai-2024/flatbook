@@ -3,15 +3,24 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-// import ProtectedComponent from './components/ProtectedComponent'  // TODO: to use
+import ProtectedComponent from './components/ProtectedComponent'
 import App from './components/App'
 import LandingPage from './pages/LandingPage'
+import DumbDashboard from './components/DumbDashboard'
+import SignUpForm from './pages/SignUpForm'
 import Dashboard from './pages/Dashboard/Dashboard'
 import ErrorPage from './pages/ErrorPage'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
     <Route index element={<LandingPage />} />
+    {/* TODO: Update with real dashboard component and path */}
+    <Route path="/chores/:id" element={<DumbDashboard />} />
+    <Route
+      path="signup"
+      element={<ProtectedComponent component={SignUpForm} />}
+      handle={'Sign Up'}
+    />
     <Route
       path="dashboard" // TODO: add '/:flatId' to path
       // element={<ProtectedComponent component={Dashboard} />} // TODO: add auth0
@@ -24,12 +33,3 @@ export const routes = createRoutesFromElements(
 )
 
 export const router = createBrowserRouter(routes)
-
-/**
-  // template for if you're adding a protected-route
-  <Route
-  path="my-path"
-  element={<ProtectedComponent component={componentGoesHere} />}
-  handle={'page name goes here'}
-  />
- */
