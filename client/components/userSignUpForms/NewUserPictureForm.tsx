@@ -1,5 +1,4 @@
 import { UserFormProps } from './userFormModel.ts'
-// import AvatarIcon from '../UI/AvatarIcon.tsx'
 import FormContainer from './FormContainer.tsx'
 
 //Who are you?
@@ -10,10 +9,6 @@ export default function NewUserPictureForm({ updateFields }: UserFormProps) {
         <div className="py-3">
           <div className="form-control mb-4 w-full"></div>
         </div>
-        {/* <AvatarIcon
-            className="w-96"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-          /> */}
         <div className="flex h-64 w-full cursor-pointer items-center justify-center rounded-lg border-4 border-dashed border-gray-300">
           <div className="text-center">
             <p className="text-gray-500">Drag and drop a photo here</p>

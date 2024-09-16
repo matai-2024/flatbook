@@ -74,7 +74,7 @@ function ChatsExample() {
 
 function Dashboard() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-28">
+    <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral">
       <div className="flex h-full w-full flex-col md:flex-row">
         <div className="flex w-full flex-col space-y-8 p-6 md:w-1/4 md:px-8">
           <Sidebar />
