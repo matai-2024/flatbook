@@ -43,7 +43,7 @@ export default function CreateAnnouncement({ flatId }: Props) {
   }
 
   return (
-    <div className="m-8 max-w-full rounded-lg bg-base-200 p-6 shadow-md">
+    <div className="mb-4 ml-8 mr-8 max-w-full rounded-lg bg-base-200 p-6 shadow-md">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="form-control">
           <TextBox
