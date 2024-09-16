@@ -1,6 +1,7 @@
 import { Outlet, useMatches } from 'react-router-dom'
 
 import useDocumentTitle from '../hooks/useDocumentTitle'
+import Footer from './Footer'
 
 function AppLayout() {
   const matches = useMatches()
@@ -14,7 +15,7 @@ function AppLayout() {
         <main>
           <Outlet />
         </main>
-        <footer></footer>
+        <Footer />
       </section>
     </>
   )

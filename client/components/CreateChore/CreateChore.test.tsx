@@ -13,7 +13,7 @@ describe('CRUD operations', () => {
 
     const screen = renderWithQuery(<CreateChore id={'1'} />)
     const { user } = screen
-    
+
     const getChoreHeader = await screen.getByText(/Add a New Chore/i)
     const getNewChoreTitle = await screen.getByPlaceholderText(/title\*/i)
     const getNewDescription = await screen.getByPlaceholderText(/Description/i)
