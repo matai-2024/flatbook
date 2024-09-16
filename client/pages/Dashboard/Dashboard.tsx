@@ -1,5 +1,7 @@
 import ChoresList from '../../components/ChoresList/ChoresList'
+import CreateAnnouncement from '../../components/CreateAnnouncement/CreateAnnouncement'
 import AddChore from '../../components/CreateChore/CreateChore'
+import FlatAnnouncements from '../../components/FlatAnnouncements/FlatAnnouncements'
 import Sidebar from './Sidebar'
 
 /* Todo: To be replaced by real widgets */
@@ -71,94 +73,47 @@ function ChatsExample() {
 }
 
 function Dashboard() {
+  {
+    /* // TODO: replace static flatId '1' with url parameters */
+  }
   return (
     <>
-      <div className="flex min-h-screen space-x-8 bg-gradient-to-b from-base-100 to-neutral">
-        <div className="flex w-full flex-col px-8 py-36">
-          {/* Main Container */}
-          <div className="flex w-full flex-row space-x-8">
-            {/* Sidebar */}
-            <Sidebar />
-
-            {/* Content Area */}
-            <div className="flex w-full flex-row space-x-8">
-              {/* Left Column (Announcements, Events) */}
-              <div className="flex w-1/2 flex-col space-y-8">
-                <div
-                  className="rounded-xl bg-gradient-to-r from-white to-base-100 p-6
-                 shadow-2xl"
-                >
-                  <h3
-                    className=" mb-4 p-3
-                   text-center text-2xl font-bold text-primary"
-                  >
-                    Announcements
-                  </h3>
-                  <ChatsExample />{' '}
-                  {/* Todo: replace with real Announcements component */}
-                </div>
-
-                <div
-                  className="rounded-xl bg-gradient-to-r from-white to-base-100 p-6
-                 shadow-2xl"
-                >
-                  <h3
-                    className="mb-4 p-3
-                   text-center text-2xl font-bold text-primary"
-                  >
-                    Events
-                  </h3>
-                  <ChatsExample />{' '}
-                  {/* Todo: replace with real Events component */}
-                </div>
+      <div className="container flex flex-row">
+        <div className="container static my-0 max-w-96 bg-[#d9d9d9] px-5 py-5">
+          <Sidebar />
+        </div>
+        <div className="container flex flex-row">
+          <div className="container flex flex-col">
+            <div className="max-auto container mb-5 min-w-96 px-5">
+              <h3 className="py-5 text-center text-2xl font-bold">
+                Announcements
+              </h3>
+              <CreateAnnouncement flatId="1" />
+              <FlatAnnouncements flatId="1" />{' '}
+            </div>
+            <div className="max-auto container mb-5 min-w-96 px-5">
+              <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
+              <ChatsExample /> {/* Todo: replace with real Events component */}
+            </div>
+          </div>
+          <div className="container flex flex-col">
+            <div className="max-auto container mb-5">
+              <h3 className="py-5 text-center text-2xl font-bold">Chores</h3>
+              <div className="container flex flex-row space-x-1">
+                <AddChore flatId={'1'} />
+                <ChoresList flatId={'1'} />
               </div>
-
-              {/* Right Column (Chores, Shopping List, Bills) */}
-              <div className="flex w-1/2 flex-col space-y-8">
-                <div
-                  className="rounded-xl bg-gradient-to-r from-white to-base-100 p-6
-                 shadow-2xl"
-                >
-                  <h3
-                    className="mb-4 p-3
-                   text-center text-2xl font-bold text-primary"
-                  >
-                    Chores
-                  </h3>
-                  <div className="flex flex-row space-x-4">
-                    <ChoresList id={'1'} /> {/* Todo: Why id? */}
-                    <AddChore id={'1'} /> {/* Todo: Why id? */}
-                  </div>
-                </div>
-
-                <div
-                  className="rounded-xl bg-gradient-to-r from-white to-base-100 p-6
-                 shadow-2xl"
-                >
-                  <h3
-                    className="mb-4 p-3
-                   text-center text-2xl font-bold text-primary"
-                  >
-                    Shopping List
-                  </h3>
-                  <WidgetExample />{' '}
-                  {/* Todo: replace with real Shopping List component */}
-                </div>
-
-                <div
-                  className="rounded-xl bg-gradient-to-r from-white to-base-100 p-6
-                 shadow-2xl"
-                >
-                  <h3
-                    className="mb-4 p-3
-                   text-center text-2xl font-bold text-primary"
-                  >
-                    Bills
-                  </h3>
-                  <WidgetExample />{' '}
-                  {/* Todo: replace with real Bills component */}
-                </div>
-              </div>
+            </div>
+            <div className="max-auto container mb-5">
+              <h3 className="py-5 text-center text-2xl font-bold">
+                Shopping List
+              </h3>
+              <WidgetExample />{' '}
+              {/* Todo: replace with real Shopping List component */}
+            </div>
+            <div className="max-auto container mb-5">
+              <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
+              <WidgetExample /> {/* Todo: replace with real Bills component */}
             </div>
           </div>
         </div>
