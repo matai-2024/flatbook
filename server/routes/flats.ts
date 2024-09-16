@@ -33,7 +33,6 @@ router.post('/', async (req, res, next) => {
     const validationResult = flatDataSchema.safeParse(form)
 
     if (!validationResult.success) {
-      console.log(form)
       res.sendStatus(StatusCodes.BAD_REQUEST)
       next()
     }
