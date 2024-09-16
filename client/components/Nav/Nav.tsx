@@ -21,7 +21,12 @@ function Nav() {
           <LoginButton />
         ) : (
           <div>
-            <Button className="btn btn-accent">Flat Dashboard</Button>
+            <button onClick={() => navigate('/profile')}>
+              <Button className="btn btn-accent">Profile Page</Button>
+            </button>
+            <button onClick={() => navigate('/dashboard')}>
+              <Button className="btn btn-accent m-1">Flat Dashboard</Button>
+            </button>
             <LogoutButton />
           </div>
         )}
