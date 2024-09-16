@@ -1,23 +1,27 @@
 export default function Sidebar() {
   return (
-    <>
-      <h2 className="text-5xl font-bold">Sweethome</h2>
-      <br />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-        soluta natus? Ratione vero corporis dolore a eligendi inventore
-        accusantium reiciendis praesentium debitis aut incidunt minus labore
-        iste, ad omnis aspernatur.
-      </p>
-      <br />
-      <h2 className="text-3xl font-bold">Flatties</h2>
-      {/* Todo: replace this list with dynamic list */}
-      <ul>
-        <li>Alicia Myers</li>
-        <li>Elias Kaleta</li>
-        <li>Logan Bennett</li>
-        <li>Ryan Zhao</li>
-      </ul>
-    </>
+    <div className="rounded-xl bg-gradient-to-b from-neutral to-base-100 p-8 shadow-xl">
+      <div>
+        <h2 className="mb-4 text-center text-5xl font-bold text-primary">
+          Sweethome
+        </h2>
+        <p className="mb-8 text-lg leading-relaxed text-secondary">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
+          soluta natus? Ratione vero corporis dolore a eligendi inventore
+          accusantium reiciendis praesentium debitis aut incidunt minus labore
+          iste, ad omnis aspernatur.
+        </p>
+
+        <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
+          Flatties
+        </h2>
+        <ul className="space-y-2 text-lg text-info">
+          <li className="font-medium">Alicia Myers</li>
+          <li className="font-medium">Elias Kaleta</li>
+          <li className="font-medium">Logan Benett</li>
+          <li className="font-medium">Ryan Zhao</li>
+        </ul>
+      </div>
+    </div>
   )
 }

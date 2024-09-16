@@ -7,9 +7,10 @@ const router = Router()
 
 //TODO-- add checkJWT & revisit ID
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const users = await db.getAllUsers()
+    const id = req.params.id
+    const users = await db.getUserById(+id)
 
     res.json(users)
   } catch (error) {

@@ -8,7 +8,7 @@ import Sidebar from './Sidebar'
 function WidgetExample() {
   return (
     <>
-      <div className="card w-96 w-full bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl">
         <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -73,46 +73,58 @@ function ChatsExample() {
 }
 
 function Dashboard() {
-  {
-    /* // TODO: replace static flatId '1' with url parameters */
-  }
   return (
     <>
-      <div className="container flex flex-row">
-        <div className="container static my-0 max-w-96 bg-[#d9d9d9] px-5 py-5">
+      <div className="flex min-h-screen w-full space-x-8 bg-gradient-to-b from-base-100 to-neutral py-32">
+        {/* Sidebar */}
+        <div className="w-1/4 px-8 py-8">
           <Sidebar />
         </div>
-        <div className="container flex flex-row">
-          <div className="container flex flex-col">
-            <div className="max-auto container mb-5 min-w-96 px-5">
-              <h3 className="py-5 text-center text-2xl font-bold">
+
+        {/* Content Area */}
+        <div className="flex w-3/4 flex-row space-x-8 px-8 py-8">
+          {/* Left Column (Announcements, Events) */}
+          <div className="flex w-1/2 flex-col space-y-8">
+            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                 Announcements
               </h3>
               <CreateAnnouncement flatId="1" />
-              <FlatAnnouncements flatId="1" />{' '}
+              <FlatAnnouncements flatId="1" />
             </div>
-            <div className="max-auto container mb-5 min-w-96 px-5">
-              <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
+
+            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                Events
+              </h3>
               <ChatsExample /> {/* Todo: replace with real Events component */}
             </div>
           </div>
-          <div className="container flex flex-col">
-            <div className="max-auto container mb-5">
-              <h3 className="py-5 text-center text-2xl font-bold">Chores</h3>
-              <div className="container flex flex-row space-x-1">
-                <AddChore flatId={'1'} />
+
+          {/* Right Column (Chores, Shopping List, Bills) */}
+          <div className="flex w-1/2 flex-col space-y-8">
+            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                Chores
+              </h3>
+              <div className="flex flex-row space-x-4">
                 <ChoresList flatId={'1'} />
+                <AddChore flatId={'1'} />
               </div>
             </div>
-            <div className="max-auto container mb-5">
-              <h3 className="py-5 text-center text-2xl font-bold">
+
+            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                 Shopping List
               </h3>
               <WidgetExample />{' '}
               {/* Todo: replace with real Shopping List component */}
             </div>
-            <div className="max-auto container mb-5">
-              <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
+
+            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                Bills
+              </h3>
               <WidgetExample /> {/* Todo: replace with real Bills component */}
             </div>
           </div>

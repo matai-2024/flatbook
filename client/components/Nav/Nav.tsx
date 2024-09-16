@@ -10,7 +10,7 @@ function Nav() {
   const navigate = useNavigate()
 
   return (
-    <div className="bg-base100 navbar shadow-md">
+    <div className="bg-base100 navbar absolute shadow-md">
       <div className="ml-8 flex-1">
         <button onClick={() => navigate('/')}>
           <img src={logo} alt="logo" className=" w- btn btn-ghost h-28" />
@@ -21,9 +21,16 @@ function Nav() {
           <LoginButton />
         ) : (
           <div>
+            {/* todo-change profile button to be dynamic */}
+            <Button
+              onClick={() => navigate('/profile/1')}
+              className="btn btn-accent"
+            >
+              Profile Page
+            </Button>
             <Button
               onClick={() => navigate('/dashboard')}
-              className="btn btn-accent"
+              className="btn btn-accent m-1"
             >
               Flat Dashboard
             </Button>

@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 function LandingPage() {
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row py-20">
         <div className="flex-none basis-3/5">
           <h1 className="landing-page">FLAT</h1>
           <h1 className="landing-page leading-none">BOOK</h1>
