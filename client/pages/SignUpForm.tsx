@@ -65,7 +65,7 @@ export default function SignUpForm() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-base-100 to-neutral py-36">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-base-100 to-neutral py-32">
       <div className="w-full max-w-lg rounded-xl bg-gradient-to-r from-white to-base-100 p-8 shadow-2xl">
         <div className="flex flex-col items-center text-center">
           <form onSubmit={onSubmit} className="mt-6 w-full">
@@ -74,19 +74,19 @@ export default function SignUpForm() {
                 <div>{step}</div>
               </div>
             </div>
-            <div className="mt-4 flex justify-center">
+            <div className="flex justify-center space-x-1">
               {!isFirstStep && (
                 <button
                   type="button"
                   onClick={back}
-                  className="btn btn-secondary m-1"
+                  className="btn btn-secondary px-6"
                 >
                   Back
                 </button>
               )}
               <button
                 type="submit"
-                className={`btn btn-primary m-1 ${isLastStep ? 'btn-accent' : 'btn-primary'}`}
+                className={`btn btn-primary px-4 ${isLastStep ? 'btn-accent' : 'btn-primary'}`}
               >
                 {isLastStep ? 'Complete' : 'Continue'}
               </button>

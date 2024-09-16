@@ -74,17 +74,14 @@ function ChatsExample() {
 
 function Dashboard() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-36">
+    <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-28">
       <div className="flex h-full w-full flex-col md:flex-row">
-        {/* Sidebar */}
         <div className="flex w-full flex-col space-y-8 p-6 md:w-1/4 md:px-8">
           <Sidebar />
         </div>
 
-        {/* Content Area */}
         <div className="flex w-full flex-col space-y-8 p-6 md:w-4/5">
           <div className="flex h-full w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
-            {/* Left Column (Announcements, Events) */}
             <div className="flex w-full flex-col space-y-8 md:w-1/2">
               <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
@@ -93,7 +90,6 @@ function Dashboard() {
                 <CreateAnnouncement flatId="1" />
                 <FlatAnnouncements flatId="1" />
               </div>
-
               <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Events
@@ -103,7 +99,6 @@ function Dashboard() {
               </div>
             </div>
 
-            {/* Right Column (Chores, Shopping List, Bills) */}
             <div className="flex w-full flex-col space-y-8 md:w-1/2">
               <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">

@@ -8,7 +8,7 @@ interface FormContainerProps {
 function FormContainer({ title, children }: FormContainerProps) {
   return (
     <>
-      <div className="">
+      <div className="tailwind placeholder">
         <h1 className="text-lg font-bold">{title}</h1>
         <p className="italic">Required forms marked using *</p>
       </div>
