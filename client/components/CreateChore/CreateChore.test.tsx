@@ -4,7 +4,6 @@ import { beforeAll, describe, expect, it, vi } from 'vitest'
 import { renderWithQuery } from '../../test-utils'
 import CreateChore from './CreateChore'
 import { waitFor, waitForElementToBeRemoved } from '@testing-library/react'
-import ChoresList from '../ChoresList/ChoresList'
 
 beforeAll(() => {
   nock.disableNetConnect()
