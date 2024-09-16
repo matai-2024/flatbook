@@ -7,19 +7,25 @@ import FlatFormPage2 from '../components/flatSetUpForms/FlatFormPage2'
 import { FlatFormProps } from '../../models/forms'
 import FlatFormPage3 from '../components/flatSetUpForms/FlatFormPage3'
 import FlatFormPage4 from '../components/flatSetUpForms/FlatFormPage4'
+import { useCreateFlat } from '../hooks/useFlats'
+import { useNavigate } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const FLAT_FORM_DEFAULTS = {
-  id: 0,
-  flat_admin: '',
+  flatAdmin: '',
   title: '',
   image: '',
   description: '',
-  street_address: '',
-  created_at: 0,
+  streetAddress: '',
+  createdAt: '',
 }
 
 export default function FlatSignUpForm() {
   const [data, setData] = useState(FLAT_FORM_DEFAULTS)
+
+  const addFlat = useCreateFlat()
+  const navigate = useNavigate()
+  const { user, getAccessTokenSilently } = useAuth0()
 
   // const navigate = useNavigate()
   // const { getAccessTokenSilently } = useAuth0()
@@ -34,15 +40,19 @@ export default function FlatSignUpForm() {
     <FlatFormPage1 {...data} updateFields={updateFields} key={'form-page-1'} />,
     <FlatFormPage2 {...data} updateFields={updateFields} key={'form-page-2'} />,
     <FlatFormPage3 {...data} updateFields={updateFields} key={'form-page-2'} />,
-    <FlatFormPage4 {...data} updateFields={updateFields} key={'form-page-2'} />,
+    <FlatFormPage4 {...data} updateFields={updateFields} key={'form-page-4'} />,
   ])
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     if (!isLastStep) {
       next()
-    } else {
-      //TODO - Create Flat
+    } else if (user?.sub) {
+      const token = await getAccessTokenSilently()
+      //TODO - update with flat profile
+      data.flatAdmin = user.sub
+      await addFlat.mutateAsync({ data, token })
+      navigate('/')
     }
   }
 

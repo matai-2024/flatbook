@@ -34,12 +34,12 @@ export default function FlatFormPage2({
           </label>
           <div className="tailwind placeholder">
             <input
-              id="lastName"
-              name="lastName"
+              id="description"
+              name="description"
               type="text"
-              placeholder="Last name"
-              value={title}
-              onChange={(e) => updateFields({ title: e.target.value })}
+              placeholder="Flat Description"
+              value={description}
+              onChange={(e) => updateFields({ description: e.target.value })}
               className="input input-bordered input-primary w-full"
             />
           </div>

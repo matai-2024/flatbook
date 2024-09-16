@@ -6,7 +6,7 @@ import Sidebar from './Sidebar'
 function WidgetExample() {
   return (
     <>
-      <div className="card w-96 bg-base-100 shadow-xl w-full">
+      <div className="card w-96 w-full bg-base-100 shadow-xl">
         <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -83,7 +83,8 @@ function Dashboard() {
               <h3 className="py-5 text-center text-2xl font-bold">
                 Announcements
               </h3>
-              <ChatsExample /> {/* Todo: replace with real Announcements component */}
+              <ChatsExample />{' '}
+              {/* Todo: replace with real Announcements component */}
             </div>
             <div className="max-auto container mb-5 min-w-96 px-5">
               <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
@@ -98,15 +99,16 @@ function Dashboard() {
                 <AddChore id={'1'} /> {/* Todo: Why id? */}
               </div>
             </div>
-            <div className="container mb-5 max-auto">
+            <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">
                 Shopping List
               </h3>
-              <WidgetExample /> {/* Todo: replace with real Shopping List component */}
+              <WidgetExample />{' '}
+              {/* Todo: replace with real Shopping List component */}
             </div>
-            <div className="container mb-5 max-auto">
+            <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
-              <WidgetExample />  {/* Todo: replace with real Bills component */}
+              <WidgetExample /> {/* Todo: replace with real Bills component */}
             </div>
           </div>
         </div>

@@ -27,20 +27,17 @@ router.get('/:id', async (req, res, next) => {
 })
 
 router.post('/', async (req, res, next) => {
-  // if (!req.auth?.sub) {
-  //   res.sendStatus(StatusCodes.UNAUTHORIZED)
-  //   return
-  // }
   try {
-    const { address, name, phone } = req.body
     const form = req.body
     const validationResult = flatDataSchema.safeParse(form)
 
     if (!validationResult.success) {
+      console.log(form)
       res.sendStatus(StatusCodes.BAD_REQUEST)
       next()
     }
-    const id = await db.addFlat({ address, name, phone })
+
+    const id = await db.addFlat(form)
     res
       .setHeader('Location', `${req.baseUrl}/${id}`)
       .sendStatus(StatusCodes.CREATED)

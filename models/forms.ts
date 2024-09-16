@@ -57,13 +57,12 @@ export interface UserProfile extends UserProfileData {
 }
 
 export interface Flat {
-  id: number
-  flat_admin: string
+  flatAdmin: string
   title: string
-  image?: string
-  description?: string
-  street_address?: string
-  created_at: EpochTimeStamp
+  image: string
+  description: string
+  streetAddress: string
+  createdAt: string
 }
 
 export interface FlatFormProps extends Flat {

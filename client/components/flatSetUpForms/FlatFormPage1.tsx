@@ -1,12 +1,12 @@
 import { BsFillHouseAddFill } from 'react-icons/bs'
-import { FlatFormProps } from '../../../models/forms.ts'
 import FormContainer from '../userSignUpForms/FormContainer.tsx'
 import { FaHouseUser, FaKey } from 'react-icons/fa'
+import { FlatFormProps } from '../../../models/forms.ts'
 
 //Joining or creating?
-export default function FlatFormPage1({ id, updateFields }: FlatFormProps) {
+export default function FlatFormPage1({ updateFields }: FlatFormProps) {
   updateFields
-  id
+
   return (
     <>
       <h1 className="m-20 text-center text-5xl font-semibold">

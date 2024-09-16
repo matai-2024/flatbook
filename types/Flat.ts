@@ -6,8 +6,7 @@ export const flatData = z.object({
   image: z.string().nullable(),
   description: z.string().nullable(),
   streetAddress: z.string(),
-  email: z.string().email(),
-  createdAt: z.string().date(),
+  createdAt: z.string().datetime(),
 })
 
 export const flatDataSchema = flatData // For validation, call flatDataSchema.safeParse(param) function
