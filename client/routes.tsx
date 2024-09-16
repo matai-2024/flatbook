@@ -12,7 +12,7 @@ export const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
     <Route index element={<LandingPage />} />
     {/* TODO: Update with real dashboard component and path */}
-    <Route path="/chores/:id" element={<DumbDashboard />} />
+    <Route path="/chores/:flatId" element={<DumbDashboard />} />
   </Route>,
 )
 

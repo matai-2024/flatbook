@@ -7,9 +7,9 @@ import {
 
 const router = Router()
 
-router.get('/:id', async (req, res) => {
+router.get('/:flatId', async (req, res) => {
   try {
-    const flatId = req.params.id
+    const flatId = req.params.flatId
     const announcements = await db.getAnnouncements(+flatId)
     res.json(announcements)
   } catch (error) {
@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-router.post('/:id', async (req, res, next) => {
+router.post('/:flatId', async (req, res, next) => {
   try {
     const newAnnouncement: AnnouncementData = req.body
     const validationResult = announcementDataSchema.safeParse(newAnnouncement)

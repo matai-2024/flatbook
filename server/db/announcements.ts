@@ -21,7 +21,7 @@ export async function addAnnouncement(data: AnnouncementData) {
   return await db('announcements').insert(
     {
       flat_id: flatId,
-      auth0_id: auth0Id,
+      author_id: auth0Id,
       title: title,
       content: content,
       created_at: createdAt,
