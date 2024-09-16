@@ -1,4 +1,4 @@
-import useCreateChore from '../../hooks/useCreateChore'
+import useChores from '../../hooks/useChores'
 import TextBox from '../UI/TextBox'
 import Button from '../UI/Button'
 import { ChoreData } from '../../../types/Chore'
@@ -17,7 +17,7 @@ const handleTodaysDate = () => {
 }
 
 // currently accepts id(flatid) from choreslist url, will need to be replaced by dashboard url
-export default function AddChore({ id }: Props) {
+export default function CreateChore({ id }: Props) {
   const defaultForm: ChoreData = {
     flatId: +id,
     title: '',
@@ -29,9 +29,8 @@ export default function AddChore({ id }: Props) {
   }
 
   const [formData, setFormData] = useState(defaultForm)
+  const chores = useChores(id)
 
-  const createChore = useCreateChore(id)
-  const { isPending } = createChore
   const handleChange: React.ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
   > = (event) => {
@@ -41,14 +40,16 @@ export default function AddChore({ id }: Props) {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault()
-
-    createChore.mutateAsync(formData) // create new chore with form data
-
+    chores.addMutation.mutate(formData) // create new chore with form data
     setFormData(defaultForm) // reset form data to default values
   }
 
-  if (isPending) {
+  if (chores.isLoading) {
     return <p data-testid={`create-chore-pending`}>Loading...</p>
+  }
+
+  if (chores.isError) {
+    return <p>Failed {String(chores.error)}</p>
   }
 
   return (
@@ -108,6 +109,7 @@ export default function AddChore({ id }: Props) {
           </label>
           <input
             name="priority"
+            id="priority"
             type="range"
             min="1"
             max="10"

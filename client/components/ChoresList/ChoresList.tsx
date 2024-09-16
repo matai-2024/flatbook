@@ -1,4 +1,4 @@
-import useFetchChores from '../../hooks/useFetchChores'
+import useChores from '../../hooks/useChores'
 import { Chore } from '../../../types/Chore'
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function ChoresList({ id }: Props) {
-  const { data: chores, isLoading, isError, error } = useFetchChores(id)
+  const { data: chores, isLoading, isError, error } = useChores(id)
 
   if (isLoading) {
     return <p>Loading...</p>
