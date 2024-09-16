@@ -6,7 +6,6 @@ import {
 import ProtectedComponent from './components/ProtectedComponent'
 import App from './components/App'
 import LandingPage from './pages/LandingPage'
-import DumbDashboard from './components/DumbDashboard'
 import SignUpForm from './pages/SignUpForm'
 import Dashboard from './pages/Dashboard/Dashboard'
 import DumbDashboard from './components/DumbDashboard'
@@ -24,7 +23,7 @@ export const routes = createRoutesFromElements(
       handle={'Sign Up'}
     />
     <Route
-      path="profile"
+      path="/profile/:id"
       // element={<ProtectedComponent component={ProfilePage} />} // TODO: add auth0
       element={<ProfilePage />}
       handle={'Profile Page'}

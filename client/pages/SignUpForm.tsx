@@ -1,8 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-
-import useCreateProfile from '../hooks/useUserProfile'
+import useCreateProfile from '../hooks/useCreateProfile'
 import useForm from '../hooks/useFormStep'
 import NewUserDetailForm from '../components/userSignUpForms/NewUserDetailForm'
 import NewUserPictureForm from '../components/userSignUpForms/NewUserPictureForm'
@@ -20,6 +19,7 @@ const MOCK_DATA = {
   mobile: '',
   socialMedia: '',
   createdAt: '',
+  auth0Id: '',
 }
 
 export default function SignUpForm() {

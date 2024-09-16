@@ -1,12 +1,15 @@
 import AvatarIcon from '../../components/UI/AvatarIcon'
+import { User } from '../../../types/User'
 
-{
-  /* Todo: replace this list with dynamic list */
+interface Props {
+  data: User
 }
-export default function UserSidebar() {
+
+export default function UserSidebar(props: Props) {
+  const profile = props.data
+
   return (
     <div className="rounded-xl bg-gradient-to-b from-neutral to-base-100 p-8 shadow-xl">
-      {/* Avatar */}
       <div>
         <div className="relative mx-auto h-52 w-52">
           <AvatarIcon
@@ -16,37 +19,34 @@ export default function UserSidebar() {
           <div className="absolute -bottom-2 left-[9rem] h-8 w-8 rounded-full border-2 border-base-100 bg-green-500 shadow-md" />
         </div>
 
-        {/* Contact Information */}
         <div className="mt-10 text-center">
           <h2 className="text-2xl font-semibold text-primary">Contact</h2>
           <ul className="mt-2 text-lg text-info">
             <li>
-              Email: <span className="font-medium">example@example.org</span>
+              Email: <span className="font-medium">{profile.email}</span>
             </li>
             <li>
-              Phone: <span className="font-medium">123 456 789</span>
+              Phone: <span className="font-medium">{profile.mobile}</span>
             </li>
           </ul>
         </div>
 
-        {/* Social Media */}
         <div className="mt-10 text-center">
           <h2 className="text-2xl font-semibold text-primary">Social Media</h2>
           <ul className="mt-2 space-y-1 text-lg text-info">
             <li>
               <div className="rounded-lg from-accent to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
-                Facebook: <span className="font-medium">User1</span>
-              </div>
-            </li>
-            <li>
-              <div className="rounded-lg from-accent to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
-                LinkedIn: <span className="font-medium">LinkedIn.com</span>
+                <a
+                  href={`https://www.instagram.com/${profile.socialMedia}`}
+                  className="font-medium"
+                >
+                  Instagram
+                </a>
               </div>
             </li>
           </ul>
         </div>
 
-        {/* Status */}
         <div className="mt-10 text-center">
           <h2 className="text-2xl font-semibold text-primary">Flat Status</h2>
           <p className="mt-2 text-lg italic text-info">Taken</p>

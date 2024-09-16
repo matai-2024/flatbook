@@ -6,6 +6,11 @@ export async function getAllUsers() {
   return users as User[]
 }
 
+export async function getUserById(id: number) {
+  const users = await db('users').where('id', '=', id)
+  return users as User[]
+}
+
 export async function addUser(data: User) {
   const [id] = await db('users').insert(data)
   return id
