@@ -5,7 +5,7 @@ import * as db from '../db/users.ts'
 
 const router = Router()
 
-//TODO-- ADD CHECKJWT STUFF
+//TODO-- add checkJWT & revisit ID
 
 router.get('/', async (req, res) => {
   try {
@@ -13,40 +13,17 @@ router.get('/', async (req, res) => {
 
     res.json(users)
   } catch (error) {
-    res.status(500).json({ message: 'Something went wrong' })
+    res.status(200).json({ message: 'Something went wrong' })
   }
 })
 
 router.post('/', async (req, res, next) => {
   try {
-    const {
-      auth0Id,
-      flatId,
-      firstName,
-      lastName,
-      nickName,
-      about,
-      email,
-      mobile,
-      profilePhoto,
-      createdAt,
-    } = req.body
+    const data = req.body
     const id = await db.addUser({
-      auth0Id,
-      flatId,
-      firstName,
-      lastName,
-      nickName,
-      about,
-      email,
-      mobile,
-      profilePhoto,
-      createdAt,
+      ...data,
     })
-    res
-      .setHeader('Location', `${req.baseUrl}/${id}`)
-      .json(id)
-      .sendStatus(StatusCodes.CREATED)
+    res.json(id).sendStatus(StatusCodes.CREATED)
   } catch (err) {
     next(err)
   }

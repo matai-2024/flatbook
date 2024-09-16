@@ -1,9 +1,9 @@
-import { PhotoFormProps } from '../../../models/forms.ts'
-import FormContainer from './FormContainer.tsx'
+import { UserFormProps } from './userFormModel.ts'
 import AvatarIcon from '../UI/AvatarIcon.tsx'
+import FormContainer from './FormContainer.tsx'
 
 //Who are you?
-export default function FormPage1({ updateFields }: PhotoFormProps) {
+export default function NewUserPictureForm({ updateFields }: UserFormProps) {
   return (
     <>
       <FormContainer title="Upload a profile picture">
@@ -11,7 +11,7 @@ export default function FormPage1({ updateFields }: PhotoFormProps) {
           <input
             type="file"
             className="file-input file-input-bordered file-input-primary w-full text-sm"
-            onChange={(e) => updateFields({ profile_photo: e.target.value })}
+            onChange={(e) => updateFields({ profilePhoto: e.target.value })}
           />
         </div>
         <AvatarIcon

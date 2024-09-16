@@ -9,6 +9,7 @@ export const userData = z.object({
   email: z.string().email().nullable(),
   mobile: z.string().nullable(),
   profilePhoto: z.string().nullable(),
+  socialMedia: z.string().nullable(),
   createdAt: z.string().datetime(),
 })
 

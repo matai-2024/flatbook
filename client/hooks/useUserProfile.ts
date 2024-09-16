@@ -1,17 +1,17 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { addProfile } from '../apis/users.ts'
-import { User } from '../../models/forms.ts'
+import { addUserProfile } from '../apis/users.ts'
+import { UserData } from '../../types/User.ts'
 
 interface Props {
-  data: User
+  data: UserData
   token: string
 }
 
-export default function useCreateProfile() {
+export default function useUserProfile() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: ({ data, token }: Props) => {
-      const id = addProfile(data, token)
+      const id = addUserProfile(data, token)
       return id
     },
     onSuccess: () => {

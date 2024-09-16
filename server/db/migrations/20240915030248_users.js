@@ -3,8 +3,7 @@
  */
 export async function up(knex) {
   return knex.schema.createTable('users', (table) => {
-    table.increments('id')
-    table.string('auth0Id')
+    table.string('auth0Id').primary()
     table.integer('flatId')
     table.string('firstName')
     table.string('lastName')
@@ -13,6 +12,7 @@ export async function up(knex) {
     table.string('email')
     table.string('mobile').defaultTo(null)
     table.string('profilePhoto').defaultTo(null)
+    table.timestamp('socialMedia').defaultTo(null)
     table.timestamp('createdAt')
   })
 }

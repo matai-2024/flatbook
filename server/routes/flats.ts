@@ -4,12 +4,13 @@ import { StatusCodes } from 'http-status-codes'
 
 import * as db from '../db/flats.ts'
 import { flatDataSchema } from '../../types/Flat.ts'
+import { Flat } from '../../models/flat.ts'
 
 const router = Router()
 
 router.get('/', async (req, res) => {
   try {
-    const flats = await db.getAllFlats()
+    const flats: Flat[] = await db.getAllFlats()
 
     res.json({ flats: flats.map((flat) => flat.name) })
   } catch (error) {
@@ -38,6 +39,15 @@ router.post('/', async (req, res, next) => {
     }
 
     const id = await db.addFlat(form)
+router.post('/', checkJwt, async (req: JwtRequest, res, next) => {
+  if (!req.auth?.sub) {
+    res.sendStatus(StatusCodes.UNAUTHORIZED)
+    return
+  }
+
+  try {
+    const { address, name, phone }: Flat = req.body
+    const id = await db.addFlat({ address, name, phone })
     res
       .setHeader('Location', `${req.baseUrl}/${id}`)
       .sendStatus(StatusCodes.CREATED)
