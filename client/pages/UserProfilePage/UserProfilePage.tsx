@@ -2,7 +2,7 @@ import UserSidebar from './UserSidebar'
 
 function ProfilePage() {
   return (
-    <div className="max-h-fit max-w-full flex-1 space-x-8 bg-gradient-to-b from-base-100 to-neutral py-28">
+    <div className="max-h-fit max-w-full flex-1 space-x-8 bg-gradient-to-b from-base-100 to-neutral">
       <div className="flex h-full space-x-8 p-8">
         {/* Sidebar */}
         <div className="px-4">
