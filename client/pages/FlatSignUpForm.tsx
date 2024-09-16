@@ -5,6 +5,8 @@ import FlatFormPage1 from '../components/flatSetUpForms/FlatFormPage1'
 import useForm from '../hooks/useForm'
 import FlatFormPage2 from '../components/flatSetUpForms/FlatFormPage2'
 import { FlatFormProps } from '../../models/forms'
+import FlatFormPage3 from '../components/flatSetUpForms/FlatFormPage3'
+import FlatFormPage4 from '../components/flatSetUpForms/FlatFormPage4'
 
 const FLAT_FORM_DEFAULTS = {
   id: 0,
@@ -31,6 +33,8 @@ export default function FlatSignUpForm() {
   const { step, isFirstStep, isLastStep, back, next } = useForm([
     <FlatFormPage1 {...data} updateFields={updateFields} key={'form-page-1'} />,
     <FlatFormPage2 {...data} updateFields={updateFields} key={'form-page-2'} />,
+    <FlatFormPage3 {...data} updateFields={updateFields} key={'form-page-2'} />,
+    <FlatFormPage4 {...data} updateFields={updateFields} key={'form-page-2'} />,
   ])
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {

@@ -1,8 +1,9 @@
 import { Router } from 'express'
-import checkJwt, { JwtRequest } from '../auth0.ts'
+// import checkJwt, { JwtRequest } from '../auth0.ts'
 import { StatusCodes } from 'http-status-codes'
 
 import * as db from '../db/flats.ts'
+import { flatDataSchema } from '../../types/Flat.ts'
 
 const router = Router()
 
@@ -25,14 +26,20 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
-router.post('/', checkJwt, async (req: JwtRequest, res, next) => {
-  if (!req.auth?.sub) {
-    res.sendStatus(StatusCodes.UNAUTHORIZED)
-    return
-  }
-
+router.post('/', async (req, res, next) => {
+  // if (!req.auth?.sub) {
+  //   res.sendStatus(StatusCodes.UNAUTHORIZED)
+  //   return
+  // }
   try {
     const { address, name, phone } = req.body
+    const form = req.body
+    const validationResult = flatDataSchema.safeParse(form)
+
+    if (!validationResult.success) {
+      res.sendStatus(StatusCodes.BAD_REQUEST)
+      next()
+    }
     const id = await db.addFlat({ address, name, phone })
     res
       .setHeader('Location', `${req.baseUrl}/${id}`)

@@ -2,7 +2,7 @@ import { FlatFormProps } from '../../../models/forms.ts'
 import FormContainer from '../userSignUpForms/FormContainer.tsx'
 
 //New flat create form
-export default function FlatFormPage2({
+export default function FlatFormPage3({
   title,
   description,
   updateFields,
@@ -12,32 +12,15 @@ export default function FlatFormPage2({
     <div className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-center justify-center gap-10">
       <FormContainer title="Flat Setup">
         <div className="form-control mb-4 w-full">
-          <label className="label-text" htmlFor="firstName">
-            What is your flats nickname?
+          <label className="label-text" htmlFor="nickname">
+            Invite your flatmates
           </label>
           <div className="tailwind placeholder">
             <input
-              id="firstName"
-              name="firstName"
-              type="text"
-              placeholder="First name"
-              value={title}
-              onChange={(e) => updateFields({ title: e.target.value })}
-              className="input input-bordered input-primary w-full"
-            />
-          </div>
-        </div>
-
-        <div className="form-control mb-4 w-full">
-          <label className="label-text" htmlFor="lastName">
-            Sum your flat up in a sentence!
-          </label>
-          <div className="tailwind placeholder">
-            <input
-              id="lastName"
-              name="lastName"
-              type="text"
-              placeholder="Last name"
+              id="nickname"
+              name="nickname"
+              type="nickname"
+              placeholder="Nickname"
               value={title}
               onChange={(e) => updateFields({ title: e.target.value })}
               className="input input-bordered input-primary w-full"
