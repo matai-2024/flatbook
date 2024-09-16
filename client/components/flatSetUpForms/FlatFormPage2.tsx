@@ -2,10 +2,9 @@ import { FlatFormProps } from '../../../models/forms.ts'
 import FormContainer from '../userSignUpForms/FormContainer.tsx'
 
 //New flat create form
-export default function FormPage4({
+export default function FlatFormPage2({
   title,
   description,
-  // image (placeholder image)
   updateFields,
 }: FlatFormProps) {
   return (

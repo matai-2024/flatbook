@@ -9,6 +9,8 @@ import LandingPage from './pages/LandingPage'
 import Dashboard from './pages/Dashboard/Dashboard'
 import DumbDashboard from './components/DumbDashboard'
 import SignUpForm from './pages/SignUpForm'
+import ErrorPage from './pages/ErrorPage'
+import FlatSignUpForm from './pages/FlatSignUpForm'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
@@ -25,6 +27,11 @@ export const routes = createRoutesFromElements(
       path="signup"
       element={<ProtectedComponent component={SignUpForm} />}
       handle={'Sign Up'}
+    />
+    <Route
+      path="flat_setup"
+      element={<ProtectedComponent component={FlatSignUpForm} />}
+      handle={'Flat Set Up'}
     />
     {/* TODO-change component to UserProfile */}
     <Route
