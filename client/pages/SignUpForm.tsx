@@ -60,15 +60,13 @@ export default function SignUpForm() {
     } else {
       const token = await getAccessTokenSilently()
       await addUserProfile.mutateAsync({ data, token })
-      //TODO - change to user/profile
-      // const id = then navigate(`/user/${id}`)
       navigate(`/`)
     }
   }
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-full max-w-lg">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-base-100 to-neutral py-36">
+      <div className="w-full max-w-lg rounded-xl bg-gradient-to-r from-white to-base-100 p-8 shadow-2xl">
         <div className="flex flex-col items-center text-center">
           <form onSubmit={onSubmit} className="mt-6 w-full">
             <div>
@@ -81,14 +79,14 @@ export default function SignUpForm() {
                 <button
                   type="button"
                   onClick={back}
-                  className="btn btn-secondary"
+                  className="btn btn-secondary m-1"
                 >
                   Back
                 </button>
               )}
               <button
                 type="submit"
-                className={`btn btn-primary ${isLastStep ? 'btn-accent' : 'btn-primary'}`}
+                className={`btn btn-primary m-1 ${isLastStep ? 'btn-accent' : 'btn-primary'}`}
               >
                 {isLastStep ? 'Complete' : 'Continue'}
               </button>
