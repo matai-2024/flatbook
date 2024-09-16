@@ -66,6 +66,3 @@ export function renderWithQueryAndRouter(location = '/') {
     ),
   }
 }
-
-//everything that's been commented out can be un-commented out when
-//testing up front-end routes is done (ticket#43)
