@@ -1,12 +1,9 @@
-import { UserData } from '../../../types/User.ts'
+import { UserFormProps } from './userFormModel.ts'
 import AvatarIcon from '../UI/AvatarIcon.tsx'
 import FormContainer from './FormContainer.tsx'
-interface PhotoFormProps extends UserData {
-  updateFields: (fields: Partial<UserData>) => void
-}
 
 //Who are you?
-export default function NewUserPictureForm({ updateFields }: PhotoFormProps) {
+export default function NewUserPictureForm({ updateFields }: UserFormProps) {
   return (
     <>
       <FormContainer title="Upload a profile picture">

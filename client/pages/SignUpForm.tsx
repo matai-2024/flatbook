@@ -7,6 +7,7 @@ import useForm from '../hooks/useFormStep'
 import NewUserDetailForm from '../components/userSignUpForms/NewUserDetailForm'
 import NewUserPictureForm from '../components/userSignUpForms/NewUserPictureForm'
 import NewUserContactForm from '../components/userSignUpForms/NewUserContactForm'
+import { FormData } from '../components/userSignUpForms/userFormModel'
 
 const MOCK_DATA = {
   flatId: 0,
@@ -58,9 +59,10 @@ export default function SignUpForm() {
       next()
     } else {
       const token = await getAccessTokenSilently()
-      const id = await addUserProfile.mutateAsync({ data, token })
+      await addUserProfile.mutateAsync({ data, token })
       //TODO - change to user/profile
-      navigate(`/users/${id}`)
+      // const id = then navigate(`/user/${id}`)
+      navigate(`/`)
     }
   }
 

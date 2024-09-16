@@ -1,8 +1,8 @@
-import { UserData } from '../../../types/User.ts'
 import FormContainer from './FormContainer.tsx'
+import { FormData } from './userFormModel.ts'
 
-interface UserFormProps extends UserData {
-  updateFields: (fields: Partial<UserData>) => void
+interface UserFormProps extends FormData {
+  updateFields: (fields: Partial<FormData>) => void
 }
 
 //How will your flatties contact you?

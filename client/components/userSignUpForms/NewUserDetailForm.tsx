@@ -1,9 +1,5 @@
-import { UserData } from '../../../types/User.ts'
 import FormContainer from './FormContainer.tsx'
-
-interface UserFormProps extends UserData {
-  updateFields: (fields: Partial<UserData>) => void
-}
+import { UserFormProps } from './userFormModel.ts'
 
 //Who are you?
 export default function NewUserDetailForm({
