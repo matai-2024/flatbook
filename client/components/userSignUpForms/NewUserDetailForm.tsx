@@ -2,7 +2,7 @@ import { UserFormProps } from '../../../models/forms.ts'
 import FormContainer from './FormContainer.tsx'
 
 //Who are you?
-export default function FormPage0({
+export default function NewUserDetailForm({
   firstName,
   lastName,
   nickname,

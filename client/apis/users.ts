@@ -1,30 +1,30 @@
 import request from 'superagent'
-import { UserProfile, UserProfileData } from '../../models/forms.ts'
+import { User, UserData } from '../../types/User.ts'
 
 const rootUrl = '/api/v1/users'
 
-export async function getProfile() {
+export async function getUser() {
   const res = await request.get(rootUrl)
-  return res.body as UserProfile[]
+  return res.body as User[]
 }
 
-export async function getProfileById(id: number) {
+export async function getUserById(id: number) {
   const res = await request.get(rootUrl + '/' + id)
-  return res.body as UserProfile
+  return res.body as UserData
 }
 
-export async function getProfileByFlatId(id: number) {
+export async function getUserByFlatId(id: number) {
   const res = await request.get(rootUrl + 'flat/' + id)
-  return res.body as UserProfile[]
+  return res.body as User[]
 }
 
-export async function deleteProfileById(id: number, token: string) {
+export async function deleteUserById(id: number, token: string) {
   await request
     .delete(rootUrl + '/' + id)
     .set('Authorization', `Bearer ${token}`)
 }
 
-export async function addProfile(newProfile: UserProfileData, token: string) {
+export async function addUserProfile(newProfile: UserData, token: string) {
   const res = await request
     .post(rootUrl)
     .set('Authorization', `Bearer ${token}`)

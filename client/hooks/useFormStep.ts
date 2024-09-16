@@ -1,6 +1,6 @@
 import { ReactElement, useState } from 'react'
 
-export default function useForm(steps: ReactElement[]) {
+export default function useFormStep(steps: ReactElement[]) {
   const [currentStepIndex, setCurrentStepIndex] = useState(0)
 
   function next() {

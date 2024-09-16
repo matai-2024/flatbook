@@ -3,7 +3,7 @@ import FormContainer from './FormContainer.tsx'
 import AvatarIcon from '../UI/AvatarIcon.tsx'
 
 //Who are you?
-export default function FormPage1({ updateFields }: PhotoFormProps) {
+export default function NewUserPictureForm({ updateFields }: PhotoFormProps) {
   return (
     <>
       <FormContainer title="Upload a profile picture">

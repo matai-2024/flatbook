@@ -1,12 +1,12 @@
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-import FormPage1 from '../components/userSignUpForms/FormPage1'
-import FormPage2 from '../components/userSignUpForms/FormPage2'
-import useCreateProfile from '../hooks/useCreateProfile'
-import useForm from '../hooks/useForm'
 import { FormData } from '../../models/forms'
-import FormPage0 from '../components/userSignUpForms/FormPage0'
+import FormPage1 from '../components/UserSignUpForms/NewUserDetailForm'
+import FormPage2 from '../components/UserSignUpForms/NewUserPictureForm'
+import FormPage3 from '../components/UserSignUpForms/NewUserContactForm'
+import useCreateProfile from '../hooks/useUserProfile'
+import useForm from '../hooks/useFormStep'
 
 const MOCK_DATA = {
   flat_id: 0,
@@ -21,10 +21,10 @@ const MOCK_DATA = {
   created_at: 0,
 }
 
-export default function Signup() {
+export default function SignUpForm() {
   const [data, setData] = useState(MOCK_DATA)
 
-  const addProfile = useCreateProfile()
+  const addUserProfile = useCreateProfile()
   const navigate = useNavigate()
   const { getAccessTokenSilently } = useAuth0()
 
@@ -35,9 +35,9 @@ export default function Signup() {
   }
 
   const { step, isFirstStep, isLastStep, back, next } = useForm([
-    <FormPage0 {...data} updateFields={updateFields} key={'form-page-1'} />,
-    <FormPage1 {...data} updateFields={updateFields} key={'form-page-2'} />,
-    <FormPage2 {...data} updateFields={updateFields} key={'form-page-3'} />,
+    <FormPage1 {...data} updateFields={updateFields} key={'form-page-1'} />,
+    <FormPage2 {...data} updateFields={updateFields} key={'form-page-2'} />,
+    <FormPage3 {...data} updateFields={updateFields} key={'form-page-3'} />,
   ])
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -46,7 +46,7 @@ export default function Signup() {
       next()
     } else {
       const token = await getAccessTokenSilently()
-      const id = await addProfile.mutateAsync({ data, token })
+      const id = await addUserProfile.mutateAsync({ data, token })
       //TODO - change to user/profile
       navigate(`/users/${id}`)
     }

@@ -2,7 +2,7 @@ import { UserFormProps } from '../../../models/forms.ts'
 import FormContainer from './FormContainer.tsx'
 
 //How will your flatties contact you?
-export default function FormPage2({
+export default function NewUserContactForm({
   email,
   number,
   socialMedia,

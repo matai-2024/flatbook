@@ -2,10 +2,12 @@ import { Router } from 'express'
 import { StatusCodes } from 'http-status-codes'
 
 import * as db from '../db/users.ts'
+import { userDataSchema } from '../../types/User.ts'
+import { useParams } from 'react-router-dom'
 
 const router = Router()
 
-//TODO-- ADD CHECKJWT STUFF
+//TODO-- add checkJWT & revisit ID
 
 router.get('/', async (req, res) => {
   try {
@@ -13,40 +15,22 @@ router.get('/', async (req, res) => {
 
     res.json(users)
   } catch (error) {
-    res.status(500).json({ message: 'Something went wrong' })
+    res.status(200).json({ message: 'Something went wrong' })
   }
 })
 
 router.post('/', async (req, res, next) => {
+  const validationResult = userDataSchema.safeParse(useParams)
+
+  if (!validationResult.success) {
+    res.status(400).json({ message: 'Validation denied' }) // Bad request
+  }
   try {
-    const {
-      auth0Id,
-      flatId,
-      firstName,
-      lastName,
-      nickName,
-      about,
-      email,
-      mobile,
-      profilePhoto,
-      createdAt,
-    } = req.body
+    const data = req.body
     const id = await db.addUser({
-      auth0Id,
-      flatId,
-      firstName,
-      lastName,
-      nickName,
-      about,
-      email,
-      mobile,
-      profilePhoto,
-      createdAt,
+      ...data,
     })
-    res
-      .setHeader('Location', `${req.baseUrl}/${id}`)
-      .json(id)
-      .sendStatus(StatusCodes.CREATED)
+    res.json(id).sendStatus(StatusCodes.CREATED)
   } catch (err) {
     next(err)
   }

@@ -19,12 +19,6 @@ export const routes = createRoutesFromElements(
       element={<ProtectedComponent component={SignUpForm} />}
       handle={'Sign Up'}
     />
-    {/* TODO-change component to UserProfile */}
-    <Route
-      path="users/:id"
-      element={<ProtectedComponent component={LandingPage} />}
-      handle={'Users'}
-    />
   </Route>,
 )
 

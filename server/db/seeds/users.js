@@ -5,7 +5,6 @@ export async function seed(knex) {
   // Inserts seed entries
   await knex('users').insert([
     {
-      id: 1,
       auth0Id: '123456789',
       flatId: 1,
       firstName: 'alicia',
