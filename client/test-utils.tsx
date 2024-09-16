@@ -49,5 +49,23 @@ export function renderWithQuery(component: JSX.Element) {
   }
 }
 
+export function renderWithQueryAndRouter(location = '/') {
+  const router = createMemoryRouter(routes, {
+    initialEntries: [location],
+  })
+  userEvent.setup()
+
+  const user = userEvent.setup()
+  const queryClient = new QueryClient()
+  return {
+    user,
+    ...render(
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>,
+    ),
+  }
+}
+
 //everything that's been commented out can be un-commented out when
 //testing up front-end routes is done (ticket#43)

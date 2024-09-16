@@ -1,9 +1,7 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi, beforeAll } from 'vitest'
 import nock from 'nock'
-import { waitFor, waitForElementToBeRemoved } from '@testing-library/react'
-import { renderWithQuery, renderWithRouter } from '../../test-utils'
-import Dashboard from './Dashboard'
+import { renderWithQueryAndRouter } from '../../test-utils'
 
 beforeAll(() => {
   nock.disableNetConnect()
@@ -18,12 +16,13 @@ vi.mock('@auth0/auth0-react', () => ({
     isAuthenticated: true,
     getAccessTokenSilently: vi.fn(() => 'token'),
   }),
+  withAuthenticationRequired: vi.fn((Component) => Component),
 }))
 
 describe('Dashboard', () => {
   it('should render widgets successfully on loading', async () => {
     // Arrange
-    const scope = nock('http://localhost')
+    const scopeChores = nock('http://localhost')
       .get('/api/v1/chores/1')
       .reply(200, [
         {
@@ -37,6 +36,8 @@ describe('Dashboard', () => {
           id: 1,
         },
       ])
+
+    const scopeAnnouncements = nock('http://localhost')
       .get('/api/v1/announcements/1')
       .reply(200, [
         {
@@ -50,28 +51,28 @@ describe('Dashboard', () => {
       ])
 
     // Action
-    // const screen = renderWithQuery(<Dashboard />)
-    // const screen = renderWithRouter('/dashboard/1')
+    const screen = renderWithQueryAndRouter('/dashboard/1')
 
     // Assert
-    // const choresWidgetHeader = await screen.findByRole('heading', {
-    //   name: 'Sweethome',
-    // })
-    // const AnnouncementWidgetHeader = screen.getByRole('heading', {
-    //   name: 'Announcements',
-    // })
-    // const shoppingListWidgetHeader = screen.getByRole('heading', {
-    //   name: 'Shopping List',
-    // })
-    // const eventsWidgetHeader = screen.getByRole('heading', {
-    //   name: 'Events',
-    // })
+    const choresWidgetHeader = await screen.findByRole('heading', {
+      name: 'Chores',
+    })
+    const AnnouncementWidgetHeader = screen.getByRole('heading', {
+      name: 'Announcements',
+    })
+    const shoppingListWidgetHeader = screen.getByRole('heading', {
+      name: 'Shopping List',
+    })
+    const eventsWidgetHeader = screen.getByRole('heading', {
+      name: 'Events',
+    })
 
-    // expect(choresWidgetHeader).toBeVisible()
-    // expect(AnnouncementWidgetHeader).toBeVisible()
-    // expect(shoppingListWidgetHeader).toBeVisible()
-    // expect(eventsWidgetHeader).toBeVisible()
+    expect(choresWidgetHeader).toBeVisible()
+    expect(AnnouncementWidgetHeader).toBeVisible()
+    expect(shoppingListWidgetHeader).toBeVisible()
+    expect(eventsWidgetHeader).toBeVisible()
 
-    expect(scope.isDone()).toBe(true)
+    expect(scopeChores.isDone()).toBe(true)
+    expect(scopeAnnouncements.isDone()).toBe(true)
   })
 })
