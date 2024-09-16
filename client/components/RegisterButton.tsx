@@ -8,6 +8,7 @@ const RegisterButton = () => {
     loginWithRedirect({
       authorizationParams: {
         screen_hint: 'signup',
+        redirect_uri: `${window.location.origin}/signup`,
       },
     })
   }
