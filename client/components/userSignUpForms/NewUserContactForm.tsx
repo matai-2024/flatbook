@@ -65,7 +65,7 @@ export default function NewUserContactForm({
           </div>
         </div>
       </FormContainer>
-      <ul className="steps steps-vertical mb-1 lg:steps-horizontal">
+      <ul className="steps steps-vertical m-2 lg:steps-horizontal">
         <li className="step step-primary"></li>
         <li className="step step-primary"></li>
         <li className="step step-primary"></li>

@@ -19,7 +19,7 @@ export default function NewUserPictureForm({ updateFields }: UserFormProps) {
           src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
         />
       </FormContainer>
-      <ul className="steps steps-vertical mb-1 lg:steps-horizontal">
+      <ul className="steps steps-vertical m-2 lg:steps-horizontal">
         <li className="step step-primary"></li>
         <li className="step step-primary"></li>
         <li className="step"></li>

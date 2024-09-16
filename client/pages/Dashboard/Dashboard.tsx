@@ -71,21 +71,20 @@ function ChatsExample() {
     </>
   )
 }
-
 function Dashboard() {
   return (
     <>
-      <div className="flex min-h-screen w-full space-x-8 bg-gradient-to-b from-base-100 to-neutral py-32">
+      <div className="flex min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-32">
         {/* Sidebar */}
-        <div className="w-1/4 px-8 py-8">
+        <div className="w-1/4 px-10 py-8">
           <Sidebar />
         </div>
 
         {/* Content Area */}
-        <div className="flex w-3/4 flex-row space-x-8 px-8 py-8">
+        <div className="flex w-3/4 px-8 py-8">
           {/* Left Column (Announcements, Events) */}
-          <div className="flex w-1/2 flex-col space-y-8">
-            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+          <div className="flex w-1/2 flex-col space-y-8 px-6">
+            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
               <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                 Announcements
               </h3>
@@ -93,7 +92,7 @@ function Dashboard() {
               <FlatAnnouncements flatId="1" />
             </div>
 
-            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
               <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                 Events
               </h3>
@@ -102,8 +101,8 @@ function Dashboard() {
           </div>
 
           {/* Right Column (Chores, Shopping List, Bills) */}
-          <div className="flex w-1/2 flex-col space-y-8">
-            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+          <div className="flex w-1/2 flex-col justify-between space-y-8">
+            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
               <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                 Chores
               </h3>
@@ -113,7 +112,7 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
               <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                 Shopping List
               </h3>
@@ -121,7 +120,7 @@ function Dashboard() {
               {/* Todo: replace with real Shopping List component */}
             </div>
 
-            <div className="h-full rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+            <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
               <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                 Bills
               </h3>

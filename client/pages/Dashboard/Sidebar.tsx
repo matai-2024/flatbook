@@ -1,6 +1,6 @@
 export default function Sidebar() {
   return (
-    <div className="rounded-xl bg-gradient-to-b from-neutral to-base-100 p-8 shadow-xl">
+    <div className="rounded-xl bg-gradient-to-b from-neutral to-base-100 p-10 shadow-xl">
       <div>
         <h2 className="mb-4 text-center text-5xl font-bold text-primary">
           Sweethome
