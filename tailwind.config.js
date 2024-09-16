@@ -22,7 +22,7 @@ export default {
           warning: '#fde047',
 
           error: '#881337',
-          'base-content': '#E43D12',
+          'base-content': '#be123d',
           'primary-content': '#ffff',
           'secondary-content': '#ffff',
           'accent-content': '#ffff',
