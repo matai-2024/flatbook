@@ -18,14 +18,14 @@ export default function UserProfilePage() {
         {users.map((user: User) => (
           <div
             key={user.auth0Id}
-            className="max-h-fit max-w-full flex-1 space-x-8 bg-gradient-to-b from-base-100 to-neutral"
+            className="max-h-fit max-w-full flex-1 space-x-8 bg-gradient-to-b from-base-100 to-neutral py-36"
           >
             <div className="flex h-full space-x-8 p-8">
               <div className="px-4">
                 <UserSidebar data={user} />
               </div>
 
-              <div className="w-4/5 rounded-xl bg-gradient-to-r from-white to-base-100 p-8 shadow-2xl">
+              <div className="to-base w-4/5 rounded-xl bg-gradient-to-r from-white to-base-100 p-8 shadow-2xl">
                 <div className="mb-6 border-b-2 border-accent pb-4">
                   <h1 className="py-2 text-5xl font-bold text-primary">
                     {user.firstName} {user.lastName}

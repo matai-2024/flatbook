@@ -21,6 +21,13 @@ function Nav() {
           <LoginButton />
         ) : (
           <div>
+            {/* todo-change profile button to be dynamic */}
+            <Button
+              onClick={() => navigate('/profile/1')}
+              className="btn btn-accent"
+            >
+              Profile Page
+            </Button>
             <Button
               onClick={() => navigate('/dashboard')}
               className="btn btn-accent m-1"
