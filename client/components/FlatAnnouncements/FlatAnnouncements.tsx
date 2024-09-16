@@ -16,7 +16,10 @@ export default function FlatAnnouncements({ flatId }: Props) {
   if (isLoading) {
     return (
       <>
-        <div className="skeleton m-8 mt-16 h-44 max-w-full bg-secondary"></div>
+        <div
+          className="skeleton m-8 mt-16 h-44 max-w-full bg-secondary"
+          data-testid="announcement-skeleton"
+        ></div>
         <div className="skeleton m-8 h-44 max-w-full bg-secondary"></div>
         <div className="skeleton m-8 h-44 max-w-full bg-secondary"></div>
         <div className="skeleton m-8 h-44 max-w-full bg-secondary"></div>
@@ -30,6 +33,8 @@ export default function FlatAnnouncements({ flatId }: Props) {
   }
 
   if (announcements) {
+    console.log(announcements)
+
     return (
       <div className="flex flex-col justify-center">
         <ul>

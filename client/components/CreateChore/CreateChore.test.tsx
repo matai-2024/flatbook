@@ -11,7 +11,7 @@ describe('CRUD operations', () => {
       .post('/api/v1/chores/1')
       .reply(200, [4])
 
-    const screen = renderWithQuery(<CreateChore id={'1'} />)
+    const screen = renderWithQuery(<CreateChore flatId={'1'} />)
     const { user } = screen
 
     const getChoreHeader = await screen.getByText(/Add a New Chore/i)

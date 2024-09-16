@@ -46,7 +46,7 @@ describe('ChoresList', () => {
         },
       ])
 
-    const screen = renderWithQuery(<ChoresList id={'1'} />)
+    const screen = renderWithQuery(<ChoresList flatId={'1'} />)
     await waitForElementToBeRemoved(() => screen.getByText(/Loading.../i))
 
     const chore1 = await screen.findByText('chore1')
