@@ -7,7 +7,6 @@ import {
 import App from './components/App'
 import LandingPage from './pages/LandingPage'
 import Dashboard from './pages/Dashboard/Dashboard'
-import DumbDashboard from './components/DumbDashboard'
 import ErrorPage from './pages/ErrorPage'
 
 export const routes = createRoutesFromElements(
@@ -19,8 +18,6 @@ export const routes = createRoutesFromElements(
       element={<Dashboard />}
       handle={'Flat Dashboard'}
     />
-    {/* TODO: Update with real dashboard component and path */}
-    <Route path="/chores/:id" element={<DumbDashboard />} />
   </Route>,
 )
 
