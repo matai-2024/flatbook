@@ -5,9 +5,9 @@ import { ChoreData } from '../../../types/Chore'
 import { useState } from 'react'
 
 interface Props {
-  id: string
+  flatId: string
 }
-const handleTodaysDate = () => {
+export const handleTodaysDate = () => {
   // zod .date() expects a valid ISO date i.e., YYYY-MM-DD
   const date = new Date()
   const day = String(date.getDate()).padStart(2, '0') // Get the day and pad with zero if needed
@@ -17,9 +17,9 @@ const handleTodaysDate = () => {
 }
 
 // currently accepts id(flatid) from choreslist url, will need to be replaced by dashboard url
-export default function AddChore({ id }: Props) {
+export default function AddChore({ flatId }: Props) {
   const defaultForm: ChoreData = {
-    flatId: +id,
+    flatId: +flatId,
     title: '',
     description: '',
     priority: '0',
@@ -30,7 +30,7 @@ export default function AddChore({ id }: Props) {
 
   const [formData, setFormData] = useState(defaultForm)
 
-  const createChore = useCreateChore(id)
+  const createChore = useCreateChore(flatId)
   const { isPending } = createChore
   const handleChange: React.ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
