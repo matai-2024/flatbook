@@ -14,7 +14,11 @@ export default function UserSidebar(props: Props) {
         <div className="relative mx-auto h-52 w-52">
           <AvatarIcon
             className="h-full w-full rounded-full object-cover ring-4 ring-accent"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src={
+              profile.profilePhoto
+                ? `${profile.profilePhoto}`
+                : 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'
+            }
           />
           <div className="absolute -bottom-2 left-[9rem] h-8 w-8 rounded-full border-2 border-base-100 bg-green-500 shadow-md" />
         </div>
