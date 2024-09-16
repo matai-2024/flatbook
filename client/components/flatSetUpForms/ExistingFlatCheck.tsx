@@ -4,7 +4,7 @@ import { FaHouseUser, FaKey } from 'react-icons/fa'
 import { FlatFormProps } from '../../../models/forms.ts'
 
 //Joining or creating?
-export default function FlatFormPage1({ updateFields }: FlatFormProps) {
+export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
   updateFields
 
   return (

@@ -1,9 +1,9 @@
 import { FormEvent, useState } from 'react'
-import FlatFormPage1 from '../components/flatSetUpForms/FlatFormPage1'
+import ExistingFlatCheck from '../components/flatSetUpForms/ExistingFlatCheck'
 // import { useNavigate } from 'react-router-dom'
 // import { useAuth0 } from '@auth0/auth0-react'
-import useForm from '../hooks/useForm'
-import FlatFormPage2 from '../components/flatSetUpForms/FlatFormPage2'
+import useFormStep from '../hooks/useFormStep'
+import FlatSetUpDetails from '../components/flatSetUpForms/FlatSetUpDetails'
 import { FlatFormProps } from '../../models/forms'
 import FlatFormPage3 from '../components/flatSetUpForms/FlatFormPage3'
 import FlatFormPage4 from '../components/flatSetUpForms/FlatFormPage4'
@@ -36,9 +36,17 @@ export default function FlatSignUpForm() {
     })
   }
 
-  const { step, isFirstStep, isLastStep, back, next } = useForm([
-    <FlatFormPage1 {...data} updateFields={updateFields} key={'form-page-1'} />,
-    <FlatFormPage2 {...data} updateFields={updateFields} key={'form-page-2'} />,
+  const { step, isFirstStep, isLastStep, back, next } = useFormStep([
+    <ExistingFlatCheck
+      {...data}
+      updateFields={updateFields}
+      key={'form-page-1'}
+    />,
+    <FlatSetUpDetails
+      {...data}
+      updateFields={updateFields}
+      key={'form-page-2'}
+    />,
     <FlatFormPage3 {...data} updateFields={updateFields} key={'form-page-2'} />,
     <FlatFormPage4 {...data} updateFields={updateFields} key={'form-page-4'} />,
   ])

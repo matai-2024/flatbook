@@ -39,18 +39,7 @@ router.post('/', async (req, res, next) => {
     }
 
     const id = await db.addFlat(form)
-router.post('/', checkJwt, async (req: JwtRequest, res, next) => {
-  if (!req.auth?.sub) {
-    res.sendStatus(StatusCodes.UNAUTHORIZED)
-    return
-  }
-
-  try {
-    const { address, name, phone }: Flat = req.body
-    const id = await db.addFlat({ address, name, phone })
-    res
-      .setHeader('Location', `${req.baseUrl}/${id}`)
-      .sendStatus(StatusCodes.CREATED)
+    res.json(id)
   } catch (err) {
     next(err)
   }
