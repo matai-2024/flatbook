@@ -1,5 +1,5 @@
 import db from './connection.ts'
-import { Flat, FlatData } from '../../models/flat.ts'
+import { Flat, FlatData } from '../../types/Flat.ts'
 
 export async function getAllFlats() {
   const flat = await db('flats').select()
