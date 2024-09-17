@@ -12,7 +12,7 @@ export async function seed(knex) {
       lastName: 'Tavita',
       nickName: 'LitFlyingMonkey',
       about:
-        'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'Currently getting my certificate in Applied Software Development at Dev Academy Aotearoa. My wealth of experience has allowed me to foster and grow both my technical and people skills. I have a well-packed tool-kit from working in different industries, and my unique background allows me to bring a fresh perspective to every role. Much like my life and work experience, I have a diverse and wide-ranging set of interests. Im always up for trying new things and looking into the next course or hobby to jump into and explore. Im always looking to grow, being challenged and stepping outside of my comfort zone drives me.',
       email: 'aliciatavita@example.com',
       mobile: '+6421-111-111',
       profilePhoto:

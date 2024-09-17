@@ -44,7 +44,7 @@ export default function UserSidebar(props: Props) {
                   href={`https://www.instagram.com/${profile.socialMedia}`}
                   className="font-medium"
                 >
-                  Instagram
+                  Facebook
                 </a>
               </div>
             </li>
