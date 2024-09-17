@@ -93,6 +93,7 @@ function Dashboard() {
 
   if ((flatId !== undefined && flatId === null) || flatId.flatId === 0) {
     // The user doesn't have a flat yet
+    // TODO: to be styled
     return (
       <div className="container">
         <p>Looks like you have not had a flat.</p>
