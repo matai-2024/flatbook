@@ -24,8 +24,6 @@ export const routes = createRoutesFromElements(
       element={<ProtectedComponent component={Dashboard} />}
       handle={'Flat Dashboard'}
     />
-    {/* DumbDashboard for testing */}
-    {/* <Route path="/chores/:flatId" element={<DumbDashboard />} /> */}
     <Route
       path="flat_setup"
       element={<ProtectedComponent component={FlatSignUpForm} />}

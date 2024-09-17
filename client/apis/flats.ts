@@ -1,12 +1,11 @@
 import request from 'superagent'
-import { Flat } from '../../types/Flat'
-import { FlatData } from '../../types/Flat'
+import { Flat, FlatData } from '../../types/Flat'
 
 const baseUrl = '/api/v1/flats/flats'
 
 export async function getFlatById(
   token: string,
-  flatId: number,
+  flatId: string,
 ): Promise<Flat> {
   const res = await request
     .get(`${baseUrl}/${flatId}`)
