@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // @vitest-environment jsdom
 import { beforeAll, describe, expect, it, vi } from 'vitest'
-import { renderWithQueryAndRouter, renderWithRouter } from '../../test-utils'
+import { renderWithQueryAndRouter } from '../../test-utils'
 
 import nock from 'nock'
 import { useAuth0 } from '@auth0/auth0-react'
