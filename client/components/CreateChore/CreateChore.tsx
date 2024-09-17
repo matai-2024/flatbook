@@ -3,6 +3,7 @@ import TextBox from '../UI/TextBox'
 import Button from '../UI/Button'
 import { ChoreData } from '../../../types/Chore'
 import { useState } from 'react'
+import { LocalSpinner } from '../UI/WaitingSpinners'
 
 interface Props {
   flatId: string
@@ -45,7 +46,7 @@ export default function CreateChore({ flatId }: Props) {
   }
 
   if (chores.isLoading) {
-    return <p data-testid={`create-chore-pending`}>Loading...</p>
+    return <LocalSpinner loadingText='Loading chore form...' testId='create-chore-pending' />
   }
 
   if (chores.isError) {
