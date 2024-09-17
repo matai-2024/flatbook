@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ChoresList from '../../components/ChoresList/ChoresList'
 import CreateAnnouncement from '../../components/CreateAnnouncement/CreateAnnouncement'
 import CreateChore from '../../components/CreateChore/CreateChore'
@@ -7,11 +7,30 @@ import Sidebar from './Sidebar'
 import ErrorPage from '../ErrorPage'
 import ShopList from '../../components/ShoppingList/ShopList'
 import Bills from '../../components/Bills/Bills'
+import { useEffect } from 'react'
+import { useGetFlatByAuthId } from '../../hooks/useFlats'
 
 function Dashboard() {
-  const { flatId } = useParams()
+  const { data: flatId, isLoading, isError } = useGetFlatByAuthId()
 
-  if (!flatId) {
+  const navigate = useNavigate()
+
+  //If flatID is undefined, null or the default value (0), redirect to flat_setup
+  useEffect(() => {
+    if (isLoading) {
+      return
+    }
+    if ((flatId !== undefined && flatId === null) || flatId.flatId === 0) {
+      console.log(flatId)
+      navigate(`/flat_setup`, { replace: true })
+    }
+  }, [flatId, isLoading, navigate])
+
+  if (isLoading) {
+    return <>Loading</>
+  }
+
+  if (isError) {
     return <ErrorPage />
   }
 

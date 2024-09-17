@@ -1,13 +1,21 @@
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { User } from '../../types/User.ts'
-import request from 'superagent'
+import { addUserProfile } from '../apis/users.ts'
 
-export default function useUserProfile(id: string) {
-  return useQuery({
-    queryKey: ['users'],
-    queryFn: async () => {
-      const res = await request.get(`/api/v1/users/${id}`)
-      return res.body as User[]
+interface Props {
+  data: User
+  token: string
+}
+
+export default function useUserProfile() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: ({ data, token }: Props) => {
+      const id = addUserProfile(data, token)
+      return id
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['profiles'] })
     },
   })
 }
