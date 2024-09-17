@@ -30,7 +30,7 @@ export default function UserProfilePage() {
                   <h1 className="py-2 text-5xl font-bold text-primary">
                     {user.firstName} {user.lastName}
                   </h1>
-                  <div className="text-2xl italic text-secondary">
+                  <div className="text-2xl italic text-info">
                     {user.nickName}
                   </div>
                 </div>

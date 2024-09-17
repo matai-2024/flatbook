@@ -74,7 +74,7 @@ function ChatsExample() {
 
 function Dashboard() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral">
+    <div className="min-h-screen w-full bg-base-100">
       <div className="flex h-full w-full flex-col md:flex-row">
         <div className="flex w-full flex-col space-y-8 p-6 md:w-1/4 md:px-8">
           <Sidebar />
@@ -83,14 +83,14 @@ function Dashboard() {
         <div className="flex w-full flex-col space-y-8 p-6 md:w-4/5">
           <div className="flex h-full w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
             <div className="flex w-full flex-col space-y-8 md:w-1/2">
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <div className="flex-grow rounded-xl bg-white p-6">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Announcements
                 </h3>
                 <CreateAnnouncement flatId="1" />
                 <FlatAnnouncements flatId="1" />
               </div>
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <div className="flex-grow rounded-xl bg-white p-6">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Events
                 </h3>
@@ -100,7 +100,7 @@ function Dashboard() {
             </div>
 
             <div className="flex w-full flex-col space-y-8 md:w-1/2">
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <div className="flex-grow rounded-xl bg-white p-6">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Chores
                 </h3>
@@ -110,7 +110,7 @@ function Dashboard() {
                 </div>
               </div>
 
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <div className="flex-grow rounded-xl bg-white p-6">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Shopping List
                 </h3>
@@ -118,7 +118,7 @@ function Dashboard() {
                 {/* Todo: replace with real Shopping List component */}
               </div>
 
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
+              <div className="flex-grow rounded-xl bg-white p-6">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Bills
                 </h3>
