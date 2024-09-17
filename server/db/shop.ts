@@ -1,10 +1,13 @@
 import { ShoppingItem, ShoppingItemData } from '../../types/Shop.ts'
 import db from './connection.ts'
 
+// currently using flatId such that one flat has one shopping list
+// to add more shopping lists, a join table would be required (stretch goal)
+// e.g, .join('shopping_items', 'shopping_items.id', '=', 'shopping_lists.id')
+// TODO: create join table from shopping_items and shopping_lists
 export async function getShoppingListItems(shoppingListId: number) {
   const shoppingLists: ShoppingItem[] = await db('shopping_items')
     .where('shopping_list_id', '=', shoppingListId)
-    // .join('shopping_items', 'shopping_items.id', '=', 'shopping_lists.id')
     .select(
       'id',
       'shopping_list_id as shoppingListId',
@@ -30,8 +33,6 @@ export async function addShoppingListItem(data: ShoppingItemData) {
 }
 
 export async function delShoppingListItem(flatId: number, itemId: string) {
-  // currently using flatId such that one flat has one shopping list
-  // to add more shopping lists, a join table would be required (stretch goal)
   return await db('shopping_items')
     .where('shopping_list_id', '=', flatId)
     .where('id', '=', itemId)

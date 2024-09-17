@@ -1,5 +1,5 @@
 import { ShoppingItemData } from '../../../types/Shop'
-import useShop from '../../hooks/useShoppingList'
+import useShop from '../../hooks/useShopList'
 
 interface Props {
   setNewItem: React.Dispatch<

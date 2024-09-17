@@ -1,5 +1,6 @@
 import { ShoppingItem } from '../../../types/Shop'
-import useShop from '../../hooks/useShoppingList'
+import useShop from '../../hooks/useShopList'
+import { LocalSpinner } from '../UI/WaitingSpinners'
 import AddItem from './AddItem'
 import DelButton from './DelButton'
 
@@ -11,7 +12,12 @@ export default function ShopList({ flatId }: Props) {
   const { data: shopList, isLoading, isError, error } = useShop(flatId)
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return (
+      <LocalSpinner
+        loadingText="Loading the shopping list..."
+        testId="shop-list-loading"
+      />
+    )
   }
 
   if (isError || !shopList) {
