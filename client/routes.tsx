@@ -15,8 +15,6 @@ import ErrorPage from './pages/ErrorPage'
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
     <Route index element={<LandingPage />} />
-    {/* TODO: Update with real dashboard component and path */}
-    <Route path="/chores/:id" element={<DumbDashboard />} />
     <Route
       path="signup"
       element={<ProtectedComponent component={SignUpForm} />}
@@ -34,8 +32,6 @@ export const routes = createRoutesFromElements(
       element={<Dashboard />}
       handle={'Flat Dashboard'}
     />
-    {/* DumbDashboard for testing */}
-    {/* <Route path="/chores/:flatId" element={<DumbDashboard />} /> */}
   </Route>,
 )
 

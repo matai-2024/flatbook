@@ -4,10 +4,22 @@ import { beforeAll, describe, it, expect } from 'vitest'
 import nock from 'nock'
 import ChoresList from './ChoresList'
 import { waitForElementToBeRemoved } from '@testing-library/react'
+import { vi } from 'vitest'
 
 beforeAll(() => {
   nock.disableNetConnect()
 })
+
+vi.mock('@auth0/auth0-react', () => ({
+  useAuth0: () => ({
+    user: {
+      sub: 'auth0|123',
+      email: '',
+    },
+    isAuthenticated: true,
+    getAccessTokenSilently: vi.fn(() => 'token'),
+  }),
+}))
 
 describe('ChoresList', () => {
   it('shows a list of chores from flat1', async () => {

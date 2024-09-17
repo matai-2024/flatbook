@@ -5,6 +5,7 @@ import flatRoutes from './routes/flats.ts'
 import choreRoutes from './routes/chores.ts'
 import announcementRoutes from './routes/announcements.ts'
 import userRoutes from './routes/users.ts'
+import shopRoutes from './routes/shop.ts'
 
 const server = express()
 
@@ -14,6 +15,7 @@ server.use('/api/v1/flats', flatRoutes)
 server.use('/api/v1/chores', choreRoutes)
 server.use('/api/v1/announcements', announcementRoutes)
 server.use('/api/v1/users', userRoutes)
+server.use('/api/v1/shop', shopRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))

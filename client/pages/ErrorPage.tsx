@@ -1,13 +1,10 @@
-import { useNavigate } from 'react-router-dom'
-import Nav from '../components/Nav/Nav'
-import Footer from '../components/Footer'
 import { GiLighthouse } from 'react-icons/gi'
+import { useNavigate } from 'react-router-dom'
 
 export default function ErrorPage() {
   const navigate = useNavigate()
   return (
     <>
-      <Nav />
       <div className="flex max-h-full  min-h-screen flex-col">
         <div className="flex max-h-full min-h-screen flex-col  items-center py-14">
           <p className="flex items-center justify-center text-6xl font-bold">
@@ -25,7 +22,6 @@ export default function ErrorPage() {
           </button>
         </div>
       </div>
-      <Footer />
     </>
   )
 }
