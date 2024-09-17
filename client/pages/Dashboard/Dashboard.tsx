@@ -139,7 +139,11 @@ function Dashboard() {
                   <br></br>
                   Shopping List
                 </h3>
-                <ShopList flatId={flatId} />
+                <div className="flex flex-row space-x-4">
+                  <div className="flex-grow">
+                    <ShopList flatId={flatId} />
+                  </div>
+                </div>
               </div>
               <div />
             </div>
