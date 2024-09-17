@@ -1,5 +1,6 @@
 import useChores from '../../hooks/useChores'
 import { Chore } from '../../../types/Chore'
+import { LocalSpinner } from '../UI/WaitingSpinners'
 
 interface Props {
   flatId: string
@@ -9,7 +10,7 @@ export default function ChoresList({ flatId }: Props) {
   const { data: chores, isLoading, isError, error } = useChores(flatId)
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <LocalSpinner loadingText='Loading the chores...' testId='chores-list-loading' />
   }
 
   if (isError || !chores) {
