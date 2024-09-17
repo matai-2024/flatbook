@@ -21,8 +21,9 @@ function Nav() {
         </IfNotAuthenticated>
         <IfAuthenticated>
           <div>
+            {/* TODO - Change dashboard route to be dynamic */}
             <Button
-              onClick={() => navigate('/dashboard')}
+              onClick={() => navigate('/dashboard/1')}
               className="btn btn-accent"
             >
               Flat Dashboard
