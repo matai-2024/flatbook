@@ -1,8 +1,7 @@
 function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-white py-12">
+    <footer className="bottom-0 w-full border-t border-gray-200 bg-white py-12">
       <div className="container mx-auto flex flex-row space-y-8 px-12 lg:space-x-8 lg:space-y-0">
-        {/* Branding and Description */}
         <div className="w-full lg:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800">Flatbook</h2>
           <p className="mt-4 text-base text-gray-600">
@@ -17,7 +16,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* Resources Section */}
         <div className="w-full px-16 lg:w-auto">
           <h3 className="text-lg font-semibold text-gray-800">Resources</h3>
           <ul className="mt-4 space-y-2 text-gray-600">
@@ -36,10 +34,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Navigation Section */}
         <div className="w-full px-10 lg:w-auto">
-          {' '}
-          {/* Increased the left shift */}
           <h3 className="text-lg font-semibold text-gray-800">Navigation</h3>
           <ul className="mt-4 space-y-2 text-gray-600">
             <li>
