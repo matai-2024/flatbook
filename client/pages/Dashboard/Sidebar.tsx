@@ -2,8 +2,8 @@ import AvatarIcon from '../../components/UI/AvatarIcon'
 
 export default function Sidebar() {
   return (
-    <div className="sidebar rounded-xl bg-white p-12 shadow-xl">
-      <div>
+    <div className="sidebar h-full rounded-xl bg-white p-12 shadow-xl">
+      <div className="flex-grow">
         <div className="">
           <h2 className="mb-4 text-center text-5xl font-bold text-primary">
             SweetHome
