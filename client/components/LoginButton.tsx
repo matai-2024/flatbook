@@ -5,7 +5,16 @@ const LoginButton = () => {
   const { loginWithRedirect } = useAuth0()
 
   return (
-    <Button onClick={() => loginWithRedirect()} data-testid="loginButton">
+    <Button
+      onClick={() =>
+        loginWithRedirect({
+          authorizationParams: {
+            redirect_uri: `${window.location.origin}/dashboard`,
+          },
+        })
+      }
+      data-testid="loginButton"
+    >
       Log In
     </Button>
   )

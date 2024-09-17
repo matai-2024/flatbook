@@ -4,9 +4,12 @@
 export async function up(knex) {
   return knex.schema.createTable('flats', (table) => {
     table.increments('id')
-    table.string('name')
-    table.string('address')
-    table.string('phone').defaultTo(null)
+    table.string('flatAdmin')
+    table.string('title')
+    table.string('image').defaultTo(null)
+    table.string('description').defaultTo(null)
+    table.string('streetAddress')
+    table.string('createdAt')
   })
 }
 

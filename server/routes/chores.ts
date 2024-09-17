@@ -40,7 +40,7 @@ router.post('/:id', async (req, res, next) => {
     }
 
     await db.addChore(newChore)
-    res.sendStatus(200)
+    res.sendStatus(201)
   } catch (err) {
     next(err)
   }

@@ -1,8 +1,9 @@
-import useCreateChore from '../../hooks/useCreateChore'
+import useChores from '../../hooks/useChores'
 import TextBox from '../UI/TextBox'
 import Button from '../UI/Button'
 import { ChoreData } from '../../../types/Chore'
 import { useState } from 'react'
+import { LocalSpinner } from '../UI/WaitingSpinners'
 
 interface Props {
   flatId: string
@@ -17,7 +18,7 @@ export const handleTodaysDate = () => {
 }
 
 // currently accepts id(flatid) from choreslist url, will need to be replaced by dashboard url
-export default function AddChore({ flatId }: Props) {
+export default function CreateChore({ flatId }: Props) {
   const defaultForm: ChoreData = {
     flatId: +flatId,
     title: '',
@@ -29,9 +30,8 @@ export default function AddChore({ flatId }: Props) {
   }
 
   const [formData, setFormData] = useState(defaultForm)
+  const chores = useChores(flatId)
 
-  const createChore = useCreateChore(flatId)
-  const { isPending } = createChore
   const handleChange: React.ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
   > = (event) => {
@@ -41,14 +41,16 @@ export default function AddChore({ flatId }: Props) {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault()
-
-    createChore.mutateAsync(formData) // create new chore with form data
-
+    chores.addMutation.mutate(formData) // create new chore with form data
     setFormData(defaultForm) // reset form data to default values
   }
 
-  if (isPending) {
-    return <p data-testid={`create-chore-pending`}>Loading...</p>
+  if (chores.isLoading) {
+    return <LocalSpinner loadingText='Loading chore form...' testId='create-chore-pending' />
+  }
+
+  if (chores.isError) {
+    return <p>Failed {String(chores.error)}</p>
   }
 
   return (
@@ -108,6 +110,7 @@ export default function AddChore({ flatId }: Props) {
           </label>
           <input
             name="priority"
+            id="priority"
             type="range"
             min="1"
             max="10"
