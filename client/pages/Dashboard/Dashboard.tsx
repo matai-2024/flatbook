@@ -8,78 +8,10 @@ import ErrorPage from '../ErrorPage'
 import ShopList from '../../components/ShoppingList/ShopList'
 import Bills from '../../components/Bills/Bills'
 
-/* Todo: To be replaced by real widgets */
-// function WidgetExample() {
-//   return (
-//     <>
-//       <div className="card w-full bg-base-100 shadow-xl">
-//         <figure>
-//           <img
-//             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-//             alt="Shoes"
-//           />
-//         </figure>
-//         <div className="card-body">
-//           <h2 className="card-title">Shoes!</h2>
-//           <p>If a dog chews shoes whose shoes does he choose?</p>
-//           <div className="card-actions justify-end">
-//             <button className="btn btn-primary">Buy Now</button>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   )
-// }
-
-/* Todo: To be replaced by real widgets */
-// function ChatsExample() {
-//   return (
-//     <>
-//       <div className="chat chat-start">
-//         <div className="avatar chat-image">
-//           <div className="w-10 rounded-full">
-//             <img
-//               alt="Tailwind CSS chat bubble component"
-//               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-//             />
-//           </div>
-//         </div>
-//         <div className="chat-bubble">
-//           It was said that you would, destroy the Sith, not join them.
-//         </div>
-//       </div>
-//       <div className="chat chat-start">
-//         <div className="avatar chat-image">
-//           <div className="w-10 rounded-full">
-//             <img
-//               alt="Tailwind CSS chat bubble component"
-//               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-//             />
-//           </div>
-//         </div>
-//         <div className="chat-bubble">
-//           It was you who would bring balance to the Force
-//         </div>
-//       </div>
-//       <div className="chat chat-start">
-//         <div className="avatar chat-image">
-//           <div className="w-10 rounded-full">
-//             <img
-//               alt="Tailwind CSS chat bubble component"
-//               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-//             />
-//           </div>
-//         </div>
-//         <div className="chat-bubble">Not leave it in Darkness</div>
-//       </div>
-//     </>
-//   )
-// }
-
 function Dashboard() {
   const { flatId } = useParams()
 
-  if (flatId) {
+  if (!flatId) {
     return <ErrorPage />
   }
 
