@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-import crystalColor from '../../assets/backgroundTextures/graident.png'
-import crystalBump from '../../assets/backgroundTextures/gradient_background.jpeg'
+import crystalColor from '../../assets/backgroundTextures/gradient.jpeg'
+import crystalBump from '../../assets/backgroundTextures/gradient.jpeg'
 export default function AnimatedBackground() {
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(
@@ -47,9 +47,8 @@ export default function AnimatedBackground() {
 
   camera.position.z = 2
 
-  sphere.rotation.y += 0
   function animate() {
-    sphere.rotation.y += 0.01
+    sphere.rotation.x += 0.01
     renderer.render(scene, camera)
   }
   renderer.setClearColor(new THREE.Color('rgb(41, 14, 24)'))

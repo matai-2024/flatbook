@@ -10,7 +10,7 @@ function AppLayout() {
 
   return (
     <>
-      <section className="bg-transparent!">
+      <section>
         <header></header>
         <main>
           <Outlet />

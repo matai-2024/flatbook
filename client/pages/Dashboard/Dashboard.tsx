@@ -82,7 +82,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-36">
+    <div className="min-h-screen w-full py-36">
       <div className="flex h-full w-full flex-col md:flex-row">
         {/* Sidebar */}
         <div className="w-full p-6 md:w-1/4 md:p-8">

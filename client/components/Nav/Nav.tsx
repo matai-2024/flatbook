@@ -33,7 +33,7 @@ function Nav() {
               Profile Page
             </Button>
             <Button
-              onClick={() => navigate('/dashboard')}
+              onClick={() => navigate('/dashboard/1')}
               className="btn btn-accent m-1"
             >
               Flat Dashboard

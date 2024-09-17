@@ -8,11 +8,9 @@ function App() {
   return (
     <>
       <AnimatedBackground />
-      <div className="relative z-20 bg-white opacity-50">
-        <Nav />
-        <AppLayout />
-        <Footer />
-      </div>
+      <Nav />
+      <AppLayout />
+      <Footer />
     </>
   )
 }
