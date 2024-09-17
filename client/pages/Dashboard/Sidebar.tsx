@@ -1,3 +1,4 @@
+import Calendar from '../../components/Calendar/Calendar'
 import AvatarIcon from '../../components/UI/AvatarIcon'
 
 export default function Sidebar() {
@@ -19,6 +20,10 @@ export default function Sidebar() {
           />
           <hr className="my-8 h-px border-0 bg-info" />
         </div>
+        <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
+          Flat Calendar
+        </h2>
+        <Calendar />
         <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
           Flatties
         </h2>

@@ -32,49 +32,6 @@ import Bills from '../../components/Bills/Bills'
 // }
 
 /* Todo: To be replaced by real widgets */
-function ChatsExample() {
-  return (
-    <>
-      <div className="chat chat-start">
-        <div className="avatar chat-image">
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS chat bubble component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            />
-          </div>
-        </div>
-        <div className="chat-bubble">
-          It was said that you would, destroy the Sith, not join them.
-        </div>
-      </div>
-      <div className="chat chat-start">
-        <div className="avatar chat-image">
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS chat bubble component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            />
-          </div>
-        </div>
-        <div className="chat-bubble">
-          It was you who would bring balance to the Force
-        </div>
-      </div>
-      <div className="chat chat-start">
-        <div className="avatar chat-image">
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS chat bubble component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            />
-          </div>
-        </div>
-        <div className="chat-bubble">Not leave it in Darkness</div>
-      </div>
-    </>
-  )
-}
 
 function Dashboard() {
   const { flatId } = useParams()
@@ -145,17 +102,6 @@ function Dashboard() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="max-auto container mb-5">
-              <h3 className="py-5 text-center text-2xl font-bold">
-                Shopping List
-              </h3>
-              <ShopList flatId={flatId} />
-            </div>
-            <div className="max-auto container mb-5">
-              <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
-              <Bills /> {/* Todo: replace with real Bills component */}
-              <div />
             </div>
           </div>
         </div>
