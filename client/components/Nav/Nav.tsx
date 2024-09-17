@@ -12,7 +12,7 @@ function Nav() {
   const isFetching = useIsFetching()
 
   return (
-    <div className="bg-base100 navbar absolute drop-shadow-xl">
+    <div className="bg-base100 navbar relative drop-shadow-xl">
       <div className="ml-8 flex-1">
         <button onClick={() => navigate('/')}>
           <img src={logo} alt="logo" className="w- btn btn-ghost h-28" />
@@ -25,6 +25,7 @@ function Nav() {
         </IfNotAuthenticated>
         <IfAuthenticated>
           <div>
+            {/* todo-change profile button to be dynamic */}
             {/* TODO - Change dashboard route to be dynamic */}
             <Button
               onClick={() => navigate('/dashboard/1')}

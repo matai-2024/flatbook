@@ -9,7 +9,7 @@ export default function UserSidebar(props: Props) {
   const profile = props.data
 
   return (
-    <div className="rounded-xl bg-gradient-to-b from-neutral to-base-100 p-8 shadow-xl">
+    <div className="rounded-xl bg-white p-8 shadow-xl">
       <div>
         <div className="relative mx-auto h-52 w-52">
           <AvatarIcon
@@ -44,7 +44,7 @@ export default function UserSidebar(props: Props) {
                   href={`https://www.instagram.com/${profile.socialMedia}`}
                   className="font-medium"
                 >
-                  Instagram
+                  Facebook
                 </a>
               </div>
             </li>

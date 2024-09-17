@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 import ProtectedComponent from './components/ProtectedComponent'
 import App from './components/App'
-import LandingPage from './pages/LandingPage'
+import LandingPage from './pages/LandingPage/LandingPage'
 import SignUpForm from './pages/SignUpForm'
 import Dashboard from './pages/Dashboard/Dashboard'
 import ProfilePage from './pages/UserProfilePage/UserProfilePage'

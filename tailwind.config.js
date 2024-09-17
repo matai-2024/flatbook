@@ -5,11 +5,11 @@ export default {
     themes: [
       {
         mytheme: {
-          primary: '#E43D12',
+          primary: '#cb2f43',
 
           secondary: '#57534e',
 
-          accent: '#E98074',
+          accent: '#e2625e',
 
           neutral: '#D8C3A5',
 
@@ -22,7 +22,7 @@ export default {
           warning: '#fde047',
 
           error: '#881337',
-          'base-content': '#be123d',
+          'base-content': '#cb2f43',
           'primary-content': '#ffff',
           'secondary-content': '#ffff',
           'accent-content': '#ffff',

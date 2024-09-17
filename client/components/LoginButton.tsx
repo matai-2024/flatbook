@@ -4,6 +4,15 @@ import Button from './UI/Button'
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0()
 
+  function handleLogin() {
+    loginWithRedirect({
+      authorizationParams: {
+        screen_hint: 'login',
+        redirect_uri: `${window.location.origin}/dashboard`,
+      },
+    })
+  }
+
   return (
     <Button
       onClick={() =>

@@ -84,32 +84,66 @@ function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen w-full py-36">
-      <div className="flex h-full w-full flex-col md:flex-row">
-        {/* Sidebar */}
-        <div className="w-full p-6 md:w-1/4 md:p-8">
+    <div className="w-full bg-base-100 p-8">
+      <div className="flex w-full flex-col md:flex-row">
+        <div className="w-full flex-col space-y-8 md:w-1/3 md:px-8">
           <Sidebar />
         </div>
-        <div className="container flex flex-row">
-          <div className="container flex flex-col">
-            <div className="max-auto container mb-5 min-w-96 px-5">
-              <h3 className="py-5 text-center text-2xl font-bold">
-                Announcements
-              </h3>
-              <CreateAnnouncement flatId={flatId} />
-              <FlatAnnouncements flatId={flatId} />
+
+        <div className="w-full flex-col space-y-8">
+          <div className="flex w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
+            {/* Left Column */}
+            <div className="flex w-full flex-col space-y-3">
+              {/* Announcements */}
+              <div className="rounded-xl bg-white">
+                <h3 className="m-2 text-center text-2xl font-bold text-primary">
+                  <br></br>
+                  Announcements
+                </h3>
+                <CreateAnnouncement flatId={flatId} />
+                <FlatAnnouncements flatId={flatId} />
+                <br></br>
+              </div>
+              <div />
+              {/* Chores */}
+              <div className="flex w-full flex-col space-y-8">
+                <div className="flex-grow rounded-xl bg-white p-6">
+                  <h3 className="m-2 text-center text-2xl font-bold text-primary">
+                    Chores
+                  </h3>
+                  <div className="flex flex-row space-x-4">
+                    <ChoresList flatId={flatId} />
+                    <CreateChore flatId={flatId} />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="max-auto container mb-5 min-w-96 px-5">
-              <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
-              <ChatsExample /> {/* Todo: replace with real Events component */}
-            </div>
-          </div>
-          <div className="container flex flex-col">
-            <div className="max-auto container mb-5">
-              <h3 className="py-5 text-center text-2xl font-bold">Chores</h3>
-              <div className="container flex flex-row space-x-1">
-                <CreateChore flatId={flatId} />
-                <ChoresList flatId={flatId} />
+            {/* Right Column */}
+            <div className="flex w-full flex-col space-y-5">
+              {/* Bills */}
+              <div className="flex w-full flex-col space-y-8">
+                <div className="flex-grow rounded-xl bg-white p-6">
+                  <h3 className="m-2 text-center text-2xl font-bold text-primary">
+                    Bills
+                  </h3>
+                  <div className="flex flex-row space-x-4">
+                    <div className="flex-grow">
+                      <Bills />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Shopping List */}
+              <div className="rounded-xl bg-white">
+                <h3 className="m-2 text-center text-2xl font-bold text-primary">
+                  <br></br>
+                  Shopping List
+                </h3>
+                <div className="flex flex-row space-x-4">
+                  <div className="flex-grow">
+                    <ShopList flatId={flatId} />
+                  </div>
+                </div>
               </div>
             </div>
             <div className="max-auto container mb-5">
@@ -121,6 +155,7 @@ function Dashboard() {
             <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
               <Bills /> {/* Todo: replace with real Bills component */}
+              <div />
             </div>
           </div>
         </div>
