@@ -41,7 +41,7 @@ function LandingPage() {
           >
             <motion.h1
               variants={flatBookWords}
-              className="landing-page mt-20 bg-gradient-to-br from-primary via-rose-700 to-primary bg-clip-text leading-none text-transparent"
+              className="landing-page mt-20 bg-gradient-to-br from-primary via-rose-700 to-rose-900 bg-clip-text leading-none text-transparent"
             >
               FLAT
             </motion.h1>

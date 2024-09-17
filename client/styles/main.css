@@ -11,6 +11,16 @@ body {
   justify-content: center;
 }
 
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+}
+
 .landing-page {
   /* background-color: aqua; */
   font-family: 'Playfair Display', serif;

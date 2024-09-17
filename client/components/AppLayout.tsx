@@ -10,7 +10,7 @@ function AppLayout() {
 
   return (
     <>
-      <section className="tailwind placeholder">
+      <section className="bg-transparent!">
         <header></header>
         <main>
           <Outlet />
