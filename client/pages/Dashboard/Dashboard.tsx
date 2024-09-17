@@ -11,7 +11,7 @@ import Bills from '../../components/Bills/Bills'
 function Dashboard() {
   const { flatId } = useParams()
 
-  if (flatId) {
+  if (!flatId) {
     return <ErrorPage />
   }
 
