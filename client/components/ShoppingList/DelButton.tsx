@@ -13,7 +13,11 @@ export default function DelButton({ flatId, itemId }: Props) {
   }
 
   return (
-    <button onClick={handleDelItem} className="btn btn-square btn-outline">
+    <button
+      onClick={handleDelItem}
+      className="btn btn-square btn-outline"
+      data-testid={`delete-item-button`}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
