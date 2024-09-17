@@ -5,6 +5,7 @@ import CreateChore from '../../components/CreateChore/CreateChore'
 import FlatAnnouncements from '../../components/FlatAnnouncements/FlatAnnouncements'
 import Sidebar from './Sidebar'
 import ErrorPage from '../ErrorPage'
+import ShopList from '../../components/ShoppingList/ShopList'
 
 /* Todo: To be replaced by real widgets */
 function WidgetExample() {
@@ -113,8 +114,7 @@ function Dashboard() {
               <h3 className="py-5 text-center text-2xl font-bold">
                 Shopping List
               </h3>
-              <WidgetExample />
-              {/* Todo: replace with real Shopping List component */}
+              <ShopList flatId={flatId} />
             </div>
             <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
