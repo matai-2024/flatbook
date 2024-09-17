@@ -9,6 +9,7 @@ import LandingPage from './pages/LandingPage'
 import SignUpForm from './pages/SignUpForm'
 import Dashboard from './pages/Dashboard/Dashboard'
 import ErrorPage from './pages/ErrorPage'
+import FlatSignUpForm from './pages/FlatSignUpForm'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
@@ -22,6 +23,19 @@ export const routes = createRoutesFromElements(
       path="dashboard/:flatId"
       element={<ProtectedComponent component={Dashboard} />}
       handle={'Flat Dashboard'}
+    />
+    {/* DumbDashboard for testing */}
+    {/* <Route path="/chores/:flatId" element={<DumbDashboard />} /> */}
+    <Route
+      path="flat_setup"
+      element={<ProtectedComponent component={FlatSignUpForm} />}
+      handle={'Flat Set Up'}
+    />
+    {/* TODO-change component to UserProfile */}
+    <Route
+      path="users/:id"
+      element={<ProtectedComponent component={LandingPage} />}
+      handle={'Users'}
     />
   </Route>,
 )
