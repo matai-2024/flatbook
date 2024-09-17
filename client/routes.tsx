@@ -17,16 +17,6 @@ export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
     <Route index element={<LandingPage />} />
     <Route
-      path="dashboard" // TODO: add '/:flatId' to path
-      // element={<ProtectedComponent component={Dashboard} />} // TODO: add auth0
-      element={<Dashboard />}
-      handle={'Flat Dashboard'}
-    />
-    {/* DumbDashboard for testing */}
-    {/* <Route path="/chores/:flatId" element={<DumbDashboard />} /> */}
-    {/* TODO: Update with real dashboard component and path */}
-    <Route path="/chores/:id" element={<DumbDashboard />} />
-    <Route
       path="signup"
       element={<ProtectedComponent component={SignUpForm} />}
       handle={'Sign Up'}
@@ -38,9 +28,8 @@ export const routes = createRoutesFromElements(
       handle={'Profile Page'}
     />
     <Route
-      path="dashboard" // TODO: add '/:flatId' to path
-      // element={<ProtectedComponent component={Dashboard} />} // TODO: add auth0
-      element={<Dashboard />}
+      path="dashboard/:flatId"
+      element={<ProtectedComponent component={Dashboard} />}
       handle={'Flat Dashboard'}
     />
     {/* DumbDashboard for testing */}

@@ -2,24 +2,28 @@ import LoginButton from '../LoginButton'
 import logo from '../../assets/flatbook-logo.png'
 import LogoutButton from '../LogoutButton'
 import Button from '../UI/Button'
-import { useAuth0 } from '@auth0/auth0-react'
 import { useNavigate } from 'react-router-dom'
+import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
+import { useIsFetching } from '@tanstack/react-query'
+import { GlobalSpinner } from '../UI/WaitingSpinners'
 
 function Nav() {
-  const { isAuthenticated } = useAuth0()
   const navigate = useNavigate()
+  const isFetching = useIsFetching()
 
   return (
     <div className="bg-base100 navbar absolute drop-shadow-xl">
       <div className="ml-8 flex-1">
         <button onClick={() => navigate('/')}>
-          <img src={logo} alt="logo" className=" w- btn btn-ghost h-28" />
+          <img src={logo} alt="logo" className="w- btn btn-ghost h-28" />
         </button>
+        {Boolean(isFetching) && <GlobalSpinner />}
       </div>
       <div className="mr-20">
-        {isAuthenticated === false ? (
+        <IfNotAuthenticated>
           <LoginButton />
-        ) : (
+        </IfNotAuthenticated>
+        <IfAuthenticated>
           <div>
             {/* todo-change profile button to be dynamic */}
             <Button
@@ -36,7 +40,7 @@ function Nav() {
             </Button>
             <LogoutButton />
           </div>
-        )}
+        </IfAuthenticated>
       </div>
     </div>
   )

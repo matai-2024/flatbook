@@ -1,14 +1,16 @@
+import { useParams } from 'react-router-dom'
 import ChoresList from '../../components/ChoresList/ChoresList'
 import CreateAnnouncement from '../../components/CreateAnnouncement/CreateAnnouncement'
-import AddChore from '../../components/CreateChore/CreateChore'
+import CreateChore from '../../components/CreateChore/CreateChore'
 import FlatAnnouncements from '../../components/FlatAnnouncements/FlatAnnouncements'
 import Sidebar from './Sidebar'
+import ErrorPage from '../ErrorPage'
 
 /* Todo: To be replaced by real widgets */
 function WidgetExample() {
   return (
     <>
-      <div className="card bg-base-100 shadow-xl">
+      <div className="card w-full bg-base-100 shadow-xl">
         <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -73,6 +75,12 @@ function ChatsExample() {
 }
 
 function Dashboard() {
+  const { flatId } = useParams()
+
+  if (!flatId) {
+    return <ErrorPage />
+  }
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-base-100 to-neutral py-36">
       <div className="flex h-full w-full flex-col md:flex-row">
@@ -80,56 +88,38 @@ function Dashboard() {
         <div className="w-full p-6 md:w-1/4 md:p-8">
           <Sidebar />
         </div>
-
-        {/* Content Area */}
-        <div className="flex w-full flex-col space-y-8 p-6 md:w-3/4 md:px-8">
-          <div className="flex h-full w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
-            {/* Left Column (Announcements, Events) */}
-            <div className="flex w-full flex-col space-y-8 md:w-1/2">
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                  Announcements
-                </h3>
-                <CreateAnnouncement flatId="1" />
-                <FlatAnnouncements flatId="1" />
-              </div>
-
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                  Events
-                </h3>
-                <ChatsExample />{' '}
-                {/* Todo: replace with real Events component */}
+        <div className="container flex flex-row">
+          <div className="container flex flex-col">
+            <div className="max-auto container mb-5 min-w-96 px-5">
+              <h3 className="py-5 text-center text-2xl font-bold">
+                Announcements
+              </h3>
+              <CreateAnnouncement flatId={flatId} />
+              <FlatAnnouncements flatId={flatId} />
+            </div>
+            <div className="max-auto container mb-5 min-w-96 px-5">
+              <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
+              <ChatsExample /> {/* Todo: replace with real Events component */}
+            </div>
+          </div>
+          <div className="container flex flex-col">
+            <div className="max-auto container mb-5">
+              <h3 className="py-5 text-center text-2xl font-bold">Chores</h3>
+              <div className="container flex flex-row space-x-1">
+                <CreateChore flatId={flatId} />
+                <ChoresList flatId={flatId} />
               </div>
             </div>
-
-            {/* Right Column (Chores, Shopping List, Bills) */}
-            <div className="flex w-full flex-col space-y-8 md:w-1/2">
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                  Chores
-                </h3>
-                <div className="flex flex-row space-x-4">
-                  <ChoresList flatId={'1'} />
-                  <AddChore flatId={'1'} />
-                </div>
-              </div>
-
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                  Shopping List
-                </h3>
-                <WidgetExample />{' '}
-                {/* Todo: replace with real Shopping List component */}
-              </div>
-
-              <div className="flex-grow rounded-xl bg-gradient-to-r from-white to-base-100 p-6 shadow-2xl">
-                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                  Bills
-                </h3>
-                <WidgetExample />{' '}
-                {/* Todo: replace with real Bills component */}
-              </div>
+            <div className="max-auto container mb-5">
+              <h3 className="py-5 text-center text-2xl font-bold">
+                Shopping List
+              </h3>
+              <WidgetExample />
+              {/* Todo: replace with real Shopping List component */}
+            </div>
+            <div className="max-auto container mb-5">
+              <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
+              <WidgetExample /> {/* Todo: replace with real Bills component */}
             </div>
           </div>
         </div>
