@@ -4,9 +4,9 @@ import ExistingFlatCheck from '../components/flatSetUpForms/ExistingFlatCheck'
 // import { useAuth0 } from '@auth0/auth0-react'
 import useFormStep from '../hooks/useFormStep'
 import FlatSetUpDetails from '../components/flatSetUpForms/FlatSetUpDetails'
-import { FlatFormProps } from '../../models/forms'
-import FlatFormPage3 from '../components/flatSetUpForms/FlatFormPage3'
-import FlatFormPage4 from '../components/flatSetUpForms/FlatFormPage4'
+import { FlatFormProps } from '../../types/Flat'
+import FlatAddressForm from '../components/flatSetUpForms/FlatAddressForm'
+import FlatSetProfilePicture from '../components/flatSetUpForms/FlatSetProfilePicture'
 import { useCreateFlat } from '../hooks/useFlats'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -47,8 +47,16 @@ export default function FlatSignUpForm() {
       updateFields={updateFields}
       key={'form-page-2'}
     />,
-    <FlatFormPage3 {...data} updateFields={updateFields} key={'form-page-2'} />,
-    <FlatFormPage4 {...data} updateFields={updateFields} key={'form-page-4'} />,
+    <FlatAddressForm
+      {...data}
+      updateFields={updateFields}
+      key={'form-page-2'}
+    />,
+    <FlatSetProfilePicture
+      {...data}
+      updateFields={updateFields}
+      key={'form-page-4'}
+    />,
   ])
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {

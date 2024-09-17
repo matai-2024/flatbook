@@ -1,14 +1,6 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { addFlat, getFlats } from '../apis/flats.ts'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { addFlat } from '../apis/flats.ts'
 import { FlatData } from '../../types/Flat.ts'
-
-export function useFlats() {
-  const query = useQuery({ queryKey: ['flats'], queryFn: getFlats })
-  return {
-    ...query,
-    // Extra queries go here e.g. addFlat: useAddFlat()
-  }
-}
 
 interface createFlatData {
   data: FlatData

@@ -8,8 +8,8 @@ export async function up(knex) {
     table.string('title')
     table.string('image').defaultTo(null)
     table.string('description').defaultTo(null)
-    table.string('streetAddress').defaultTo(null)
-    table.string('createdAt').defaultTo(null)
+    table.string('streetAddress')
+    table.string('createdAt')
   })
 }
 

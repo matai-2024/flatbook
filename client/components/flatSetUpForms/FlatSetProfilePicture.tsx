@@ -1,16 +1,19 @@
-import { FlatFormProps } from '../../../models/forms.ts'
+import { FlatFormProps } from '../../../types/Flat.ts'
 import AvatarIcon from '../UI/AvatarIcon.tsx'
 import FormContainer from '../userSignUpForms/FormContainer.tsx'
 
 //New flat create form
-export default function FlatFormPage4({ image, updateFields }: FlatFormProps) {
+export default function FlatSetProfilePicture({
+  image,
+  updateFields,
+}: FlatFormProps) {
   return (
     <div className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-center justify-center gap-10">
       <FormContainer title="Flat Setup">
         <div className="form-control mb-4 w-full">
           <input
             type="file"
-            value={image}
+            value={image ? image : ''}
             className="file-input file-input-bordered file-input-primary w-full text-sm"
             onChange={(e) => updateFields({ image: e.target.value })}
           />

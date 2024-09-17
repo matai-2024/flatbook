@@ -4,7 +4,7 @@ import { StatusCodes } from 'http-status-codes'
 
 import * as db from '../db/flats.ts'
 import { flatDataSchema } from '../../types/Flat.ts'
-import { Flat } from '../../models/flat.ts'
+import { Flat } from '../../types/Flat.ts'
 
 const router = Router()
 
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   try {
     const flats: Flat[] = await db.getAllFlats()
 
-    res.json({ flats: flats.map((flat) => flat.name) })
+    res.json({ flats: flats.map((flat) => flat.id) })
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong' })
   }
