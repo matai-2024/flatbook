@@ -1,9 +1,8 @@
 import { BsFillHouseAddFill } from 'react-icons/bs'
 import FormContainer from '../userSignUpForms/FormContainer.tsx'
 import { FaHouseUser, FaKey } from 'react-icons/fa'
-import { FlatFormProps } from '../../../models/forms.ts'
+import { FlatFormProps } from '../../../types/Flat.ts'
 
-//Joining or creating?
 export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
   updateFields
 

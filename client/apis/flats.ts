@@ -3,12 +3,6 @@ import { FlatData } from '../../types/Flat'
 
 const rootUrl = '/api/v1/flats'
 
-export function getFlats(): Promise<string[]> {
-  return request.get(rootUrl + '/flats').then((res) => {
-    return res.body.flats
-  })
-}
-
 export async function addFlat(newFlat: FlatData, token: string) {
   const date = new Date(Date.now()).toISOString()
 

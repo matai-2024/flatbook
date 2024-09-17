@@ -1,4 +1,4 @@
-import { FlatFormProps } from '../../../models/forms.ts'
+import { FlatFormProps } from '../../../types/Flat.ts'
 import FormContainer from '../userSignUpForms/FormContainer.tsx'
 
 //New flat create form
@@ -7,7 +7,6 @@ export default function FlatSetUpDetails({
   description,
   updateFields,
 }: FlatFormProps) {
-  description
   return (
     <div className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-center justify-center gap-10">
       <FormContainer title="Flat Setup">
@@ -38,7 +37,7 @@ export default function FlatSetUpDetails({
               name="description"
               type="text"
               placeholder="Flat Description"
-              value={description}
+              value={description ? description : ''}
               onChange={(e) => updateFields({ description: e.target.value })}
               className="input input-bordered input-primary w-full"
             />

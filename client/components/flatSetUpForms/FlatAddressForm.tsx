@@ -1,8 +1,8 @@
-import { FlatFormProps } from '../../../models/forms.ts'
+import { FlatFormProps } from '../../../types/Flat.ts'
 import FormContainer from '../userSignUpForms/FormContainer.tsx'
 
 //New flat create form
-export default function FlatFormPage3({
+export default function FlatAddressForm({
   streetAddress,
   updateFields,
 }: FlatFormProps) {
