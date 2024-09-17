@@ -74,15 +74,15 @@ function ChatsExample() {
 
 function Dashboard() {
   return (
-    <div className="min-h-screen w-full bg-base-100">
+    <div className="flex min-h-screen w-full bg-base-100 p-8">
       <div className="flex h-full w-full flex-col md:flex-row">
-        <div className="flex w-full flex-col space-y-8 p-6 md:w-1/4 md:px-8">
+        <div className="flex w-full flex-col space-y-8 md:w-1/3 md:px-8">
           <Sidebar />
         </div>
 
-        <div className="flex w-full flex-col space-y-8 p-6 md:w-4/5">
+        <div className="flex w-full  flex-col space-y-8">
           <div className="flex h-full w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
-            <div className="flex w-full flex-col space-y-8 md:w-1/2">
+            <div className="flex w-full flex-col space-y-8">
               <div className="flex-grow rounded-xl bg-white p-6">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Announcements
@@ -99,7 +99,7 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="flex w-full flex-col space-y-8 md:w-1/2">
+            <div className="flex w-full flex-col space-y-8 ">
               <div className="flex-grow rounded-xl bg-white p-6">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Chores
