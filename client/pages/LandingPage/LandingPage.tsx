@@ -33,6 +33,14 @@ function LandingPage() {
             repudiandae et a id nisi.
           </p>
           <br />
+          <p>
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi. Provident cupiditate voluptatem et in. Quaerat fugiat ut
+            assumenda excepturi exercitationem quasi. In deleniti eaque aut
+            repudiandae et a id nisi.
+          </p>
+          <br />
           <div className="text-center">
             <RegisterButton />
           </div>

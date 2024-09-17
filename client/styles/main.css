@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +9,7 @@
 
 html,
 body {
-  font-family: 'Lora', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .landing {
@@ -16,5 +17,5 @@ body {
   font-weight: 400;
   font-size: 16cqmax;
   margin: -110px;
-  margin-left: 15px;
+  margin-left: 40px;
 }
