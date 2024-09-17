@@ -5,6 +5,7 @@ import CreateChore from '../../components/CreateChore/CreateChore'
 import FlatAnnouncements from '../../components/FlatAnnouncements/FlatAnnouncements'
 import Sidebar from './Sidebar'
 import ErrorPage from '../ErrorPage'
+import Bills from '../../components/Bills/Bills'
 
 /* Todo: To be replaced by real widgets */
 function WidgetExample() {
@@ -118,7 +119,7 @@ function Dashboard() {
             </div>
             <div className="max-auto container mb-5">
               <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
-              <WidgetExample /> {/* Todo: replace with real Bills component */}
+              <Bills /> {/* Todo: replace with real Bills component */}
             </div>
           </div>
         </div>
