@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import CarouselPage1 from './CarouselPages/CarouselPage1'
 import CarouselPage2 from './CarouselPages/CarouselPage2'
-import CarouselPage3 from './CarouselPages/CarouselPage3'
+// import CarouselPage3 from './CarouselPages/CarouselPage3'
 
 const Carousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const slides = [
     { id: 1, content: <CarouselPage1 />, bg: 'bg-inherit' },
     { id: 2, content: <CarouselPage2 />, bg: 'bg-inherit' },
-    { id: 3, content: <CarouselPage3 />, bg: 'bg-inherit' },
+    // { id: 3, content: <CarouselPage3 />, bg: 'bg-inherit' },
   ]
 
   const prevSlide = () => {
