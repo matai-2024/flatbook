@@ -1,5 +1,5 @@
 import { ShoppingItem } from '../../../types/Shop'
-import useShop from '../../hooks/useShopList'
+import useShop from '../../hooks/useShop'
 import { LocalSpinner } from '../UI/WaitingSpinners'
 import AddItem from './AddItem'
 import DelButton from './DelButton'

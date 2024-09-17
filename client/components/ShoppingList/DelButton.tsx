@@ -1,4 +1,4 @@
-import useShop from '../../hooks/useShopList'
+import useShop from '../../hooks/useShop'
 
 interface Props {
   flatId: string
