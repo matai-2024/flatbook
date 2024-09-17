@@ -13,7 +13,14 @@ const RegisterButton = () => {
     })
   }
 
-  return <Button onClick={handleRegister}>Get Started</Button>
+  return (
+    <Button
+      className="h-28 w-64 rounded-2xl text-3xl font-bold"
+      onClick={handleRegister}
+    >
+      Get Started
+    </Button>
+  )
 }
 
 export default RegisterButton

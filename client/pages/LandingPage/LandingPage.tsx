@@ -16,29 +16,10 @@ function LandingPage() {
             <h1 className="landing px-10 text-center">Book</h1>
           </div>
         </div>
-        <div className=" flex basis-1/2 flex-col justify-center bg-inherit px-32">
+        <div className="register flex basis-1/2 flex-col justify-center bg-inherit px-32 text-center text-3xl font-medium">
           <p>
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi. Provident cupiditate voluptatem et in. Quaerat fugiat ut
-            assumenda excepturi exercitationem quasi. In deleniti eaque aut
-            repudiandae et a id nisi.
-          </p>
-          <br />
-          <p>
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi. Provident cupiditate voluptatem et in. Quaerat fugiat ut
-            assumenda excepturi exercitationem quasi. In deleniti eaque aut
-            repudiandae et a id nisi.
-          </p>
-          <br />
-          <p>
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi. Provident cupiditate voluptatem et in. Quaerat fugiat ut
-            assumenda excepturi exercitationem quasi. In deleniti eaque aut
-            repudiandae et a id nisi.
+            excepturi exercitationem quasi.
           </p>
           <br />
           <div className="text-center">
