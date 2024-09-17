@@ -5,11 +5,10 @@ function Footer() {
         <div className="w-full lg:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800">Flatbook</h2>
           <p className="mt-4 text-base text-gray-600">
-            Flatbook is a platform designed for individuals in New Zealand to
-            find flats and flatmates. It aims to create a more homely,
-            comfortable, and enjoyable flatting experience while also helping to
-            manage shared responsibilities, chores, and fostering positive
-            living environments.
+            Flatbook is a platform designed for flatties in New Zealand. It aims
+            to create a more homely, comfortable, and enjoyable flatting
+            experience while also helping to manage shared responsibilities,
+            chores, and fostering positive living environments.
           </p>
           <p className="mt-6 text-sm text-gray-500">
             ©2000-2024 Team Flatbook. All rights reserved.

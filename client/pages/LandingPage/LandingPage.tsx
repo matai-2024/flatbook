@@ -18,8 +18,7 @@ function LandingPage() {
         </div>
         <div className="register flex basis-1/2 flex-col justify-center bg-inherit px-32 text-center text-3xl font-medium">
           <p>
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi.
+            Transforming your flat, one dashboard at a time. Home, sweet home.
           </p>
           <br />
           <div className="text-center">
