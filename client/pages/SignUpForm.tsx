@@ -65,8 +65,8 @@ export default function SignUpForm() {
   }
 
   return (
-    <div className="flex w-full items-center justify-center bg-gradient-to-b from-base-100 to-neutral p-10">
-      <div className="w-full max-w-lg rounded-xl bg-gradient-to-r from-white to-base-100 p-16 shadow-2xl">
+    <div className="flex w-full items-center justify-center p-10">
+      <div className="w-full max-w-lg rounded-xl bg-white p-16 shadow-2xl">
         <div className="flex flex-col items-center text-center">
           <form onSubmit={onSubmit} className="mt-6 w-full">
             <div>
