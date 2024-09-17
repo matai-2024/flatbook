@@ -6,6 +6,7 @@ import FlatAnnouncements from '../../components/FlatAnnouncements/FlatAnnounceme
 import Sidebar from './Sidebar'
 import ErrorPage from '../ErrorPage'
 import Bills from '../../components/Bills/Bills'
+import { useGetFlatByAuthId } from '../../hooks/useFlats'
 
 /* Todo: To be replaced by real widgets */
 function WidgetExample() {
@@ -76,8 +77,8 @@ function ChatsExample() {
 }
 
 function Dashboard() {
-  const { flatId } = useParams()
-
+  const { data: flatId, isLoading, isError } = useGetFlatByAuthId()
+  console.log(flatId)
   if (!flatId) {
     return <ErrorPage />
   }

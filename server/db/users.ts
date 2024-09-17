@@ -10,3 +10,8 @@ export async function addUser(data: User) {
   const [id] = await db('users').insert(data)
   return id
 }
+
+export async function getFlatByAuthId(auth0Id: string) {
+  const flatId = await db('users').select('flatId').first().where({ auth0Id })
+  return flatId as string
+}
