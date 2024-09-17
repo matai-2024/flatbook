@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // @vitest-environment jsdom
 import { beforeAll, describe, expect, it, vi } from 'vitest'
-import { renderWithRouter } from '../../test-utils'
+import { renderWithQueryAndRouter, renderWithRouter } from '../../test-utils'
 
 import nock from 'nock'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -17,7 +17,7 @@ describe('Nav bar', () => {
     vi.mocked(useAuth0).mockReturnValue({
       isAuthenticated: false,
     } as any)
-    const { ...render } = renderWithRouter('/')
+    const { ...render } = renderWithQueryAndRouter('/')
     // Act
     const loginButton = render.getByTestId('loginButton')
     // Assert
@@ -30,7 +30,7 @@ describe('Nav bar', () => {
       isAuthenticated: true,
     } as any)
 
-    const { ...render } = renderWithRouter('/')
+    const { ...render } = renderWithQueryAndRouter('/')
     // Act
     const logoutButton = render.getByTestId('logoutButton')
     // Assert

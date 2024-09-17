@@ -4,16 +4,20 @@ import LogoutButton from '../LogoutButton'
 import Button from '../UI/Button'
 import { useNavigate } from 'react-router-dom'
 import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
+import { useIsFetching } from '@tanstack/react-query'
+import { GlobalSpinner } from '../UI/WaitingSpinners'
 
 function Nav() {
   const navigate = useNavigate()
+  const isFetching = useIsFetching()
 
   return (
     <div className="bg-base100 navbar shadow-md">
       <div className="ml-8 flex-1">
         <button onClick={() => navigate('/')}>
-          <img src={logo} alt="logo" className=" w- btn btn-ghost h-28" />
+          <img src={logo} alt="logo" className="w- btn btn-ghost h-28" />
         </button>
+        {Boolean(isFetching) && <GlobalSpinner />}
       </div>
       <div className="mr-20">
         <IfNotAuthenticated>
