@@ -28,78 +28,73 @@ function WidgetExample() {
 }
 
 /* Todo: To be replaced by real widgets */
-function ChatsExample() {
-  return (
-    <>
-      <div className="chat chat-start">
-        <div className="avatar chat-image">
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS chat bubble component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            />
-          </div>
-        </div>
-        <div className="chat-bubble">
-          It was said that you would, destroy the Sith, not join them.
-        </div>
-      </div>
-      <div className="chat chat-start">
-        <div className="avatar chat-image">
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS chat bubble component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            />
-          </div>
-        </div>
-        <div className="chat-bubble">
-          It was you who would bring balance to the Force
-        </div>
-      </div>
-      <div className="chat chat-start">
-        <div className="avatar chat-image">
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS chat bubble component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            />
-          </div>
-        </div>
-        <div className="chat-bubble">Not leave it in Darkness</div>
-      </div>
-    </>
-  )
-}
+// function ChatsExample() {
+//   return (
+//     <>
+//       <div className="chat chat-start">
+//         <div className="avatar chat-image">
+//           <div className="w-10 rounded-full">
+//             <img
+//               alt="Tailwind CSS chat bubble component"
+//               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+//             />
+//           </div>
+//         </div>
+//         <div className="chat-bubble">
+//           It was said that you would, destroy the Sith, not join them.
+//         </div>
+//       </div>
+//       <div className="chat chat-start">
+//         <div className="avatar chat-image">
+//           <div className="w-10 rounded-full">
+//             <img
+//               alt="Tailwind CSS chat bubble component"
+//               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+//             />
+//           </div>
+//         </div>
+//         <div className="chat-bubble">
+//           It was you who would bring balance to the Force
+//         </div>
+//       </div>
+//       <div className="chat chat-start">
+//         <div className="avatar chat-image">
+//           <div className="w-10 rounded-full">
+//             <img
+//               alt="Tailwind CSS chat bubble component"
+//               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+//             />
+//           </div>
+//         </div>
+//         <div className="chat-bubble">Not leave it in Darkness</div>
+//       </div>
+//     </>
+//   )
+// }
 
 function Dashboard() {
   return (
-    <div className="flex min-h-screen w-full bg-base-100 p-8">
-      <div className="flex h-full w-full flex-col md:flex-row">
-        <div className="flex w-full flex-col space-y-8 md:w-1/3 md:px-8">
+    <div className="w-full bg-base-100 p-8">
+      <div className="flex w-full flex-col md:flex-row">
+        <div className="w-full flex-col space-y-8 md:w-1/3 md:px-8">
           <Sidebar />
         </div>
 
-        <div className="flex w-full  flex-col space-y-8">
-          <div className="flex h-full w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
+        <div className="w-full flex-col space-y-8">
+          <div className="flex w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
             <div className="flex w-full flex-col space-y-8">
-              <div className="flex-grow rounded-xl bg-white p-6">
+              <div className="rounded-xl bg-white">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
+                  <br></br>
                   Announcements
                 </h3>
                 <CreateAnnouncement flatId="1" />
                 <FlatAnnouncements flatId="1" />
               </div>
-              <div className="flex-grow rounded-xl bg-white p-6">
-                <h3 className="mb-4 text-center text-2xl font-bold text-primary">
-                  Events
-                </h3>
-                <ChatsExample />{' '}
-                {/* Todo: replace with real Events component */}
-              </div>
+              <div />
             </div>
 
-            <div className="flex w-full flex-col space-y-8 ">
+            <div className="flex w-full flex-col space-y-8">
               <div className="flex-grow rounded-xl bg-white p-6">
                 <h3 className="mb-4 text-center text-2xl font-bold text-primary">
                   Chores
