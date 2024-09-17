@@ -37,3 +37,11 @@ export async function getFlatByAuthId(authId: string, token: string) {
     .set('Authorization', `Bearer ${token}`)
   return res.body
 }
+
+export async function setFlatId(authId: User, flatId: number, token: string) {
+  const res = await request
+    .post(rootUrl)
+    .set('Authorization', `Bearer ${token}`)
+    .send({ authId, flatId })
+  return res.body as number
+}

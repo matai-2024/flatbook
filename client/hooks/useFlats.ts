@@ -13,6 +13,7 @@ export function useGetFlatByAuthId() {
     queryFn: async () => {
       const accessToken = await getAccessTokenSilently()
       const flatId = await getFlatByAuthId(authId, accessToken)
+
       return flatId
     },
   })

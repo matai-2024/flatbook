@@ -82,12 +82,16 @@ function Dashboard() {
   const { data: flatId, isLoading, isError } = useGetFlatByAuthId()
 
   const navigate = useNavigate()
+
+  //If flatID is undefined, null or the default value (0), redirect to flat_setup
   useEffect(() => {
-    if (flatId.flatId === 0) {
-      console.log('hi')
-      navigate('/flat_setup')
+    if (isLoading) {
+      return
     }
-  }, [flatId.flatId, navigate])
+    if ((flatId !== undefined && flatId === null) || flatId.flatId === 0) {
+      navigate(`/flat_setup`, { replace: true })
+    }
+  }, [flatId, isLoading, navigate])
 
   if (isLoading) {
     return <>Loading</>
