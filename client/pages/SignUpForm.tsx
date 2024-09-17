@@ -19,7 +19,7 @@ const MOCK_DATA = {
   mobile: '',
   socialMedia: '',
   createdAt: '',
-  auth0Id: '',
+  auth0Id: '90',
 }
 
 export default function SignUpForm() {
