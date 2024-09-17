@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom'
 import ChoresList from '../../components/ChoresList/ChoresList'
 import CreateAnnouncement from '../../components/CreateAnnouncement/CreateAnnouncement'
 import CreateChore from '../../components/CreateChore/CreateChore'
@@ -8,6 +7,8 @@ import ErrorPage from '../ErrorPage'
 import ShopList from '../../components/ShoppingList/ShopList'
 import Bills from '../../components/Bills/Bills'
 import { useGetFlatByAuthId } from '../../hooks/useFlats'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 /* Todo: To be replaced by real widgets */
 // function WidgetExample() {
@@ -79,11 +80,22 @@ function ChatsExample() {
 
 function Dashboard() {
   const { data: flatId, isLoading, isError } = useGetFlatByAuthId()
-  console.log(flatId)
-  if (!flatId) {
-    return <ErrorPage />
+
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (flatId.flatId === 0) {
+      console.log('hi')
+      navigate('/flat_setup')
+    }
+  }, [flatId.flatId, navigate])
+
+  if (isLoading) {
+    return <>Loading</>
   }
 
+  if (isError) {
+    return <ErrorPage />
+  }
   return (
     <>
       <div className="container flex flex-row">

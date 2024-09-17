@@ -24,7 +24,7 @@ export async function deleteUserById(id: number, token: string) {
     .set('Authorization', `Bearer ${token}`)
 }
 
-export async function addUserProfile(newProfile: UserData, token: string) {
+export async function addUserProfile(newProfile: User, token: string) {
   const res = await request
     .post(rootUrl)
     .set('Authorization', `Bearer ${token}`)
@@ -35,5 +35,5 @@ export async function getFlatByAuthId(authId: string, token: string) {
   const res = await request
     .get(`${rootUrl}/flat/${authId}`)
     .set('Authorization', `Bearer ${token}`)
-  return res.body as string
+  return res.body
 }
