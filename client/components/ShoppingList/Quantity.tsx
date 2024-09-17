@@ -12,10 +12,12 @@ interface Props {
   quantity: number
 }
 
+// handles the quantity of a new item
 export default function Quantity({ setNewItem, newItem, quantity }: Props) {
   const handleChangeQuantity = (direction: string): void => {
     let newQ = quantity
 
+    // change quantity based on arrow pressed
     if (direction === 'plus') {
       newQ++
     } else if (direction === 'minus' && newQ > 1) {

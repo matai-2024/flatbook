@@ -16,11 +16,16 @@ interface Props {
 export default function AddButton({ setNewItem, newItem, defaultItem }: Props) {
   const { addMutation } = useShop(String(newItem.shoppingListId))
 
+  // adds item to the db and resets values to default
   const handleAddItem = () => {
-    addMutation.mutateAsync(newItem)
-    setNewItem(defaultItem)
+    // no submission if there is no product name
+    if (newItem.productName !== '') {
+      addMutation.mutateAsync(newItem)
+      setNewItem(defaultItem)
+    }
   }
 
+  // render [+] button, when a user clicks add item to the db
   return (
     <button onClick={handleAddItem} className="btn btn-square mt-2">
       <svg

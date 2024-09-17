@@ -19,7 +19,7 @@ export default function ShopList({ flatId }: Props) {
   }
 
   if (shopList) {
-    console.log(shopList)
+    // render shopping list
     return (
       <>
         <AddItem flatId={flatId} />
