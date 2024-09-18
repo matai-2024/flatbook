@@ -26,7 +26,6 @@ function Nav() {
         <IfAuthenticated>
           <div>
             {/* todo-change profile button to be dynamic */}
-            {/* TODO - Change dashboard route to be dynamic */}
             <Button
               onClick={() => navigate('/profile/1')}
               className="btn btn-accent"
@@ -34,7 +33,7 @@ function Nav() {
               Profile Page
             </Button>
             <Button
-              onClick={() => navigate('/dashboard/1')}
+              onClick={() => navigate('/dashboard')}
               className="btn btn-accent m-1"
             >
               Flat Dashboard

@@ -11,6 +11,3 @@ https://www.figma.com/design/JorUlIGmq1y85tJvWcYrtC/FlatBook-Wireframe?node-id=0
 
 ## ERD
 https://dbdiagram.io/d/MVP-Flatbook-v2-66e4b01b6dde7f41491176d1
-
-<!-- small change
- -->
