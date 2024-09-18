@@ -35,11 +35,11 @@ export const routes = createRoutesFromElements(
       element={<ProtectedComponent component={FlatSignUpForm} />}
       handle={'Flat Set Up'}
     />
-    <Route
+    {/* <Route
       path="users/:id"
       element={<ProtectedComponent component={LandingPage} />}
       handle={'Users'}
-    />
+    /> */}
   </Route>,
 )
 
