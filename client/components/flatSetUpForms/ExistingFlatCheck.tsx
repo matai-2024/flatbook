@@ -1,5 +1,5 @@
 import { BsFillHouseAddFill } from 'react-icons/bs'
-import FormContainer from '../userSignUpForms/FormContainer.tsx'
+import FormContainer from '../UserSignUpForms/FormContainer.tsx'
 import { FaHouseUser, FaKey } from 'react-icons/fa'
 import { FlatFormProps } from '../../../types/Flat.ts'
 

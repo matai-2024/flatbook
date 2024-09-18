@@ -1,6 +1,6 @@
 import { FlatFormProps } from '../../../types/Flat.ts'
 import AvatarIcon from '../UI/AvatarIcon.tsx'
-import FormContainer from '../userSignUpForms/FormContainer.tsx'
+import FormContainer from '../UserSignUpForms/FormContainer.tsx'
 
 //New flat create form
 export default function FlatSetProfilePicture({
