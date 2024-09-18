@@ -6,6 +6,9 @@ import Sidebar from './Sidebar'
 import ErrorPage from '../ErrorPage'
 import ShopList from '../../components/ShoppingList/ShopList'
 import Bills from '../../components/Bills/Bills'
+import { useGetFlatByAuthId } from '../../hooks/useFlats'
+import { useNavigate } from 'react-router-dom'
+import Button from '../../components/UI/Button'
 
 function Dashboard() {
   const { data: flatId, isLoading, isError } = useGetFlatByAuthId()
