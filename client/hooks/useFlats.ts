@@ -12,9 +12,9 @@ export function useGetFlatByAuthId() {
     queryKey: ['userFlatId'],
     queryFn: async () => {
       const accessToken = await getAccessTokenSilently()
-      const flatId = await getFlatByAuthId(authId, accessToken)
+      const res = await getFlatByAuthId(authId, accessToken)
 
-      return flatId
+      return res.flatId
     },
   })
   return { data, isLoading, isError, error }
