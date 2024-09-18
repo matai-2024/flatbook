@@ -25,14 +25,11 @@ export const routes = createRoutesFromElements(
       element={<ProtectedComponent component={Dashboard} />}
       handle={'Flat Dashboard'}
     />
-    {/* DumbDashboard for testing */}
-    {/* <Route path="/chores/:flatId" element={<DumbDashboard />} /> */}
     <Route
       path="flat_setup"
       element={<ProtectedComponent component={FlatSignUpForm} />}
       handle={'Flat Set Up'}
     />
-    {/* TODO-change component to UserProfile */}
     <Route
       path="/profile/:id"
       element={<UserProfilePage />}

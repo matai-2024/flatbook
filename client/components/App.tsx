@@ -11,6 +11,7 @@ function App() {
       <Nav />
       <AppLayout />
       <Footer />
+      {/* <AnimatedBackground /> */}
     </>
   )
 }

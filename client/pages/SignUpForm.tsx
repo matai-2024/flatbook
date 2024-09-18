@@ -66,8 +66,8 @@ export default function SignUpForm() {
   }
 
   return (
-    <div className="flex w-full items-center justify-center p-10">
-      <div className="w-full max-w-lg rounded-xl bg-white p-16 shadow-2xl">
+    <div className="flex items-center justify-center">
+      <div className="w-full max-w-lg">
         <div className="flex flex-col items-center text-center">
           <form onSubmit={onSubmit} className="mt-6 w-full">
             <div>
@@ -75,12 +75,12 @@ export default function SignUpForm() {
                 <div>{step}</div>
               </div>
             </div>
-            <div className="flex justify-center space-x-1">
+            <div className="mt-4 flex justify-center">
               {!isFirstStep && (
                 <button
                   type="button"
                   onClick={back}
-                  className="btn btn-secondary px-6"
+                  className="btn btn-secondary"
                 >
                   Back
                 </button>
