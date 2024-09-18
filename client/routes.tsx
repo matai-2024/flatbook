@@ -8,7 +8,6 @@ import App from './components/App'
 import LandingPage from './pages/LandingPage/LandingPage'
 import SignUpForm from './pages/SignUpForm'
 import Dashboard from './pages/Dashboard/Dashboard'
-import ProfilePage from './pages/UserProfilePage/UserProfilePage'
 import ErrorPage from './pages/ErrorPage'
 import FlatSignUpForm from './pages/FlatSignUpForm'
 import UserProfilePage from './pages/UserProfilePage/UserProfilePage'
@@ -22,12 +21,7 @@ export const routes = createRoutesFromElements(
       handle={'Sign Up'}
     />
     <Route
-      path="/profile/:id"
-      element={<ProfilePage />}
-      handle={'Profile Page'}
-    />
-    <Route
-      path="dashboard/:flatId"
+      path="dashboard"
       element={<ProtectedComponent component={Dashboard} />}
       handle={'Flat Dashboard'}
     />

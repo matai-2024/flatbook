@@ -7,9 +7,13 @@ import ErrorPage from '../ErrorPage'
 import ShopList from '../../components/ShoppingList/ShopList'
 import Bills from '../../components/Bills/Bills'
 import { useGetFlatByAuthId } from '../../hooks/useFlats'
+import { useNavigate } from 'react-router-dom'
+import Button from '../../components/UI/Button'
 
 function Dashboard() {
   const { data: flatId, isLoading, isError } = useGetFlatByAuthId()
+
+  const navigate = useNavigate()
 
   if (isLoading) {
     return <>Loading</>
@@ -17,6 +21,23 @@ function Dashboard() {
 
   if (isError) {
     return <ErrorPage />
+  }
+
+  if ((flatId !== undefined && flatId === null) || flatId === 0) {
+    // The user doesn't have a flat yet
+    // TODO: to be styled
+    return (
+      <div className="container">
+        <p>Looks like you have not had a flat.</p>
+        <Button
+          onClick={() => {
+            navigate(`/flat_setup`, { replace: true })
+          }}
+        >
+          Next
+        </Button>
+      </div>
+    )
   }
 
   return (
