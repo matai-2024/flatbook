@@ -22,7 +22,6 @@ export const routes = createRoutesFromElements(
     />
     <Route
       path="/profile/:id"
-      // element={<ProtectedComponent component={ProfilePage} />} // TODO: add auth0
       element={<ProfilePage />}
       handle={'Profile Page'}
     />
@@ -31,14 +30,11 @@ export const routes = createRoutesFromElements(
       element={<ProtectedComponent component={Dashboard} />}
       handle={'Flat Dashboard'}
     />
-    {/* DumbDashboard for testing */}
-    {/* <Route path="/chores/:flatId" element={<DumbDashboard />} /> */}
     <Route
       path="flat_setup"
       element={<ProtectedComponent component={FlatSignUpForm} />}
       handle={'Flat Set Up'}
     />
-    {/* TODO-change component to UserProfile */}
     <Route
       path="users/:id"
       element={<ProtectedComponent component={LandingPage} />}
