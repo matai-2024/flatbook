@@ -33,7 +33,7 @@ export default function Sidebar({ flatId }: Props) {
               {data.title}
             </h2>
             <p className="mb-8 text-center text-lg leading-relaxed text-secondary">
-              Home, sweet-home
+              {data.description}
             </p>
             <AvatarIcon
               className="h-full w-full rounded-full object-cover ring-4 ring-accent"

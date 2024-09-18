@@ -27,7 +27,10 @@ export default function ChoresList({ flatId }: Props) {
       <>
         <ul>
           {chores.map((chore: Chore) => (
-            <div className="collapse collapse-arrow bg-base-200" key={chore.id}>
+            <div
+              className="collapse collapse-arrow mt-2 bg-base-200"
+              key={chore.id}
+            >
               <input type="radio" name={`chore-list-item`} />
               <h2 className="collapse-title text-xl font-medium">
                 {chore.title}
