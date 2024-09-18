@@ -1,5 +1,7 @@
 import { GiLighthouse } from 'react-icons/gi'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../components/Footer'
+import { GiLighthouse } from 'react-icons/gi'
 
 export default function ErrorPage() {
   const navigate = useNavigate()

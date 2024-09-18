@@ -27,7 +27,7 @@ export default function SignUpForm() {
 
   const addUserProfile = useCreateProfile()
   const navigate = useNavigate()
-  const { getAccessTokenSilently } = useAuth0()
+  const { getAccessTokenSilently, user } = useAuth0()
 
   function updateFields(fields: Partial<FormData>) {
     setData((prev) => {
@@ -58,6 +58,7 @@ export default function SignUpForm() {
     if (!isLastStep) {
       next()
     } else {
+      user?.sub ? (data.auth0Id = user.sub) : ''
       const token = await getAccessTokenSilently()
       await addUserProfile.mutateAsync({ data, token })
       navigate(`/`)

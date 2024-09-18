@@ -21,13 +21,7 @@ export const routes = createRoutesFromElements(
       handle={'Sign Up'}
     />
     <Route
-      path="/profile/:id"
-      // element={<ProtectedComponent component={ProfilePage} />} // TODO: add auth0
-      element={<ProfilePage />}
-      handle={'Profile Page'}
-    />
-    <Route
-      path="dashboard/:flatId"
+      path="dashboard"
       element={<ProtectedComponent component={Dashboard} />}
       handle={'Flat Dashboard'}
     />
