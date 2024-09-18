@@ -5,7 +5,6 @@ import { events, generateDate, months } from './calendar-utils'
 import cn from './cn'
 import { useState } from 'react'
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
-import Button from '../UI/Button'
 
 export default function Calendar() {
   const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
@@ -21,13 +20,13 @@ export default function Calendar() {
   })
 
   return (
-    <div className="mx-auto flex h-auto items-center gap-10 divide-y-2 divide-secondary">
+    <div className="divide-y-10 items-center bg-slate-100">
       <div className="h-96 w-96">
         {
           //** Calendar Days of week*/
         }
         <div className="flex justify-between">
-          <h1 className="font-semibold" data-testid="visibleMonth">
+          <h1 className="py-3 font-semibold" data-testid="visibleMonth">
             {months[today.month()]}, {today.year()}
           </h1>
           <div className="flex items-center gap-5">
@@ -111,7 +110,7 @@ export default function Calendar() {
       {
         //** Schedule Events*/
       }
-      <div className="h-96 w-96 flex-row px-5">
+      <div className="border-l-1 border-t-1 mt-12 h-64 w-96 flex-row pl-3 pt-5 ">
         <h1 className="font-semibold">
           Schedule for {selectDate.toDate().toDateString()}
         </h1>
@@ -130,7 +129,6 @@ export default function Calendar() {
             No Events Today!
           </p>
         )}
-        <Button className="absolute bottom-60 text-center">Add an event</Button>
       </div>
     </div>
   )

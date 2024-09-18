@@ -30,7 +30,6 @@ export const routes = createRoutesFromElements(
       element={<ProtectedComponent component={FlatSignUpForm} />}
       handle={'Flat Set Up'}
     />
-    {/* TODO-change component to UserProfile */}
     <Route
       path="/profile/:id"
       element={<UserProfilePage />}
