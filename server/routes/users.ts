@@ -14,7 +14,7 @@ router.get('/:id', async (req, res) => {
 
     res.json(users)
   } catch (error) {
-    res.status(200).json({ message: 'Something went wrong' })
+    res.status(500).json({ message: 'Something went wrong' })
   }
 })
 
@@ -25,7 +25,7 @@ router.get('/flatties/:flatId', async (req, res) => {
 
     res.json(usersWithFlatId)
   } catch (error) {
-    res.status(200).json({ message: 'Something went wrong' })
+    res.status(500).json({ message: 'Something went wrong' })
   }
 })
 
