@@ -10,7 +10,12 @@ export default function ChoresList({ flatId }: Props) {
   const { data: chores, isLoading, isError, error } = useChores(flatId)
 
   if (isLoading) {
-    return <LocalSpinner loadingText='Loading the chores...' testId='chores-list-loading' />
+    return (
+      <LocalSpinner
+        loadingText="Loading the chores..."
+        testId="chores-list-loading"
+      />
+    )
   }
 
   if (isError || !chores) {

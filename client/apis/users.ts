@@ -31,6 +31,14 @@ export async function addUserProfile(newProfile: User, token: string) {
     .send({ ...newProfile, createdAt: String(Date.now()) })
   return res.body as number
 }
+
+export async function getFlattiesByFlatId(token: string, flatId: string) {
+  const res = await request
+    .get(`${rootUrl}/flatties/${flatId}`)
+    .set('Authorization', `Bearer ${token}`)
+  return res.body as User[]
+}
+
 export async function getFlatByAuthId(authId: string, token: string) {
   const res = await request
     .get(`${rootUrl}/flat/${authId}`)

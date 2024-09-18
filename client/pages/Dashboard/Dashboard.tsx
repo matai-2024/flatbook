@@ -44,7 +44,7 @@ function Dashboard() {
     <div className="w-full bg-inherit p-8">
       <div className="flex w-full flex-col md:flex-row">
         <div className="w-full flex-col space-y-8 md:w-1/3 md:px-8">
-          <Sidebar />
+          <Sidebar flatId={flatId} />
         </div>
 
         <div className="w-full flex-col space-y-8">
