@@ -5,7 +5,7 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 function AppLayout() {
   const matches = useMatches()
   const pageTitle = matches[1].handle
-  useDocumentTitle(pageTitle ? `${pageTitle}` : 'flatbook')
+  useDocumentTitle(pageTitle ? `${pageTitle}` : 'FlatBook')
 
   return (
     <>

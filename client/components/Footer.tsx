@@ -3,15 +3,15 @@ function Footer() {
     <footer className="bottom-0 w-full border-t border-gray-200 bg-white py-12">
       <div className="container mx-auto flex flex-row space-y-8 px-12 lg:space-x-8 lg:space-y-0">
         <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl font-bold text-gray-800">Flatbook</h2>
+          <h2 className="text-3xl font-bold text-gray-800">FlatBook</h2>
           <p className="mt-4 text-base text-gray-600">
-            Flatbook is a platform designed for flatties in New Zealand. It aims
+            FlatBook is a platform designed for flatties in New Zealand. It aims
             to create a more homely, comfortable, and enjoyable flatting
             experience while also helping to manage shared responsibilities,
             chores, and fostering positive living environments.
           </p>
           <p className="mt-6 text-sm text-gray-500">
-            ©2000-2024 Team Flatbook. All rights reserved.
+            ©2000-2024 Team FlatBook. All rights reserved.
           </p>
         </div>
 

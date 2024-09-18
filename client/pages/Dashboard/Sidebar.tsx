@@ -43,10 +43,7 @@ export default function Sidebar({ flatId }: Props) {
             />
             <hr className="my-8 h-px border-0 bg-info" />
           </div>
-          <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
-            Flat Calendar
-          </h2>
-          <Calendar />
+
           <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
             Flatties
           </h2>
@@ -63,7 +60,7 @@ export default function Sidebar({ flatId }: Props) {
                     href={`/profile/${index + 1}`}
                     className="hover:text-white"
                   >
-                    {name.firstName}
+                    {`${name.firstName} ${name.lastName}`}
                   </a>
                 </li>
               )

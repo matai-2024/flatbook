@@ -59,9 +59,8 @@ function LandingPage() {
           </motion.div>
         </div>
         <div className="register flex basis-1/2 flex-col justify-center bg-inherit px-32 text-center text-3xl font-medium">
-          <p>
-            Transforming your flat, one dashboard at a time. Home, sweet home.
-          </p>
+          <p>Transforming your flat, one dashboard at a time.</p>
+          <p className="pt-2">Home, sweet home.</p>
           <br />
           <div className="text-center">
             <RegisterButton />

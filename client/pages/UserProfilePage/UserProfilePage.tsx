@@ -18,7 +18,7 @@ export default function UserProfilePage() {
         {users.map((user: User) => (
           <div
             key={user.auth0Id}
-            className="m-10 max-h-fit max-w-full flex-1 space-x-8"
+            className="m-5 max-h-fit max-w-full flex-1 space-x-8"
           >
             <div className="flex h-full space-x-8 p-8">
               <div className="px-4">
@@ -34,14 +34,15 @@ export default function UserProfilePage() {
                     {user.nickName}
                   </div>
                 </div>
-
-                <div>
-                  <h2 className="mb-4 text-3xl font-semibold text-primary">
-                    About Me
-                  </h2>
-                  <p className="text-lg leading-relaxed text-secondary">
-                    {user.about}
-                  </p>
+                <div className="divide-y-10 items-center rounded-xl bg-slate-100 p-5 pt-7">
+                  <div>
+                    <h2 className="mb-4 text-3xl font-semibold text-primary">
+                      About Me
+                    </h2>
+                    <p className="text-lg leading-relaxed text-secondary">
+                      {user.about}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -20,13 +20,13 @@ export default function Calendar() {
   })
 
   return (
-    <div className="divide-y-10 items-center bg-slate-100">
+    <div className="divide-y-10 items-center bg-slate-100 pt-6">
       <div className="h-96 w-96">
         {
           //** Calendar Days of week*/
         }
         <div className="flex justify-between">
-          <h1 className="py-3 font-semibold" data-testid="visibleMonth">
+          <h1 className="py-3 pl-5 font-semibold" data-testid="visibleMonth">
             {months[today.month()]}, {today.year()}
           </h1>
           <div className="flex items-center gap-5">
@@ -69,6 +69,7 @@ export default function Calendar() {
         {
           //** Calendar Days of month*/
         }
+
         <div className="grid w-full grid-cols-7">
           {generateDate(today.month(), today.year()).map(
             ({ date, currentMonth, today }, index) => {

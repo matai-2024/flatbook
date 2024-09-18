@@ -1,6 +1,6 @@
-# Flatbook
+# FlatBook
 
-## What is Flatbook?
+## What is FlatBook?
 An application where the users can manage the flat and flat listing.
 
 ## Planning Board

@@ -35,13 +35,13 @@ export default function UserSidebar(props: Props) {
           </ul>
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-8 text-center">
           <h2 className="text-2xl font-semibold text-primary">Social Media</h2>
           <ul className="mt-2 space-y-1 text-lg text-info">
             <li>
               <div className="rounded-lg from-accent to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
                 <a
-                  href={`https://www.instagram.com/${profile.socialMedia}`}
+                  href={`https://www.facebook.com/${profile.socialMedia}`}
                   className="font-medium"
                 >
                   Facebook
@@ -51,7 +51,7 @@ export default function UserSidebar(props: Props) {
           </ul>
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-8 text-center">
           <h2 className="text-2xl font-semibold text-primary">Flat Status</h2>
           <p className="mt-2 text-lg italic text-info">Taken</p>
         </div>
