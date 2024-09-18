@@ -111,7 +111,7 @@ function Dashboard() {
       <>
         <div className="container flex flex-row">
           <div className="container static my-0 max-w-96 bg-[#d9d9d9] px-5 py-5">
-            <Sidebar />
+            <Sidebar flatId={flatId} />
           </div>
           <div className="container flex flex-row">
             <div className="container flex flex-col">

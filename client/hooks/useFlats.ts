@@ -1,8 +1,8 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { addFlat } from '../apis/flats.ts'
+import { addFlat, getFlatById } from '../apis/flats.ts'
 import { FlatData } from '../../types/Flat.ts'
 import { useAuth0 } from '@auth0/auth0-react'
-import { getFlatByAuthId } from '../apis/users.ts'
+import { getFlatByAuthId, getFlattiesByFlatId } from '../apis/users.ts'
 
 export function useGetFlatByAuthId() {
   const { getAccessTokenSilently, user } = useAuth0()
