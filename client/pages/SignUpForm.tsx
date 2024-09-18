@@ -1,8 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-
-import useCreateProfile from '../hooks/useUserProfile'
+import useCreateProfile from '../hooks/useCreateProfile'
 import useForm from '../hooks/useFormStep'
 import NewUserDetailForm from '../components/userSignUpForms/NewUserDetailForm'
 import NewUserPictureForm from '../components/userSignUpForms/NewUserPictureForm'
@@ -62,15 +61,13 @@ export default function SignUpForm() {
       user?.sub ? (data.auth0Id = user.sub) : ''
       const token = await getAccessTokenSilently()
       await addUserProfile.mutateAsync({ data, token })
-      //TODO - change to user/profile
-      // const id = then navigate(`/user/${id}`)
       navigate(`/`)
     }
   }
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-full max-w-lg">
+    <div className="flex w-full items-center justify-center p-10">
+      <div className="w-full max-w-lg rounded-xl bg-white p-16 shadow-2xl">
         <div className="flex flex-col items-center text-center">
           <form onSubmit={onSubmit} className="mt-6 w-full">
             <div>
@@ -78,19 +75,19 @@ export default function SignUpForm() {
                 <div>{step}</div>
               </div>
             </div>
-            <div className="mt-4 flex justify-center">
+            <div className="flex justify-center space-x-1">
               {!isFirstStep && (
                 <button
                   type="button"
                   onClick={back}
-                  className="btn btn-secondary"
+                  className="btn btn-secondary px-6"
                 >
                   Back
                 </button>
               )}
               <button
                 type="submit"
-                className={`btn btn-primary ${isLastStep ? 'btn-accent' : 'btn-primary'}`}
+                className={`btn btn-primary px-4 ${isLastStep ? 'btn-accent' : 'btn-primary'}`}
               >
                 {isLastStep ? 'Complete' : 'Continue'}
               </button>

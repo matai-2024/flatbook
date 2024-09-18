@@ -1,7 +1,6 @@
 import { Outlet, useMatches } from 'react-router-dom'
 
 import useDocumentTitle from '../hooks/useDocumentTitle'
-import Footer from './Footer'
 
 function AppLayout() {
   const matches = useMatches()
@@ -10,12 +9,11 @@ function AppLayout() {
 
   return (
     <>
-      <section className="tailwind placeholder">
+      <section>
         <header></header>
         <main>
           <Outlet />
         </main>
-        <Footer />
       </section>
     </>
   )

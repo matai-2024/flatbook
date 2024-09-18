@@ -1,23 +1,56 @@
+import Calendar from '../../components/Calendar/Calendar'
+import AvatarIcon from '../../components/UI/AvatarIcon'
+
 export default function Sidebar() {
   return (
-    <>
-      <h2 className="text-5xl font-bold">Sweethome</h2>
-      <br />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-        soluta natus? Ratione vero corporis dolore a eligendi inventore
-        accusantium reiciendis praesentium debitis aut incidunt minus labore
-        iste, ad omnis aspernatur.
-      </p>
-      <br />
-      <h2 className="text-3xl font-bold">Flatties</h2>
-      {/* Todo: replace this list with dynamic list */}
-      <ul>
-        <li>Alicia Myers</li>
-        <li>Elias Kaleta</li>
-        <li>Logan Bennett</li>
-        <li>Ryan Zhao</li>
-      </ul>
-    </>
+    <div className="sidebar h-full rounded-xl bg-white p-12 shadow-xl">
+      <div className="flex-grow">
+        <div className="">
+          <h2 className="mb-4 text-center text-5xl font-bold text-primary">
+            SweetHome
+          </h2>
+          <p className="mb-8 text-center text-lg leading-relaxed text-secondary">
+            Home, sweet-home
+          </p>
+          <AvatarIcon
+            className="h-full w-full rounded-full object-cover ring-4 ring-accent"
+            src={
+              'https://i.pinimg.com/736x/4b/56/28/4b56284d1fb20107551932d87453d96c.jpg'
+            }
+          />
+          <hr className="my-8 h-px border-0 bg-info" />
+        </div>
+        <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
+          Flat Calendar
+        </h2>
+        <Calendar />
+        <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
+          Flatties
+        </h2>
+        <ul className="space-y-2 p-1 text-center text-lg text-secondary">
+          <li className="rounded-lg from-primary to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
+            <a href="/profile/1" className="hover:text-white">
+              Alicia Myers
+            </a>
+          </li>
+          <li className="rounded-lg from-primary to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
+            <a href="/profile/2" className="hover:text-white">
+              Elias Kaleta
+            </a>
+          </li>
+          <li className="rounded-lg from-primary to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
+            <a href="/profile/4" className="hover:text-white">
+              Logan Benett
+            </a>
+          </li>
+          <li className="rounded-lg from-primary to-primary transition duration-200 ease-in-out hover:bg-gradient-to-r hover:text-accent-content">
+            <a href="/profile/3" className="hover:text-white">
+              Ryan Zhao
+            </a>
+          </li>
+        </ul>
+        <hr className="my-8 h-px border-0 bg-info" />
+      </div>
+    </div>
   )
 }
