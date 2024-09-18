@@ -1,7 +1,6 @@
 import { Router } from 'express'
 
 import * as db from '../db/users.ts'
-import { StatusCodes } from 'http-status-codes'
 
 const router = Router()
 
