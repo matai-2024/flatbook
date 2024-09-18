@@ -5,7 +5,6 @@ import { events, generateDate, months } from './calendar-utils'
 import cn from './cn'
 import { useState } from 'react'
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
-import Button from '../UI/Button'
 
 export default function Calendar() {
   const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
@@ -130,7 +129,6 @@ export default function Calendar() {
             No Events Today!
           </p>
         )}
-        <Button className="absolute bottom-60 text-center">Add an event</Button>
       </div>
     </div>
   )
