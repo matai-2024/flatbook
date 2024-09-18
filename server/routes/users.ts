@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import { StatusCodes } from 'http-status-codes'
 
 import * as db from '../db/users.ts'
+import { StatusCodes } from 'http-status-codes'
 
 const router = Router()
 
@@ -18,13 +18,22 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+router.get('/flat/:id', async (req, res, next) => {
+  try {
+    const flatId = await db.getFlatByAuthId(req.params.id)
+    res.json(flatId)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.post('/', async (req, res, next) => {
   try {
     const data = req.body
     const id = await db.addUser({
       ...data,
     })
-    res.json(id).sendStatus(StatusCodes.CREATED)
+    res.status(StatusCodes.CREATED).json(id)
   } catch (err) {
     next(err)
   }

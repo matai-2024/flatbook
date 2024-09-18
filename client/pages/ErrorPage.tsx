@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import Nav from '../components/Nav/Nav'
 import Footer from '../components/Footer'
 import { GiLighthouse } from 'react-icons/gi'
 
@@ -7,8 +6,7 @@ export default function ErrorPage() {
   const navigate = useNavigate()
   return (
     <>
-      <Nav />
-      <div className="flex max-h-full  min-h-screen flex-col py-36">
+      <div className="flex max-h-full  min-h-screen flex-col">
         <div className="m-10 flex max-h-full min-h-screen flex-col  items-center py-6 ">
           <p className="flex items-center justify-center text-7xl font-bold">
             No ones home

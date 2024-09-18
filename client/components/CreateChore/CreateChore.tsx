@@ -46,7 +46,12 @@ export default function CreateChore({ flatId }: Props) {
   }
 
   if (chores.isLoading) {
-    return <LocalSpinner loadingText='Loading chore form...' testId='create-chore-pending' />
+    return (
+      <LocalSpinner
+        loadingText="Loading chore form..."
+        testId="create-chore-pending"
+      />
+    )
   }
 
   if (chores.isError) {
