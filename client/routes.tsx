@@ -8,9 +8,9 @@ import App from './components/App'
 import LandingPage from './pages/LandingPage/LandingPage'
 import SignUpForm from './pages/SignUpForm'
 import Dashboard from './pages/Dashboard/Dashboard'
-import ProfilePage from './pages/UserProfilePage/UserProfilePage'
 import ErrorPage from './pages/ErrorPage'
 import FlatSignUpForm from './pages/FlatSignUpForm'
+import UserProfilePage from './pages/UserProfilePage/UserProfilePage'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
@@ -34,9 +34,9 @@ export const routes = createRoutesFromElements(
     />
     {/* TODO-change component to UserProfile */}
     <Route
-      path="users/:id"
-      element={<ProtectedComponent component={LandingPage} />}
-      handle={'Users'}
+      path="/profile/:id"
+      element={<UserProfilePage />}
+      handle={'Profile Page'}
     />
   </Route>,
 )

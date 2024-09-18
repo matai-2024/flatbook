@@ -81,7 +81,7 @@ function Dashboard() {
               </div>
               <div className="max-auto container mb-5 min-w-96 px-5">
                 <h3 className="py-5 text-center text-2xl font-bold">Events</h3>
-                <ChatsExample />{' '}
+
                 {/* Todo: replace with real Events component */}
               </div>
             </div>
