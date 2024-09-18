@@ -69,12 +69,13 @@ export default function Sidebar({ flatId }: Props) {
               )
             })}
           </ul>
-          <hr className="my-8 h-px border-0 bg-info" /><div>
-          <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
-            Calendar
-          </h2>
-          <Calendar />
-        </div>
+          <hr className="my-8 h-px border-0 bg-info" />
+          <div>
+            <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
+              Calendar
+            </h2>
+            <Calendar />
+          </div>
         </div>
       </div>
     )
