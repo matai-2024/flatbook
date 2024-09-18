@@ -10,7 +10,8 @@ function FormContainer({ title, children }: FormContainerProps) {
     <>
       <div className="tailwind placeholder">
         <h1 className="text-lg font-bold">{title}</h1>
-        <p className="italic">Required forms marked using *</p>
+        <p className="text-sm italic">Required forms marked using *</p>
+        <hr className="my-2 h-px border-0 bg-info" />
       </div>
       {children}
     </>

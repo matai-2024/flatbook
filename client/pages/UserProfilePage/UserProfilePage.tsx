@@ -18,7 +18,7 @@ export default function UserProfilePage() {
         {users.map((user: User) => (
           <div
             key={user.auth0Id}
-            className="max-h-fit max-w-full flex-1 space-x-8 py-36"
+            className="m-10 max-h-fit max-w-full flex-1 space-x-8"
           >
             <div className="flex h-full space-x-8 p-8">
               <div className="px-4">

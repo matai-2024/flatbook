@@ -8,19 +8,16 @@ export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
 
   return (
     <>
-      <h1 className="m-20 text-center text-5xl font-semibold">
-        Does your flat already have a FlatBook profile?
-      </h1>
-      <div className="mx-auto mt-10 flex w-full max-w-4xl items-center justify-center gap-10">
-        <FormContainer title="">
-          <div className="card glass h-auto w-full text-center">
-            <h2 className="mb-5 mt-5 text-center text-5xl font-semibold">
+      <FormContainer title="Does your flat already have a FlatBook profile?">
+        <div className="mx-auto mt-5 flex w-full max-w-4xl items-center justify-center gap-5">
+          <div className="card glass h-auto w-full bg-orange-100 text-center">
+            <h2 className="mb-5 mt-5 pt-6 text-center text-5xl font-semibold">
               Yes?
             </h2>
-            <figure className="mx-auto ml-10 mr-10 mt-5 h-96 w-96 rounded-full bg-primary p-10">
+            <figure className="mx-auto ml-10 mr-10 mt-5 h-60 w-60 rounded-full bg-current p-10">
               <FaHouseUser color="white" className="mx-auto h-72 w-72" />
             </figure>
-            <p className="mt-10">
+            <p className="mt-9 p-1 text-sm italic">
               Tip: Ask an existing Flattie for the flat key!
             </p>
             <div className="card-body flex flex-row items-center">
@@ -39,13 +36,12 @@ export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
               </div>
             </div>
           </div>
-        </FormContainer>
-        <FormContainer title="">
-          <div className="card glass h-auto w-full text-center">
-            <h2 className="mb-5 mt-5 text-center text-5xl font-semibold">
+
+          <div className="card glass h-auto w-full bg-orange-100 text-center">
+            <h2 className="mb-5 mt-5 pt-6 text-center text-5xl font-semibold">
               No?
             </h2>
-            <figure className="mx-auto ml-10 mr-10 mt-5 h-96 w-96 rounded-full bg-primary p-10">
+            <figure className="mx-auto ml-10 mr-10 mt-5 h-60 w-60 rounded-full bg-current p-10">
               <BsFillHouseAddFill color="white" className="mx-auto h-72 w-72" />
             </figure>
 
@@ -55,8 +51,8 @@ export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
               </button>
             </div>
           </div>
-        </FormContainer>
-      </div>
+        </div>
+      </FormContainer>
     </>
   )
 }

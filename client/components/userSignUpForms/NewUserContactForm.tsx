@@ -15,8 +15,8 @@ export default function NewUserContactForm({
   return (
     <>
       <FormContainer title="How will your flatties contact you?">
-        <div className="py-8">
-          <div className="form-control mb-4 w-full">
+        <div className="py-5">
+          <div className="form-control mb-4 w-full p-1">
             <label className="label-text" htmlFor="email">
               *Email
             </label>
@@ -32,7 +32,7 @@ export default function NewUserContactForm({
               />
             </div>
           </div>
-          <div className="form-control mb-4 w-full">
+          <div className="form-control mb-4 w-full p-1">
             <label className="label-text" htmlFor="mobile">
               Phone Number
             </label>
@@ -49,7 +49,7 @@ export default function NewUserContactForm({
             </div>
           </div>
 
-          <div className="form-control mb-4 w-full ">
+          <div className="form-control mb-4 w-full p-1 ">
             <label className="label-text" htmlFor="socialMedia">
               Social Media
             </label>
@@ -67,7 +67,7 @@ export default function NewUserContactForm({
           </div>
         </div>
       </FormContainer>
-      <ul className="steps steps-vertical m-2 lg:steps-horizontal">
+      <ul className="steps steps-vertical py-7 lg:steps-horizontal">
         <li className="step step-primary"></li>
         <li className="step step-primary"></li>
         <li className="step step-primary"></li>

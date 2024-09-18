@@ -11,6 +11,7 @@ html,
 body {
   align-items: center;
   justify-content: center;
+  /* background-color: transparent; */
 }
 
 canvas {
@@ -18,8 +19,8 @@ canvas {
   height: 100vh;
   display: block;
   position: fixed;
-  opacity: 0.4;
-  filter: blur(10px);
+  opacity: 1;
+  /* filter: blur(10px); */
   top: 0;
   left: 0;
   z-index: -1000;
@@ -40,18 +41,6 @@ canvas {
   margin-right: 60px;
   align-items: center;
   justify-content: center;
-}
-
-canvas {
-  width: 100vw;
-  height: 100vh;
-  display: block;
-  position: fixed;
-  opacity: 0.4;
-  filter: blur(10px);
-  top: 0;
-  left: 0;
-  z-index: -1000;
 }
 
 .landing-page {

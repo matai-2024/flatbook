@@ -8,7 +8,7 @@ export default function FlatSetUpDetails({
   updateFields,
 }: FlatFormProps) {
   return (
-    <div className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-center justify-center gap-10">
+    <div className="mx-auto mt-10 flex w-full max-w-4xl flex-col items-center justify-center gap-4">
       <FormContainer title="Flat Setup">
         <div className="form-control mb-4 w-full">
           <label className="label-text" htmlFor="firstName">
@@ -19,7 +19,7 @@ export default function FlatSetUpDetails({
               id="firstName"
               name="firstName"
               type="text"
-              placeholder="First name"
+              placeholder="Flat Nickname"
               value={title}
               onChange={(e) => updateFields({ title: e.target.value })}
               className="input input-bordered input-primary w-full"

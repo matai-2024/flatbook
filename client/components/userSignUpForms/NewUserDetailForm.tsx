@@ -12,8 +12,8 @@ export default function NewUserDetailForm({
   return (
     <>
       <FormContainer title="Let's get to know each other">
-        <div className="py-8">
-          <div className="form-control mb-4 w-full">
+        <div className="py-5">
+          <div className="form-control mb-2 w-full">
             <label className="label-text" htmlFor="firstName">
               *First name
             </label>
@@ -30,7 +30,7 @@ export default function NewUserDetailForm({
             </div>
           </div>
 
-          <div className="form-control mb-4 w-full">
+          <div className="form-control mb-2 w-full">
             <label className="label-text" htmlFor="lastName">
               *Last name
             </label>
@@ -47,7 +47,7 @@ export default function NewUserDetailForm({
             </div>
           </div>
 
-          <div className="form-control mb-4 w-full">
+          <div className="form-control mb-2 w-full">
             <label className="label-text" htmlFor="nickName">
               Nickname
             </label>
@@ -64,7 +64,7 @@ export default function NewUserDetailForm({
             </div>
           </div>
 
-          <div className="form-control mb-4 w-full">
+          <div className="form-control mb-2 w-full">
             <label className="label-text" htmlFor="about">
               About
             </label>
@@ -82,7 +82,7 @@ export default function NewUserDetailForm({
           </div>
         </div>
       </FormContainer>
-      <ul className="steps steps-vertical m-2 lg:steps-horizontal">
+      <ul className="steps steps-vertical py-7 lg:steps-horizontal">
         <li className="step step-primary"></li>
         <li className="step"></li>
         <li className="step"></li>

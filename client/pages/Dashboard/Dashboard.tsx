@@ -27,15 +27,20 @@ function Dashboard() {
     // The user doesn't have a flat yet
     // TODO: to be styled
     return (
-      <div className="container">
-        <p>Looks like you have not had a flat.</p>
-        <Button
-          onClick={() => {
-            navigate(`/flat_setup`, { replace: true })
-          }}
-        >
-          Next
-        </Button>
+      <div className="flex h-screen items-center justify-center bg-gray-100">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold">
+            No Flat? No Problem! Click below and we will get you all set up!
+          </h1>
+          <Button
+            className="mt-4 rounded-full bg-blue-500 px-6 py-3 font-bold text-white"
+            onClick={() => {
+              navigate(`/flat_setup`, { replace: true })
+            }}
+          >
+            Next
+          </Button>
+        </div>
       </div>
     )
   }

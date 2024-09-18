@@ -6,7 +6,7 @@ export default function NewUserPictureForm({ updateFields }: UserFormProps) {
   return (
     <>
       <FormContainer title="Upload a profile picture">
-        <div className="py-3">
+        <div className="py-1">
           <div className="form-control mb-4 w-full"></div>
         </div>
         <div className="flex h-64 w-full cursor-pointer items-center justify-center rounded-lg border-4 border-dashed border-gray-300">
@@ -18,13 +18,13 @@ export default function NewUserPictureForm({ updateFields }: UserFormProps) {
         <div className="py-1">
           <input
             type="file"
-            className="file-input file-input-bordered file-input-info w-full bg-inherit text-sm text-gray-500"
+            className="file-input file-input-bordered file-input-info  w-full text-sm text-gray-500"
             onChange={(e) => updateFields({ profilePhoto: e.target.value })}
           />
         </div>
       </FormContainer>
 
-      <ul className="steps steps-vertical py-7 lg:steps-horizontal">
+      <ul className="steps steps-vertical py-6 lg:steps-horizontal">
         <li className="step step-primary"></li>
         <li className="step step-primary"></li>
         <li className="step"></li>

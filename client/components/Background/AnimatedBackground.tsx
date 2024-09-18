@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import crystalColor from '../../assets/backgroundTextures/gradient.jpeg'
-import crystalBump from '../../assets/backgroundTextures/gradient.jpeg'
 export default function AnimatedBackground() {
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(
@@ -9,7 +8,6 @@ export default function AnimatedBackground() {
     0.1,
     10,
   )
-
   const renderer = new THREE.WebGLRenderer({
     antialias: true,
     logarithmicDepthBuffer: true,
@@ -19,11 +17,11 @@ export default function AnimatedBackground() {
   renderer.shadowMap.enabled = true
   document.body.appendChild(renderer.domElement)
 
-  const geometry = new THREE.SphereGeometry(1.8, 32, 32)
+  const geometry = new THREE.CircleGeometry(4, 12)
 
   const textureLoader = new THREE.TextureLoader()
   const texture = textureLoader.load(crystalColor)
-  const bumpMap = textureLoader.load(crystalBump)
+  const bumpMap = textureLoader.load(crystalColor)
 
   const material = new THREE.MeshStandardMaterial({
     map: texture,
@@ -33,32 +31,26 @@ export default function AnimatedBackground() {
     metalness: 0.5,
   })
 
-  const sphere = new THREE.Mesh(geometry, material)
-  sphere.castShadow = true
-  sphere.receiveShadow = true
-  scene.add(sphere)
+  const circle = new THREE.Mesh(geometry, material)
+  circle.castShadow = true
+  circle.receiveShadow = true
+  scene.add(circle)
 
-  const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1)
+  const light = new THREE.HemisphereLight(0xffffff, 0x000000, 10)
   scene.add(light)
 
   const directionalLight = new THREE.AmbientLight()
-  directionalLight.position.set(7, 5, 5)
+  directionalLight.position.set(0, 0, 5)
   scene.add(directionalLight)
 
   camera.position.z = 2
 
   function animate() {
-    sphere.rotation.x += 0.01
+    circle.rotation.z += 0.001
+
     renderer.render(scene, camera)
   }
   renderer.setClearColor(new THREE.Color('rgb(41, 14, 24)'))
   renderer.setAnimationLoop(animate)
   return <></>
-  // return <div className="t-0 l-0 -z-20 h-screen w-screen bg-black">Hey</div>
 }
-
-// const material = new THREE.MeshDepthMaterial()
-// const displacementMap = new THREE.TextureLoader().load(
-//   '../../assets/displacementMap.jpg',
-// )
-// material.displacementMap = displacementMap

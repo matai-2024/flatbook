@@ -68,9 +68,9 @@ export default function FlatSignUpForm() {
   }
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="max-w w-full">
-        <div className="flex items-center text-center">
+    <div className="flex w-full items-center justify-center p-10">
+      <div className="w-1/4 rounded-xl bg-white p-10 shadow-2xl">
+        <div className="flex flex-col items-center text-center">
           <form onSubmit={onSubmit} className="mt-6 w-full">
             <div>
               <div>
@@ -82,7 +82,7 @@ export default function FlatSignUpForm() {
                 <button
                   type="button"
                   onClick={back}
-                  className="btn btn-secondary"
+                  className="btn btn-secondary mr-1 px-6"
                 >
                   Back
                 </button>
