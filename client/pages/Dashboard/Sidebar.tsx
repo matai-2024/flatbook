@@ -1,3 +1,4 @@
+import Calendar from '../../components/Calendar/Calendar'
 import AvatarIcon from '../../components/UI/AvatarIcon'
 
 export default function Sidebar() {
@@ -17,6 +18,7 @@ export default function Sidebar() {
               'https://i.pinimg.com/736x/4b/56/28/4b56284d1fb20107551932d87453d96c.jpg'
             }
           />
+
           <hr className="my-8 h-px border-0 bg-info" />
         </div>
         <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
@@ -45,6 +47,12 @@ export default function Sidebar() {
           </li>
         </ul>
         <hr className="my-8 h-px border-0 bg-info" />
+        <div>
+          <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
+            Calendar
+          </h2>
+          <Calendar />
+        </div>
       </div>
     </div>
   )

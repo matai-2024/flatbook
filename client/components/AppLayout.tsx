@@ -9,7 +9,7 @@ function AppLayout() {
 
   return (
     <>
-      <section className="tailwind placeholder">
+      <section>
         <header></header>
         <main>
           <Outlet />

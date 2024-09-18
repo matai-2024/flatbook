@@ -16,7 +16,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="w-full bg-base-100 p-8">
+    <div className="w-full bg-inherit p-8">
       <div className="flex w-full flex-col md:flex-row">
         <div className="w-full flex-col space-y-8 md:w-1/3 md:px-8">
           <Sidebar />
@@ -37,21 +37,9 @@ function Dashboard() {
                 <br></br>
               </div>
               <div />
-              {/* Chores */}
-              <div className="flex w-full flex-col space-y-8">
-                <div className="flex-grow rounded-xl bg-white p-6">
-                  <h3 className="m-2 text-center text-2xl font-bold text-primary">
-                    Chores
-                  </h3>
-                  <div className="flex flex-row space-x-4">
-                    <ChoresList flatId={flatId} />
-                    <CreateChore flatId={flatId} />
-                  </div>
-                </div>
-              </div>
             </div>
             {/* Right Column */}
-            <div className="flex w-full flex-col space-y-5">
+            <div className="flex w-full flex-col space-y-5 pr-7">
               {/* Bills */}
               <div className="flex w-full flex-col space-y-8">
                 <div className="flex-grow rounded-xl bg-white p-6">
@@ -74,6 +62,18 @@ function Dashboard() {
                 <div className="flex flex-row space-x-4">
                   <div className="flex-grow">
                     <ShopList flatId={flatId} />
+                  </div>
+                </div>
+              </div>
+              {/* Chores */}
+              <div className="flex w-full flex-col space-y-8">
+                <div className="flex-grow rounded-xl bg-white p-6">
+                  <h3 className="m-2 text-center text-2xl font-bold text-primary">
+                    Chores
+                  </h3>
+                  <div className="flex flex-row space-x-4">
+                    <ChoresList flatId={flatId} />
+                    <CreateChore flatId={flatId} />
                   </div>
                 </div>
               </div>

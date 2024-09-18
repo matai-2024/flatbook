@@ -9,6 +9,30 @@
 
 html,
 body {
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  opacity: 0.4;
+  filter: blur(10px);
+  top: 0;
+  left: 0;
+  z-index: -1000;
+}
+
+.landing-page {
+  /* background-color: aqua; */
+  font-family: 'Playfair Display', serif;
+  /* font-size: 285px; */
+  font-size: 15cqmax;
+  font-weight: 600;
+  text-align: justify;
+  padding-left: 50px;
   font-family: 'DM Sans', sans-serif;
 }
 

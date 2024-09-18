@@ -12,7 +12,7 @@ function Nav() {
   const isFetching = useIsFetching()
 
   return (
-    <div className="bg-base100 navbar relative">
+    <div className="bg-base100 navbar relative drop-shadow-xl">
       <div className="ml-8 flex-1">
         <button onClick={() => navigate('/')}>
           <img src={logo} alt="logo" className="w- btn btn-ghost h-28" />
@@ -33,7 +33,7 @@ function Nav() {
               Profile Page
             </Button>
             <Button
-              onClick={() => navigate('/dashboard')}
+              onClick={() => navigate('/dashboard/1')}
               className="btn btn-accent m-1"
             >
               Flat Dashboard
