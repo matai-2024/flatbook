@@ -1,7 +1,5 @@
 import { FormEvent, useState } from 'react'
 import ExistingFlatCheck from '../components/flatSetUpForms/ExistingFlatCheck'
-// import { useNavigate } from 'react-router-dom'
-// import { useAuth0 } from '@auth0/auth0-react'
 import useFormStep from '../hooks/useFormStep'
 import FlatSetUpDetails from '../components/flatSetUpForms/FlatSetUpDetails'
 import { FlatFormProps } from '../../types/Flat'
@@ -26,9 +24,6 @@ export default function FlatSignUpForm() {
   const addFlat = useCreateFlat()
   const navigate = useNavigate()
   const { user, getAccessTokenSilently } = useAuth0()
-
-  // const navigate = useNavigate()
-  // const { getAccessTokenSilently } = useAuth0()
 
   function updateFields(fields: Partial<FlatFormProps>) {
     setData((prev) => {
@@ -68,7 +63,7 @@ export default function FlatSignUpForm() {
       //TODO - update with flat profile
       data.flatAdmin = user.sub
       await addFlat.mutateAsync({ data, token })
-      navigate('/')
+      navigate('/dashboard')
     }
   }
 

@@ -20,7 +20,7 @@ export const routes = createRoutesFromElements(
       handle={'Sign Up'}
     />
     <Route
-      path="dashboard/:flatId"
+      path="dashboard"
       element={<ProtectedComponent component={Dashboard} />}
       handle={'Flat Dashboard'}
     />

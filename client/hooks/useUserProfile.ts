@@ -1,9 +1,9 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { addUserProfile } from '../apis/users.ts'
-import { UserData } from '../../types/User.ts'
+import { User } from '../../types/User.ts'
 
 interface Props {
-  data: UserData
+  data: User
   token: string
 }
 

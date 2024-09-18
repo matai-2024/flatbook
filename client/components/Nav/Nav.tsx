@@ -27,7 +27,7 @@ function Nav() {
           <div>
             {/* TODO - Change dashboard route to be dynamic */}
             <Button
-              onClick={() => navigate('/dashboard/1')}
+              onClick={() => navigate('/dashboard')}
               className="btn btn-accent"
             >
               Flat Dashboard

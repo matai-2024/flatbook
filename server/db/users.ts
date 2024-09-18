@@ -16,3 +16,7 @@ export async function getUsersByFlatId(flatId: string) {
   return users
 }
 
+export async function getFlatByAuthId(auth0Id: string) {
+  const flatId = await db('users').select('flatId').first().where({ auth0Id })
+  return flatId as string
+}
