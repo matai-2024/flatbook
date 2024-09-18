@@ -17,6 +17,15 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+router.get('/flat/:id', async (req, res, next) => {
+  try {
+    const flatId = await db.getFlatByAuthId(req.params.id)
+    res.json(flatId)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.post('/', async (req, res, next) => {
   try {
     const data = req.body

@@ -24,10 +24,24 @@ export async function deleteUserById(id: number, token: string) {
     .set('Authorization', `Bearer ${token}`)
 }
 
-export async function addUserProfile(newProfile: UserData, token: string) {
+export async function addUserProfile(newProfile: User, token: string) {
   const res = await request
     .post(rootUrl)
     .set('Authorization', `Bearer ${token}`)
     .send({ ...newProfile, createdAt: String(Date.now()) })
+  return res.body as number
+}
+export async function getFlatByAuthId(authId: string, token: string) {
+  const res = await request
+    .get(`${rootUrl}/flat/${authId}`)
+    .set('Authorization', `Bearer ${token}`)
+  return res.body
+}
+
+export async function setFlatId(authId: User, flatId: number, token: string) {
+  const res = await request
+    .post(rootUrl)
+    .set('Authorization', `Bearer ${token}`)
+    .send({ authId, flatId })
   return res.body as number
 }

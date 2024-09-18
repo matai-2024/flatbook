@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom'
 import ChoresList from '../../components/ChoresList/ChoresList'
 import CreateAnnouncement from '../../components/CreateAnnouncement/CreateAnnouncement'
 import CreateChore from '../../components/CreateChore/CreateChore'
@@ -9,9 +8,15 @@ import ShopList from '../../components/ShoppingList/ShopList'
 import Bills from '../../components/Bills/Bills'
 
 function Dashboard() {
-  const { flatId } = useParams()
+  const { data: flatId, isLoading, isError } = useGetFlatByAuthId()
 
-  if (!flatId) {
+  const navigate = useNavigate()
+
+  if (isLoading) {
+    return <>Loading</>
+  }
+
+  if (isError) {
     return <ErrorPage />
   }
 

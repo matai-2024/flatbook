@@ -13,5 +13,7 @@ export async function getFlatById(id: number | string) {
 
 export async function addFlat(data: FlatData) {
   const [id] = await db('flats').insert(data)
+  await db('users').where({ auth0Id: data.flatAdmin }).update({ flatId: id })
+
   return id
 }
