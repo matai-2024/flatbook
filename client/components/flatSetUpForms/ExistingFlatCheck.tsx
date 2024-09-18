@@ -11,20 +11,20 @@ export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
       <FormContainer title="Does your flat already have a FlatBook profile?">
         <div className="mx-auto mt-5 flex w-full max-w-4xl items-center justify-center gap-3">
           <div className="card glass h-auto w-full bg-orange-100 text-center">
-            <h2 className="mb-5 mt-5 pt-6 text-center text-5xl font-semibold">
+            <h2 className="mb-5 mt-5 pt-6 text-center text-3xl font-semibold">
               Yes?
             </h2>
-            <figure className="mx-auto ml-10 mr-10 mt-5 h-52 w-52 rounded-full bg-current p-10">
-              <FaHouseUser color="white" className="mx-auto h-72 w-72" />
+            <figure className="mx-auto ml-10 mr-10 mt-5 h-48 w-48 rounded-full bg-current p-10">
+              <FaHouseUser color="white" className="mx-auto h-64 w-64" />
             </figure>
-            <p className="mt-9 p-1 text-sm italic">
+            <p className="text mt-2 p-1 italic">
               Tip: Ask an existing Flattie for the flat key!
             </p>
             <div className="card-body flex flex-row items-center">
               <input
                 type="text"
                 placeholder="Enter Your Flat Key"
-                className="color-primary input input-bordered input-secondary w-full text-center text-sm"
+                className="color-primary input input-bordered input-secondary w-full text-center text-xs"
               />
               <div className="card-actions">
                 <button
@@ -38,11 +38,11 @@ export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
           </div>
 
           <div className="card glass h-auto w-full bg-orange-100 text-center">
-            <h2 className="mb-5 mt-5 pt-6 text-center text-5xl font-semibold">
+            <h2 className="mb-5 mt-5 pt-6 text-center text-3xl font-semibold">
               No?
             </h2>
-            <figure className="mx-auto ml-10 mr-10 mt-5 h-52 w-52 rounded-full bg-current p-10">
-              <BsFillHouseAddFill color="white" className="mx-auto h-72 w-72" />
+            <figure className="mx-auto ml-10 mr-10 mt-5 h-48 w-48 rounded-full bg-current p-10">
+              <BsFillHouseAddFill color="white" className="mx-auto h-64 w-64" />
             </figure>
 
             <div className="card-body flex flex-row items-center">

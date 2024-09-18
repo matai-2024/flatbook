@@ -27,13 +27,16 @@ function Dashboard() {
     // The user doesn't have a flat yet
     // TODO: to be styled
     return (
-      <div className="flex h-screen items-center justify-center bg-gray-100">
+      <div className="flex h-screen items-center justify-center bg-inherit">
         <div className="text-center">
-          <h1 className="text-2xl font-bold">
-            No Flat? No Problem! Click below and we will get you all set up!
+          <div className="mt-32 flex">
+            <h1 className="no-flat font-bold">No Flat? No Problem!</h1>
+          </div>
+          <h1 className="no-flex text-3xl font-bold">
+            Click below and we will get you all set up!
           </h1>
           <Button
-            className="mt-4 rounded-full bg-blue-500 px-6 py-3 font-bold text-white"
+            className="m-14 h-28 w-64 rounded-2xl text-3xl font-bold"
             onClick={() => {
               navigate(`/flat_setup`, { replace: true })
             }}
