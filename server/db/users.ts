@@ -17,8 +17,6 @@ export async function addUser(data: User) {
 }
 
 export async function getUsersByFlatId(flatId: string) {
-  console.log('inside the database', flatId)
-  
   const users: User[] = await db('users').where({ flatId })
   return users
 }

@@ -1,12 +1,11 @@
-import Calendar from "../../components/Calendar/Calendar";
-import AvatarIcon from "../../components/UI/AvatarIcon";
+import Calendar from '../../components/Calendar/Calendar'
+import AvatarIcon from '../../components/UI/AvatarIcon'
 import { LocalSpinner } from '../../components/UI/WaitingSpinners'
 import { useFlatbyId, useFlattiesInfo } from '../../hooks/useFlats'
 
 interface Props {
   flatId: string
 }
-
 
 export default function Sidebar({ flatId }: Props) {
   const { data } = useFlatbyId(flatId)
@@ -26,10 +25,6 @@ export default function Sidebar({ flatId }: Props) {
   }
 
   if (flatties && data) {
-    console.log(flatties)
-    console.log('flatID:', flatId)
-    console.log('Flat Data:', data)
-
     return (
       <div className="sidebar h-full rounded-xl bg-white p-12 shadow-xl">
         <div className="flex-grow">
@@ -78,4 +73,5 @@ export default function Sidebar({ flatId }: Props) {
         </div>
       </div>
     )
-}}
+  }
+}
