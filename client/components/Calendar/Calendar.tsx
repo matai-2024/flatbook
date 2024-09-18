@@ -21,7 +21,7 @@ export default function Calendar() {
   })
 
   return (
-    <div className="mx-auto flex h-screen w-1/2 items-center gap-10 divide-x-2 divide-secondary">
+    <div className="mx-auto flex h-auto items-center gap-10 divide-y-2 divide-secondary">
       <div className="h-96 w-96">
         {
           //** Calendar Days of week*/

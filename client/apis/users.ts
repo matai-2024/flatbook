@@ -34,7 +34,7 @@ export async function addUserProfile(newProfile: User, token: string) {
 
 export async function getFlattiesByFlatId(token: string, flatId: string) {
   const res = await request
-    .get(`${rootUrl}/${flatId}`)
+    .get(`${rootUrl}/flatties/${flatId}`)
     .set('Authorization', `Bearer ${token}`)
   return res.body as User[]
 }

@@ -6,12 +6,19 @@ export async function getAllUsers() {
   return users as User[]
 }
 
+export async function getUserById(id: number) {
+  const users = await db('users').where('id', '=', id)
+  return users as User[]
+}
+
 export async function addUser(data: User) {
   const [id] = await db('users').insert(data)
   return id
 }
 
 export async function getUsersByFlatId(flatId: string) {
+  console.log('inside the database', flatId)
+  
   const users: User[] = await db('users').where({ flatId })
   return users
 }
