@@ -69,7 +69,7 @@ export default function FlatSignUpForm() {
 
   return (
     <div className="flex w-full items-center justify-center p-10">
-      <div className="w-1/4 rounded-xl bg-white p-10 shadow-2xl">
+      <div className="w-2/6 rounded-xl bg-white p-10 shadow-2xl">
         <div className="flex flex-col items-center text-center">
           <form onSubmit={onSubmit} className="mt-6 w-full">
             <div>

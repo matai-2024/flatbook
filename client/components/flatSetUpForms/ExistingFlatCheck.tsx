@@ -9,12 +9,12 @@ export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
   return (
     <>
       <FormContainer title="Does your flat already have a FlatBook profile?">
-        <div className="mx-auto mt-5 flex w-full max-w-4xl items-center justify-center gap-5">
+        <div className="mx-auto mt-5 flex w-full max-w-4xl items-center justify-center gap-3">
           <div className="card glass h-auto w-full bg-orange-100 text-center">
             <h2 className="mb-5 mt-5 pt-6 text-center text-5xl font-semibold">
               Yes?
             </h2>
-            <figure className="mx-auto ml-10 mr-10 mt-5 h-60 w-60 rounded-full bg-current p-10">
+            <figure className="mx-auto ml-10 mr-10 mt-5 h-52 w-52 rounded-full bg-current p-10">
               <FaHouseUser color="white" className="mx-auto h-72 w-72" />
             </figure>
             <p className="mt-9 p-1 text-sm italic">
@@ -24,7 +24,7 @@ export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
               <input
                 type="text"
                 placeholder="Enter Your Flat Key"
-                className="color-primary input input-bordered input-secondary w-full"
+                className="color-primary input input-bordered input-secondary w-full text-center text-sm"
               />
               <div className="card-actions">
                 <button
@@ -41,7 +41,7 @@ export default function ExistingFlatCheck({ updateFields }: FlatFormProps) {
             <h2 className="mb-5 mt-5 pt-6 text-center text-5xl font-semibold">
               No?
             </h2>
-            <figure className="mx-auto ml-10 mr-10 mt-5 h-60 w-60 rounded-full bg-current p-10">
+            <figure className="mx-auto ml-10 mr-10 mt-5 h-52 w-52 rounded-full bg-current p-10">
               <BsFillHouseAddFill color="white" className="mx-auto h-72 w-72" />
             </figure>
 
