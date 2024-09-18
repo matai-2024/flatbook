@@ -10,3 +10,9 @@ export async function addUser(data: User) {
   const [id] = await db('users').insert(data)
   return id
 }
+
+export async function getUsersByFlatId(flatId: string) {
+  const users: User[] = await db('users').where({ flatId })
+  return users
+}
+

@@ -17,6 +17,17 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:flatId', async (req, res) => {
+  try {
+    const flatId = req.params.flatId
+    const usersWithFlatId = await db.getUsersByFlatId(flatId)
+
+    res.json(usersWithFlatId)
+  } catch (error) {
+    res.status(200).json({ message: 'Something went wrong' })
+  }
+})
+
 router.post('/', async (req, res, next) => {
   try {
     const data = req.body

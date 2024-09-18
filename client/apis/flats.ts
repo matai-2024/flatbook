@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { Flat, FlatData } from '../../types/Flat'
 
-const baseUrl = '/api/v1/flats/flats'
+const baseUrl = '/api/v1/flats/'
 
 export async function getFlatById(
   token: string,

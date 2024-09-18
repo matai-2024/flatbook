@@ -18,6 +18,18 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/auth/:id', async (req, res, next) => {
+  try {
+    // get the flat id back from the db as assign to variable
+    // e.g. const flatId = await db.getFlatByAuthId
+    // then getFlatById(flatId)
+    const flat = await db.getFlatById(req.params.id)
+    res.json(flat)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.get('/:id', async (req, res, next) => {
   try {
     const flat = await db.getFlatById(req.params.id)
