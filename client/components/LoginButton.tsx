@@ -9,7 +9,7 @@ const LoginButton = () => {
       onClick={() =>
         loginWithRedirect({
           authorizationParams: {
-            redirect_uri: `${window.location.origin}/dashboard`, // Todo: can redirect to User Profile page as well when ready
+            redirect_uri: `${window.location.origin}/signup`,
           },
         })
       }
