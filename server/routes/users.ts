@@ -1,6 +1,7 @@
 import { Router } from 'express'
 
 import * as db from '../db/users.ts'
+import { StatusCodes } from 'http-status-codes'
 
 const router = Router()
 
@@ -32,7 +33,7 @@ router.post('/', async (req, res, next) => {
     const id = await db.addUser({
       ...data,
     })
-    res.json(id)
+    res.status(StatusCodes.CREATED).json(id)
   } catch (err) {
     next(err)
   }

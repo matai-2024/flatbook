@@ -26,19 +26,36 @@ function Dashboard() {
           <Sidebar />
         </div>
 
-        <div className="w-full flex-col space-y-8">
-          <div className="flex w-full flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0">
-            {/* Left Column */}
-            <div className="flex w-full flex-col space-y-3">
-              {/* Announcements */}
-              <div className="rounded-xl bg-white">
-                <h3 className="m-2 text-center text-2xl font-bold text-primary">
-                  <br></br>
+  if ((flatId !== undefined && flatId === null) || flatId === 0) {
+    // The user doesn't have a flat yet
+    // TODO: to be styled
+    return (
+      <div className="container">
+        <p>Looks like you have not had a flat.</p>
+        <Button
+          onClick={() => {
+            navigate(`/flat_setup`, { replace: true })
+          }}
+        >
+          Next
+        </Button>
+      </div>
+    )
+  } else {
+    return (
+      <>
+        <div className="container flex flex-row">
+          <div className="container static my-0 max-w-96 bg-[#d9d9d9] px-5 py-5">
+            <Sidebar />
+          </div>
+          <div className="container flex flex-row">
+            <div className="container flex flex-col">
+              <div className="max-auto container mb-5 min-w-96 px-5">
+                <h3 className="py-5 text-center text-2xl font-bold">
                   Announcements
                 </h3>
                 <CreateAnnouncement flatId={flatId} />
                 <FlatAnnouncements flatId={flatId} />
-                <br></br>
               </div>
               <div />
             </div>
@@ -57,17 +74,15 @@ function Dashboard() {
                   </div>
                 </div>
               </div>
-              {/* Shopping List */}
-              <div className="rounded-xl bg-white">
-                <h3 className="m-2 text-center text-2xl font-bold text-primary">
-                  <br></br>
+              <div className="max-auto container mb-5">
+                <h3 className="py-5 text-center text-2xl font-bold">
                   Shopping List
                 </h3>
-                <div className="flex flex-row space-x-4">
-                  <div className="flex-grow">
-                    <ShopList flatId={flatId} />
-                  </div>
-                </div>
+                <ShopList flatId={flatId} />
+              </div>
+              <div className="max-auto container mb-5">
+                <h3 className="py-5 text-center text-2xl font-bold">Bills</h3>
+                <Bills /> {/* Todo: replace with real Bills component */}
               </div>
               {/* Chores */}
               <div className="flex w-full flex-col space-y-8">
@@ -85,9 +100,9 @@ function Dashboard() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  )
+      </>
+    )
+  }
 }
 
 export default Dashboard
