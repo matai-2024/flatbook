@@ -8,16 +8,6 @@ export async function seed(knex) {
   await knex('chores').insert([
     {
       flat_id: '1',
-      title: 'chore1',
-      description: 'Clean the abc',
-      priority: 4,
-      deadline: '2024-10-14',
-      assignee_id: 'auth0-placeholder',
-      created_at: '2024-09-14',
-      is_completed: false,
-    },
-    {
-      flat_id: '1',
       title: 'chore2',
       description: 'Clean the def',
       assignee_id: 'auth0-placeholder',
@@ -36,16 +26,7 @@ export async function seed(knex) {
       created_at: '2024-09-14',
       is_completed: false,
     },
-    {
-      flat_id: '2',
-      title: 'chore1',
-      description: 'Fold the damn laundry',
-      assignee_id: 'auth0-placeholder',
-      priority: 6,
-      deadline: '2024-10-14',
-      created_at: '2024-09-15',
-      is_completed: false,
-    },
+
     {
       flat_id: '3',
       title: 'chore1',

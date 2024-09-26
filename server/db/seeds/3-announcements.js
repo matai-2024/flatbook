@@ -36,13 +36,6 @@ export async function seed(knex) {
     },
     {
       author_id: 'auth0-placeholder',
-      flat_id: 2,
-      title: 'Flat Announcement Test 5',
-      content: 'test content for the flat announcement of flat 2',
-      created_at: '2024-09-15',
-    },
-    {
-      author_id: 'auth0-placeholder',
       flat_id: 3,
       title: 'Flat Announcement Test 6',
       content: 'test content for the flat announcement of flat 3',

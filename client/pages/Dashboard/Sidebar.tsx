@@ -41,6 +41,9 @@ export default function Sidebar({ flatId }: Props) {
                 'https://i.pinimg.com/736x/4b/56/28/4b56284d1fb20107551932d87453d96c.jpg'
               }
             />
+            <p className="pt-2 text-center font-semibold">
+              Flat Key: 3ab#67ijs
+            </p>
             <hr className="my-8 h-px border-0 bg-info" />
           </div>
 

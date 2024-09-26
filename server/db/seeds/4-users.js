@@ -25,11 +25,10 @@ export async function seed(knex) {
       flatId: 1,
       firstName: 'Elias',
       lastName: 'Kaleta',
-      nickName: 'LonelyBanana',
-      about:
-        'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      email: 'eliaskaleta@example.com',
-      mobile: '+6421-222-222',
+      nickName: 'LonelyBalogna',
+      about: 'A Dev Academy student',
+      email: 'elias@gmail.com',
+      mobile: '+6421-111-1111',
       profilePhoto:
         'https://scontent.fakl1-3.fna.fbcdn.net/v/t39.30808-6/410602207_10161040388484181_5426114017262028169_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=CFNUEbrrwiUQ7kNvgG-xyVp&_nc_ht=scontent.fakl1-3.fna&_nc_gid=Al8YmmE9YMFWexLLK_eJ6wg&oh=00_AYB9WjhY_JrQSBfr2FAAlEggOHuCQvDNv_vk0uemlPJ8SQ&oe=66ED9B5E',
       createdAt: '13-02-2000',

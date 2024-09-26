@@ -73,19 +73,6 @@ function Dashboard() {
             </div>
             {/* Right Column */}
             <div className="flex w-full flex-col space-y-5 pr-7">
-              {/* Bills */}
-              <div className="flex flex-col space-y-8">
-                <div className="flex-grow rounded-xl bg-white p-6">
-                  <h3 className="m-2 mb-5 text-center text-2xl font-bold text-primary">
-                    Bills
-                  </h3>
-                  <div className="flex flex-row space-x-4">
-                    <div className="flex-grow">
-                      <Bills />
-                    </div>
-                  </div>
-                </div>
-              </div>
               {/* Shopping List */}
               <div className="w-full rounded-xl bg-white">
                 <h3 className="m-2 mb-5 text-center text-2xl font-bold text-primary">
@@ -108,6 +95,19 @@ function Dashboard() {
                     <div className="flex-grow">
                       <ChoresList flatId={flatId} />
                       <CreateChore flatId={flatId} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Bills */}
+              <div className="flex flex-col space-y-8">
+                <div className="flex-grow rounded-xl bg-white p-6">
+                  <h3 className="m-2 mb-5 text-center text-2xl font-bold text-primary">
+                    Bills
+                  </h3>
+                  <div className="flex flex-row space-x-4">
+                    <div className="flex-grow">
+                      <Bills />
                     </div>
                   </div>
                 </div>
