@@ -71,8 +71,7 @@ describe('Calendar', () => {
     const renderedMonth = render.getByTestId('visibleMonth')
     expect(renderedMonth.innerHTML).toStrictEqual(currentMonth) //Render correct current month
 
-    const renderedDays = render
-      .getAllByTestId('dayWithoutEvent')
+    const renderedDays = render.getAllByTestId('dayWithoutEvent')
     expect(renderedDays).toHaveLength(42) //Render all days
 
     const nextMonthButton = render.getByTestId('next-month-button')
