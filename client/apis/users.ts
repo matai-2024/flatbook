@@ -13,7 +13,7 @@ export async function getUserById(id: number) {
   return res.body as UserData
 }
 
-export async function getUserByFlatId(id: number) {
+export async function getUsersByFlatId(id: number) {
   const res = await request.get(rootUrl + 'flat/' + id)
   return res.body as User[]
 }
