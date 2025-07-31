@@ -72,7 +72,7 @@ export default function Sidebar({ flatId }: Props) {
           <hr className="my-8 h-px border-0 bg-info" />
           <div>
             <h2 className="mb-4 text-center text-3xl font-semibold text-primary">
-              Calendar
+              Personal Calendar
             </h2>
             <Calendar />
           </div>
