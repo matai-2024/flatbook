@@ -18,11 +18,11 @@ export default function ProfilePageButton() {
       return
     }
 
-    const id = user[0].id
-    if (id === undefined) {
+    const internalUser = user[0]
+    if (internalUser === undefined || user[0].id === undefined) {
       navigate('/signup')
     } else {
-      navigate(`/profile/${id}`)
+      navigate(`/profile/${user[0].id}`)
     }
   }
 
