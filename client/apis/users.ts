@@ -13,6 +13,11 @@ export async function getUserById(id: number) {
   return res.body as UserData
 }
 
+export async function getUserIdByAuthID(authID: string) {
+  const res = await request.get(rootUrl + '/auth/' + authID)
+  return res.body as UserData
+}
+
 export async function getUsersByFlatId(id: number) {
   const res = await request.get(rootUrl + 'flat/' + id)
   return res.body as User[]

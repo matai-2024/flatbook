@@ -18,6 +18,17 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+router.get('/auth/:id', async (req, res) => {
+  try {
+    const id: string = req.params.id
+    const userID = await db.getUserByAuthId(id)
+
+    res.json(userID)
+  } catch (error) {
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+})
+
 router.get('/flatties/:flatId', async (req, res) => {
   try {
     const flatId = req.params.flatId

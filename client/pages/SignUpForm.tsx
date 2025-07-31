@@ -14,6 +14,7 @@ const MOCK_DATA = {
   lastName: '',
   nickName: '',
   about: '',
+  id: 0,
   profilePhoto: '',
   email: '',
   mobile: '',
@@ -61,7 +62,7 @@ export default function SignUpForm() {
       user?.sub ? (data.auth0Id = user.sub) : ''
       const token = await getAccessTokenSilently()
       await addUserProfile.mutateAsync({ data, token })
-      navigate(`/`)
+      navigate(`/profile/${data.id}`)
     }
   }
 

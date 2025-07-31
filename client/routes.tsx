@@ -11,13 +11,18 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import ErrorPage from './pages/ErrorPage'
 import FlatSignUpForm from './pages/FlatSignUpForm'
 import UserProfilePage from './pages/UserProfilePage/UserProfilePage'
+import RedirectIfUserAlreadyExists from './wrappers/RedirectIfUserAlreadyExists'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
     <Route index element={<LandingPage />} />
     <Route
       path="signup"
-      element={<ProtectedComponent component={SignUpForm} />}
+      element={
+        <RedirectIfUserAlreadyExists relocationPath="/dashboard">
+          <ProtectedComponent component={SignUpForm} />
+        </RedirectIfUserAlreadyExists>
+      }
       handle={'Sign Up'}
     />
     <Route

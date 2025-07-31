@@ -2,6 +2,7 @@ import * as z from 'zod'
 
 export const userData = z.object({
   flatId: z.number().nullable(),
+  id: z.number(),
   firstName: z.string(),
   lastName: z.string().nullable(),
   nickName: z.string().nullable(),

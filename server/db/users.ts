@@ -11,6 +11,11 @@ export async function getUserById(id: number) {
   return users as User[]
 }
 
+export async function getUserByAuthId(authID: string) {
+  const user = await db('users').where('auth0Id', '=', authID)
+  return user as User[]
+}
+
 export async function addUser(data: User) {
   const [id] = await db('users').insert(data)
   return id
