@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
 import { useIsFetching } from '@tanstack/react-query'
 import { GlobalSpinner } from '../UI/WaitingSpinners'
+import ProfilePageButton from '../Buttons/ProfilePageButton'
 
 function Nav() {
   const navigate = useNavigate()
@@ -26,12 +27,7 @@ function Nav() {
         <IfAuthenticated>
           <div>
             {/* todo-change profile button to be dynamic */}
-            <Button
-              onClick={() => navigate('/profile/1')}
-              className="btn btn-accent"
-            >
-              Profile Page
-            </Button>
+            <ProfilePageButton />
             <Button
               onClick={() => navigate('/dashboard')}
               className="btn btn-accent m-1"
